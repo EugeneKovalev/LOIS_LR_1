@@ -1,0 +1,28 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS(
+#include "../../include/scp_keynodes.scsy"
+// Location: /lib/test/main
+)
+
+program(test_main,
+M4SCS(	[[	
+		test_LOIS_Lab1 = "/lib/test/LOIS_Lab1/test_LOIS_Lab1",
+		test_get_different_unorient_filter = "/lib/test/get_different_unorient_filter/test_get_different_unorient_filter",
+		prm1,prm2]])
+M4SEC(	[[
+		test_LOIS_Lab1 = /LOIS_Lab1[SYFIX]/test_LOIS_Lab1,
+		test_get_different_unorient_filter = /get_different_unorient_filter[SYFIX]/test_get_different_unorient_filter,
+		prm1,prm2]]),
+	[{
+		descr}])
+
+call([1_: fixed_: test_LOIS_Lab1, 2_: fixed_: prm1488=[{}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: test_get_different_unorient_filter, 2_: fixed_: prm9=[{}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+return([])
+end()

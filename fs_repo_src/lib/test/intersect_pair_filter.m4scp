@@ -1,0 +1,87 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS(
+#include "../../include/sckp_keynodes.scsy" 
+// Location: /lib/test/intersect_pair_filter
+)
+procedure(test_intersect_pair_filter,
+M4SCS(	[[
+		start_message = /"=======START_SUBTRACT======="/, 
+		end_message = /"=======FINISH_SUBTRACT======="/,	
+		debug_message = /"====ANSWER====\n"/, 	
+		hello_world_message = /"====Hello world!====\n"/, 	
+		chain_push = "/lib/chain/push/chain_push",
+		chain_push_first = "/lib/chain/push_first/chain_push_first",
+		chain_destroy = "/lib/chain/destroy/chain_destroy",
+		set_intersection = "/lib/set/intersection/set_intersection",
+		prm1,prm2,prm3,prm4,prm5,prm6,prm7]])
+M4SEC(	[[	chain_push = /../chain/push[SYFIX]/chain_push,
+		chain_push_first = /../chain/push_first[SYFIX]/chain_push_first,
+		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
+		set_intersection = /../set/intersection[SYFIX]/set_intersection,
+		prm1,prm2,prm3,prm4,prm5,prm6,prm7]]), 
+	[{
+		setA,
+		setB,
+		setC,
+		node1, node2, node3, node4, node5, node6, node7, node8, node9, 
+		arc, arc1, arc2,
+		descr,empty,
+		parameters,history}], 
+	{[]}) 
+
+DBG(M4SCS(printNl([1_: fixed_: start_message])))
+genEl([1_: assign_: node_: const_: empty])
+
+genEl([1_: assign_: node_: const_: setC])
+
+genElStr3([
+		1_: assign_: node_: const_: node1,
+		2_: assign_: arc_: const_: permanent_: setA,
+		3_: assign_: node_: const_: node2])
+
+genElStr3([
+		1_: fixed_: node1,
+		2_: assign_: arc_: const_: permanent_: setB,
+		3_: assign_: node_: const_: node3])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prm1 = [{1_: setC, 2_: parameters, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prm2 = [{1_: setB, 2_: history, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prm3 = [{1_: history, 2_: setA, 3_: history, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+DBG(M4SCS(printNl([1_: fixed_: start_message])))
+
+call([1_: fixed_: set_intersection, 2_: fixed_: prm5 = [{1_: empty, 2_: empty, 3_: history, 4_: parameters, 5_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+DBG(M4SCS(printNl([1_: fixed_: debug_message])))
+M4SCS(
+printEl([1_: fixed_: setA])
+printEl([1_: fixed_: setB])
+printEl([1_: fixed_: setC])
+)
+DBG(M4SCS(printNl([1_: fixed_: debug_message])))
+
+call([	1_: fixed_: chain_destroy,
+	2_: fixed_: prm6 = [{1_: parameters, 2_: empty}],
+	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([	1_: fixed_: chain_destroy,
+	2_: fixed_: prm7 = [{1_: history, 2_: empty}],
+	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+DBG(M4SCS(printNl([1_: fixed_: end_message])))
+
+return()
+end()

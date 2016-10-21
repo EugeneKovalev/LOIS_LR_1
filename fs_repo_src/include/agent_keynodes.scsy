@@ -1,0 +1,28 @@
+///////////////////////////////////////////////
+//   File: agent_keynodes.scsy
+//   Date: 21.04.2002
+// Author: IVP
+///////////////////////////////////////////////
+// синонимы ключевых узлов агентов
+
+"agent"          = "/proc/agents/keynode/agent";
+"personal agent" = "/proc/agents/keynode/personal agent";
+"person_"        = "/proc/agents/keynode/person_";
+"agent_"         = "/proc/agents/keynode/agent_";
+"dir_"           = "/proc/agents/keynode/directory_";
+"home"           = "/proc/agents/keynode/home";
+
+"mailbox_" = "/proc/agents/keynode/mailbox_";
+"command_" = "/proc/agents/keynode/command_";
+
+"internal" = "/proc/agents/keynode/internal";
+"external" = "/proc/agents/keynode/external";
+
+"return_value"     = "/proc/agents/keynode/return_value";
+"load_graph"       = "/proc/agents/keynode/load_graph";
+"login"            = "/proc/agents/keynode/login";
+"subcribe"         = "/proc/agents/keynode/subcribe";
+"subcribe_ok"      = "/proc/agents/keynode/subcribe_ok";
+"run_program"      = "/proc/agents/keynode/run_program";
+"connect_tm"       = "/proc/agents/keynode/connect_tm";
+"startup_program_" = "/proc/agents/keynode/startup_program_";

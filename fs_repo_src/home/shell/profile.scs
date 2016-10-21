@@ -1,0 +1,7 @@
+// Location: /home/shell/profile
+#include "../../include/io_keynodes.scsy"
+#include "../../include/agent_keynodes.scsy"
+
+agent -> shell = {command_: {login_failed, dialog_do, have_inc_msg, return_value, sheet_create, output, login_ok, dialog_create}, mailbox_: shell_mailbox, startup_program_: {}};
+mailbox -> shell_mailbox = {};
+home             -> {agent_: shell,               dir_: "/home/META/shell"};

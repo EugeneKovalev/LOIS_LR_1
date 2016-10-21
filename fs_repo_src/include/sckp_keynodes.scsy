@@ -1,0 +1,14 @@
+///////////////////////////////////////////////////////
+//        File: sckp_keynodes.scsy
+// Description: synonyms for sckp-machine keynodes
+///////////////////////////////////////////////////////
+//      Author: IVP
+//        Date: 8.08.2006
+
+#include "ordinal.scsy"
+#include "scp_keynodes.scsy"
+
+actual_ = "/proc/keynode/actual_";
+phantom_ = "/proc/keynode/phantom_";
+temporary_ = "/proc/keynode/temporary_";
+permanent_ = "/proc/keynode/permanent_";

@@ -1,0 +1,19 @@
+///////////////////////////////////////////////
+//   File: user_passwd.scs
+//   Date: 21.04.2002
+// Author: IVP
+// Location: /user/passwd
+////////////////////////////////
+// представление сегмента /user/passwd
+#include "../include/agent_keynodes.scsy"
+
+///////////////////////////////////////////////
+// агенты
+tester = "/home/tester/profile/tester";
+agent -> tester;
+///////////////////////////////////////////////
+// домашние папки агентов
+home             -> {agent_: tester,                 dir_: "/home/META/tester"};
+///////////////////////////////////////////////
+// персональные агенты
+"personal agent" -> {agent_: tester,                 person_: tester};

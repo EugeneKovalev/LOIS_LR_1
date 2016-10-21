@@ -1,0 +1,6 @@
+// Location: /startup
+#include "include/startup_keynodes.scsy"
+
+immersion = {};
+
+current_module -> startup_: { "/lib/test/main/test_main" };

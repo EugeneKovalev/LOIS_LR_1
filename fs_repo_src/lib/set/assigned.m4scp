@@ -1,0 +1,97 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+// Location: /lib/set/assigned
+])
+
+procedure(sc_mono_assigned,
+M4SCS(	[[
+		enter_message = /"sc_mono_assigned: entering\n"/,
+		leave_message = /"sc_mono_assigned: leaving\n"/,
+		chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
+		chain_push = "/lib/chain/push/chain_push",
+		chain_pop_destroy_singlet = "/lib/chain/pop_destroy_singlet/chain_pop_destroy_singlet",
+		log_get = "/lib/log/get/log_get",
+		prm1,prm2,prm3,lp1,lp2]])
+M4SEC(	[[	chain_get_next_singlet = /../../chain/get_next_singlet[SYFIX]/chain_get_next_singlet,
+		chain_push = /../../chain/push[SYFIX]/chain_push,
+		chain_pop_destroy_singlet = /../../chain/pop_destroy_singlet[SYFIX]/chain_pop_destroy_singlet,
+		log_get = /../../log/get[SYFIX]/log_get,
+		prm1,prm2,prm3,lp1,lp2]]), 
+	[{
+		elmn,arc,first,second,data,logger,log, empty,
+		state,true,
+		history,
+		parameters,
+		logging,
+		descr}], 
+	{[ 
+		1_: in_: out_: state,
+		2_: in_: out_: true,
+		3_: in_: out_: history,
+		4_: in_: parameters, 
+		5_: in_: logging
+	]}) 
+
+DBG(M4SCS(print([1_: fixed_: enter_message])))
+genEl([1_: assign_: node_: const_: empty])
+
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm1 = [{1_: history, 2_: data, 3_: elmn}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+searchElStr3([	1_: assign_: node_: first,
+		2_: fixed_: elmn,
+		3_: assign_: arc_: node_: undf_: second],,final)
+
+call([	1_: fixed_: log_get,
+	2_: fixed_: lp1 = [{1_: logging, 2_: logger, 3_: log, 4_: data}],
+	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+genElStr3([	1_: assign_: node_: const_: elmn,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: first])
+
+genElStr3([	1_: assign_: node_: const_: data,
+		2_: assign_: arc_: permanent_: pos_: const_: descr,
+		3_: fixed_: arc])
+
+genElStr3([	1_: fixed_: elmn,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: second])
+
+ifVarAssign([1_: logger],,logged)
+
+genElStr3([	1_: fixed_: data,
+		2_: assign_: arc_: permanent_: pos_: const_: descr,
+		3_: fixed_: arc])
+
+genElStr3([	1_: fixed_: data,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: elmn])
+
+call([	1_: fixed_: logger,
+	2_: fixed_: lp2 = [{1_: log, 2_: data}],
+	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+label(logged)
+eraseEl([1_: fixed_: f_: data])
+
+call([1_: fixed_: chain_pop_destroy_singlet, 2_: fixed_: prm2 = [{1_: history, 2_: history, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prm3 = [{1_: history, 2_: elmn, 3_: history, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+label(final)
+eraseEl([1_: fixed_: f_: empty])
+DBG(M4SCS(print([1_: fixed_: leave_message])))
+
+return()
+end()

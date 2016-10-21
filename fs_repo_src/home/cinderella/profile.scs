@@ -1,0 +1,7 @@
+// Location: /home/cinderella/profile
+#include "../../include/io_keynodes.scsy"
+#include "../../include/agent_keynodes.scsy"
+
+agent -> cinderella = {command_: {login, change, subscribe, subscribe_ok, build_program, return_value, run_program, load_graph, erase}, mailbox_: cinderella_mailbox, startup_program_: {}};
+mailbox -> cinderella_mailbox = {};
+home             -> {agent_: cinderella,          dir_: "/home/META/cinderella"};

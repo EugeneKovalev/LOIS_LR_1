@@ -1,0 +1,61 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS(
+#include "../../include/sckp_keynodes.scsy" 
+// Location: /lib/test/LOIS_Lab1
+)
+procedure(test_LOIS_Lab1,
+M4SCS(	[[
+		start_message = /"=======Hello world!======="/, 
+		end_message = /"=======Goodbye world!======="/,
+		debug_message = /"=======Deletion successful======="/]])
+M4SEC(	[[	]]), 
+	[{node1, node2, node3, arc1,
+		descr,empty,
+		parameters,history}], 
+	{[]}) 
+
+DBG(M4SCS(printNl([1_: fixed_: start_message])))
+
+
+genEl([1_: assign_: node_: const_: node1])
+
+genElStr3([
+		1_: assign_: node_: const_: node2,
+		2_: assign_: arc_: permanent_: pos_: const_: arc1,
+		3_: assign_: node_: const_: node3])
+
+DBG(M4SCS(
+printEl([1_: fixed_: node1])
+printEl([1_: fixed_: node2])
+printEl([1_: fixed_: node3])
+printEl([1_: fixed_: arc1])
+))
+eraseEl([1_: fixed_: f_: node1])
+eraseEl([1_: fixed_: f_: node2])
+eraseEl([1_: fixed_: f_: node3])
+
+DBG(M4SCS(printNl([1_: fixed_: debug_message])))
+
+DBG(M4SCS(
+printEl([1_: fixed_: node1])
+printEl([1_: fixed_: node2])
+printEl([1_: fixed_: node3])
+printEl([1_: fixed_: arc1])
+))
+
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm1 = [{1_: nodeA, 2_: history, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2 = [{1_: history, 2_: nodeB, 3_: history, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+
+
+
+
+DBG(M4SCS(printNl([1_: fixed_: end_message])))
+
+return()
+end()

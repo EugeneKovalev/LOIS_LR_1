@@ -1,0 +1,17 @@
+///////////////////////////////////////////////////////
+//        File: ordinal.scsy
+// Description: synonyms for ordinals
+///////////////////////////////////////////////////////
+//      Author: IVP
+//        Date: 8.08.2002
+
+"1_"  = "/proc/keynode/1_";
+"2_"  = "/proc/keynode/2_";
+"3_"  = "/proc/keynode/3_";
+"4_"  = "/proc/keynode/4_";
+"5_"  = "/proc/keynode/5_";
+"6_"  = "/proc/keynode/6_";
+"7_"  = "/proc/keynode/7_";
+"8_"  = "/proc/keynode/8_";
+"9_"  = "/proc/keynode/9_";
+"10_" = "/proc/keynode/10_";

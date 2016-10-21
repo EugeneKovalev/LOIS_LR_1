@@ -1,0 +1,13 @@
+/////////////////////////////////////////////////
+//   File: home_tester_profile.scs
+//   Date: 04.10.2012
+// Author: IVP
+// Location: /home/tester/profile
+/////////////////////////////////////////////////
+// представление сегмента home/tester/profile
+
+#include "../../include/io_keynodes.scsy"
+#include "../../include/agent_keynodes.scsy"
+
+agent -> tester = {command_: {}, mailbox_: tester_mailbox, startup_program_: { /*"/operations/testing/test"*/ }};
+mailbox -> tester_mailbox = {};

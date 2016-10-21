@@ -1,0 +1,19 @@
+///////////////////////////////////////////////
+//   File: io_keynodes.scsy
+//   Date: 21.04.2002
+// Author: IVP
+///////////////////////////////////////////////
+// синонимы ключевых узлов ввода-вывода
+
+"system_mailbox" = "/proc/keynode/system_mailbox";
+
+"mailbox"        = "/proc/keynode/mailbox";
+"mailbox_hook_"  = "/proc/keynode/mailbox_hook_";
+"mail_incoming_" = "/proc/keynode/mail_incoming_";
+"mail_outgoing_" = "/proc/keynode/mail_outgoing_";
+
+"msg_dstmaj_"    = "/proc/keynode/msg_dstmaj_";
+"msg_dstmin_"    = "/proc/keynode/msg_dstmin_";
+"msg_srcmaj_"    = "/proc/keynode/msg_srcmaj_";
+"msg_srcmin_"    = "/proc/keynode/msg_srcmin_";
+"msg_data_"      = "/proc/keynode/msg_data_";

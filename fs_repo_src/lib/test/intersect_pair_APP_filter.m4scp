@@ -1,0 +1,155 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS(
+#include "../../include/sckp_keynodes.scsy" 
+// Location: /lib/test/intersect_pair_APP_filter
+)
+procedure(test_intersect_pair_APP_filter,
+M4SCS(	[[	
+		chain_push = "/lib/chain/push/chain_push",
+		chain_push_first = "/lib/chain/push_first/chain_push_first",
+		chain_destroy = "/lib/chain/destroy/chain_destroy",
+		set_intersect_pair_APP_filter = "/lib/set/v1_dAPPs_dANUg_c_uAPPg_uc1_f_c_uAPPg_uv2_t_uAPPn_uc1_filter/set_v1_dAPPs_dANUg_c_uAPPg_uc1_f_c_uAPPg_uv2_t_uAPPn_uc1_filter",
+		prm1,prm2,prm3,prm4,prm5,prm6]])
+M4SEC(	[[	chain_push = /../chain/push[SYFIX]/chain_push,
+		chain_push_first = /../chain/push_first[SYFIX]/chain_push_first,
+		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
+		set_intersect_pair_APP_filter = /../set/v1_dAPPs_dANUg_c_uAPPg_uc1_f_c_uAPPg_uv2_t_uAPPn_uc1_filter[SYFIX]/set_v1_dAPPs_dANUg_c_uAPPg_uc1_f_c_uAPPg_uv2_t_uAPPn_uc1_filter,
+		prm1,prm2,prm3,prm4,prm5,prm6]]), 
+	[{
+		setA,
+		setB,
+		setC,
+		undfA,undfAB,undfB,nodeA,nodeAB,nodeB,arcA,arcAB,arcB,
+		arc,descr,empty,
+		parameters,history}], 
+	{[]}) 
+
+genEl([1_: assign_: node_: const_: empty])
+
+genEl([1_: assign_: node_: const_: setA])
+genEl([1_: assign_: node_: const_: setB])
+genEl([1_: assign_: node_: const_: setC])
+genElStr3([
+		1_: assign_: node_: const_: nodeA,
+		2_: assign_: arc_: permanent_: pos_: const_: arcA,
+		3_: assign_: undf_: const_: undfA])
+
+genElStr3([
+		1_: assign_: node_: const_: nodeB,
+		2_: assign_: arc_: permanent_: pos_: const_: arcB,
+		3_: assign_: undf_: const_: undfB])
+
+genElStr3([
+		1_: assign_: node_: const_: nodeAB,
+		2_: assign_: arc_: permanent_: pos_: const_: arcAB,
+		3_: assign_: undf_: const_: undfAB])
+
+genElStr3([
+		1_: fixed_: setA,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: nodeA])
+
+genElStr3([
+		1_: fixed_: setA,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: undfA])
+
+genElStr3([
+		1_: fixed_: setA,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: arcA])
+
+genElStr3([
+		1_: fixed_: setB,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: nodeB])
+
+genElStr3([
+		1_: fixed_: setB,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: undfB])
+
+genElStr3([
+		1_: fixed_: setB,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: arcB])
+
+genElStr3([
+		1_: fixed_: setA,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: nodeAB])
+
+genElStr3([
+		1_: fixed_: setA,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: undfAB])
+
+genElStr3([
+		1_: fixed_: setA,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: arcAB])
+
+genElStr3([
+		1_: fixed_: setB,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: nodeAB])
+
+genElStr3([
+		1_: fixed_: setB,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: undfAB])
+
+genElStr3([
+		1_: fixed_: setB,
+		2_: assign_: arc_: permanent_: pos_: const_: arc,
+		3_: fixed_: arcAB])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prm1 = [{1_: setC, 2_: parameters, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prm2 = [{1_: setB, 2_: history, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prm3 = [{1_: history, 2_: setA, 3_: history, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: set_intersect_pair_APP_filter, 2_: fixed_: prm4 = [{1_: empty, 2_: empty, 3_: history, 4_: parameters, 5_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([	1_: fixed_: chain_destroy,
+	2_: fixed_: prm5 = [{1_: parameters, 2_: empty}],
+	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([	1_: fixed_: chain_destroy,
+	2_: fixed_: prm6 = [{1_: history, 2_: empty}],
+	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+M4SCS(
+printEl([1_: fixed_: setC])
+)
+
+eraseEl([1_: fixed_: f_: setA])
+eraseEl([1_: fixed_: f_: setB])
+eraseEl([1_: fixed_: f_: setC])
+eraseEl([1_: fixed_: f_: arcA])
+eraseEl([1_: fixed_: f_: arcB])
+eraseEl([1_: fixed_: f_: arcAB])
+eraseEl([1_: fixed_: f_: undfA])
+eraseEl([1_: fixed_: f_: undfB])
+eraseEl([1_: fixed_: f_: undfAB])
+eraseEl([1_: fixed_: f_: nodeA])
+eraseEl([1_: fixed_: f_: nodeB])
+eraseEl([1_: fixed_: f_: nodeAB])
+
+eraseEl([1_: fixed_: f_: empty])
+
+return()
+end()

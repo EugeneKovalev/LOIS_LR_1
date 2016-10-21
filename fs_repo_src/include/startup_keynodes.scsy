@@ -1,0 +1,2 @@
+startup_ = "/proc/keynode/startup_";
+current_module = "/proc/keynode/current_module";
