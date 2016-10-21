@@ -5,22 +5,38 @@ M4SCS(
 )
 
 program(test_main,
-M4SCS(	[[	
-		test_LOIS_Lab1 = "/lib/test/LOIS_Lab1/test_LOIS_Lab1",
+M4SCS(	[[
+		reverse = "/lib/test/reverse/reverse",
+		test_unite_pair_filter = "/lib/test/unite_pair_filter/test_unite_pair_filter",
+		test_unite_pair_APP_filter = "/lib/test/unite_pair_APP_filter/test_unite_pair_APP_filter",
+		test_unite_pair_APN_filter = "/lib/test/unite_pair_APN_filter/test_unite_pair_APN_filter",
+		test_intersect_pair_filter = "/lib/test/intersect_pair_filter/test_intersect_pair_filter",
+		test_intersect_pair_APP_filter = "/lib/test/intersect_pair_APP_filter/test_intersect_pair_APP_filter",
+		test_intersect_pair_APN_filter = "/lib/test/intersect_pair_APN_filter/test_intersect_pair_APN_filter",
+		test_subtract_pair_filter = "/lib/test/subtract_pair_filter/test_subtract_pair_filter",
+		test_comparator_strict_filter = "/lib/test/comparator_strict_filter/test_comparator_strict_filter",
+		test_counter_APA_output = "/lib/test/counter_APA_output/test_counter_APA_output",
+		test_embedded_bicycle_filter = "/lib/test/embedded_bicycle_filter/test_embedded_bicycle_filter",
+		test_embedded_square_cycle_filter = "/lib/test/embedded_square_cycle_filter/test_embedded_square_cycle_filter",
 		test_get_different_unorient_filter = "/lib/test/get_different_unorient_filter/test_get_different_unorient_filter",
-		prm1,prm2]])
+		prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9]])
 M4SEC(	[[
-		test_LOIS_Lab1 = /LOIS_Lab1[SYFIX]/test_LOIS_Lab1,
+		reverse = /reverse[SYFIX]/reverse,
+		test_unite_pair_filter = /unite_pair_filter[SYFIX]/test_unite_pair_filter,
+		test_unite_pair_APP_filter = /unite_pair_APP_filter[SYFIX]/test_unite_pair_APP_filter,
+		test_unite_pair_APN_filter = /unite_pair_APN_filter[SYFIX]/test_unite_pair_APN_filter,
+		test_intersect_pair_filter = /intersect_pair_filter[SYFIX]/test_intersect_pair_filter,
+		test_intersect_pair_APP_filter = /intersect_pair_APP_filter[SYFIX]/test_intersect_pair_APP_filter,
+		test_intersect_pair_APN_filter = /intersect_pair_APN_filter[SYFIX]/test_intersect_pair_APN_filter,
+		test_subtract_pair_filter = /subtract_pair_filter[SYFIX]/test_subtract_pair_filter,
+		test_comparator_strict_filter = /comparator_strict_filter[SYFIX]/test_comparator_strict_filter,
+		test_counter_APA_output = /counter_APA_output[SYFIX]/test_counter_APA_output,
+		test_embedded_square_cycle_filter = /embedded_square_cycle_filter[SYFIX]/test_embedded_square_cycle_filter,
 		test_get_different_unorient_filter = /get_different_unorient_filter[SYFIX]/test_get_different_unorient_filter,
-		prm1,prm2]]),
+		prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9]]),
 	[{
 		descr}])
-
-call([1_: fixed_: test_LOIS_Lab1, 2_: fixed_: prm1488=[{}], 3_: assign_: descr])
-
-waitReturn([1_: fixed_: descr])
-
-call([1_: fixed_: test_get_different_unorient_filter, 2_: fixed_: prm9=[{}], 3_: assign_: descr])
+call([1_: fixed_: reverse, 2_: fixed_: prm1=[{}], 3_: assign_: descr])
 
 waitReturn([1_: fixed_: descr])
 
