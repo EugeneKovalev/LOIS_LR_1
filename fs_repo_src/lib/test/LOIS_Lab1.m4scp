@@ -7,11 +7,22 @@ procedure(test_LOIS_Lab1,
 M4SCS(	[[
 		start_message = /"=======Hello world!======="/, 
 		end_message = /"=======Goodbye world!======="/,
-		debug_message = /"=======Deletion successful======="/]])
-M4SEC(	[[	]]), 
+		debug_message = /"=======Deletion successful======="/,
+		debug1_message = /"=======Chains are created======="/,
+		chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
+		chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",
+		chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
+		prm1, prm2, prm3, prm4, prm5
+		]])
+M4SEC(	[[	
+		chain_push_first_singlet = /../chain/push_first_singlet[SYFIX]/chain_push_first_singlet,
+		chain_push_singlet = /../chain/push_singlet[SYFIX]/chain_push_singlet,
+		chain_get_next_singlet = /../../chain/get_next_singlet[SYFIX]/chain_get_next_singlet,
+		prm1, prm2, prm3, prm4, prm5
+		]]), 
 	[{node1, node2, node3, arc1,
 		descr,empty,
-		parameters,history}], 
+		parameters,history, link, bullshit1, bullshit2}], 
 	{[]}) 
 
 DBG(M4SCS(printNl([1_: fixed_: start_message])))
@@ -34,8 +45,6 @@ eraseEl([1_: fixed_: f_: node1])
 eraseEl([1_: fixed_: f_: node2])
 eraseEl([1_: fixed_: f_: node3])
 
-DBG(M4SCS(printNl([1_: fixed_: debug_message])))
-
 DBG(M4SCS(
 printEl([1_: fixed_: node1])
 printEl([1_: fixed_: node2])
@@ -43,17 +52,30 @@ printEl([1_: fixed_: node3])
 printEl([1_: fixed_: arc1])
 ))
 
-call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm1 = [{1_: nodeA, 2_: history, 3_: empty}], 3_: assign_: descr])
+DBG(M4SCS(printNl([1_: fixed_: debug_message])))
+
+genEl([1_: assign_: node_: const_: empty])
+genEl([1_: assign_: node_: const_: node1])
+genEl([1_: assign_: node_: const_: node2])
+
+DBG(M4SCS(printNl([1_: fixed_: debug1_message])))
+
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm1 = [{1_: node1, 2_: history, 3_: empty}], 3_: assign_: descr])
 
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2 = [{1_: history, 2_: nodeB, 3_: history, 4_: empty}], 3_: assign_: descr])
+DBG(M4SCS(printNl([1_: fixed_: debug1_message])))
+
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2 = [{1_: history, 2_: node2, 3_: history, 4_: empty}], 3_: assign_: descr])
 
 waitReturn([1_: fixed_: descr])
 
+DBG(M4SCS(printNl([1_: fixed_: debug1_message])))
 
-
-
+DBG(M4SCS(
+printEl([1_: fixed_: node1])
+printEl([1_: fixed_: node2])
+))
 
 DBG(M4SCS(printNl([1_: fixed_: end_message])))
 
