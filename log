@@ -11,7 +11,7 @@ Loading fs segment home/shell/profile
 Loading fs segment home/META
 load_segment: Warning find homonym for /home/META/META (/META/META)
 load_segment: Warning find homonym for /home/META/shell (/home/shell/profile/shell)
-scp_segment is 02400978
+scp_segment is 024409F0
 scp_operator: registering operator genEl
 scp_operator: registering operator genElStr3
 scp_operator: registering operator genElStr5
@@ -246,30 +246,30 @@ load_segment: Warning find homonym for /lib/chain/get_next_singlet/arc_1 (/lib/c
 load_segment: Warning find homonym for /lib/chain/get_next_singlet/arc_2 (/lib/chain/push/arc_2)
 Loading fs segment lib/test/META
 load_segment: Warning find homonym for /lib/test/META/META (/META/META)
-autosegment is 027227B8
+autosegment is 02762DD0
 Switching to dedicated mode
 Loading fs segment lib/chain/META
 load_segment: Warning find homonym for /lib/chain/META/META (/META/META)
-autosegment is 027224E8
+autosegment is 02762EC0
 =======Hello world!=======
-printEl: node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@5
+printEl: node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@5
 Output arcs:
 
 Input arcs:
 
-printEl: node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@6
+printEl: node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@6
 Output arcs:
-	arc|const|pos|permanent:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@8 >- node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@7
+	arc|const|pos|permanent:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@8 >- node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@7
 
 Input arcs:
 
-printEl: node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@7
+printEl: node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@7
 Output arcs:
 
 Input arcs:
-	arc|const|pos|permanent:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@8 -< node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@6
+	arc|const|pos|permanent:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@8 -< node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@6
 
-printEl: arc|const|pos|permanent:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@8 = <node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@6,node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@7>
+printEl: arc|const|pos|permanent:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@8 = <node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@6,node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@7>
 Output arcs:
 
 Input arcs:
@@ -281,133 +281,133 @@ Failed to fill operand info for operand N1
 =======Deletion successful=======
 Loading fs segment lib/log/META
 load_segment: Warning find homonym for /lib/log/META/META (/META/META)
-autosegment is 027226C8
+autosegment is 027620B0
 chain_push_first_singlet: entering
-autosegment is 02722470
-autosegment is 02722F38
-autosegment is 029C8CF0
+autosegment is 027621A0
+autosegment is 02762F38
+autosegment is 029FE390
 chain_get_next: entering
 chain_get_next: leaving
-Process 028E4658 is dying now
+Process 0291FF00 is dying now
 Unlink tmp segment autoseg4
-Process 028E3B90 is dying now
+Process 0291F078 is dying now
 Unlink tmp segment autoseg3
-Process 028E2E20 is dying now
+Process 0291E2B8 is dying now
 Unlink tmp segment autoseg2
 chain_push_first_singlet: leaving
-Process 028E1778 is dying now
+Process 0291D638 is dying now
 Unlink tmp segment autoseg1
-autosegment is 02722470
+autosegment is 027620B0
 chain_push_singlet: entering
-autosegment is 027226C8
-autosegment is 02722F38
-autosegment is 029C8B88
+autosegment is 027621A0
+autosegment is 02762F38
+autosegment is 029FE2A0
 chain_get_next: entering
 chain_get_next: leaving
-Process 028E5148 is dying now
+Process 0290F628 is dying now
 Unlink tmp segment autoseg8
-Process 028E40E0 is dying now
+Process 0291F9B0 is dying now
 Unlink tmp segment autoseg7
-Process 028E32D0 is dying now
+Process 0291EEE8 is dying now
 Unlink tmp segment autoseg6
 chain_push_singlet: leaving
-Process 028E1D68 is dying now
+Process 0291D3B8 is dying now
 Unlink tmp segment autoseg5
-printEl: node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@b
+printEl: node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@b
 Output arcs:
 
 Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@20 -< node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@1c
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@20 -< node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@1c
 
-printEl: node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@1c
+printEl: node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@1c
 Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@20 >- node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@b
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@20 >- node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@b
 
 Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@1e -< node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@10
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@1e -< node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@10
 
-printEl: node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@10
+printEl: node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@10
 Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@12 >- arc|const|pos|temporary|actual:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@11
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@1e >- node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@1c
-
-Input arcs:
-
-printEl: node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@a
-Output arcs:
-
-Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@13 -< node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@f
-
-printEl: node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@f
-Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@13 >- node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@a
-
-Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@11 -< node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@e
-
-printEl: node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@e
-Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@11 >- node|const:/tmp/autoseg/@@5ad25036-9a8b-4b00-8fde-a6a5615ad3ad@f
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@12 >- arc|const|pos|temporary|actual:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@11
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@1e >- node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@1c
 
 Input arcs:
 
-autosegment is 02722470
+printEl: node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@a
+Output arcs:
+
+Input arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@13 -< node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@f
+
+printEl: node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@f
+Output arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@13 >- node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@a
+
+Input arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@11 -< node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@e
+
+printEl: node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@e
+Output arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@11 >- node|const:/tmp/autoseg/@@e21abc15-51ef-416c-8942-02453d30ae88@f
+
+Input arcs:
+
+autosegment is 027620B0
 chain_get_next: entering
 chain_get_next: leaving
-Process 028E2970 is dying now
+Process 0291DEF8 is dying now
 Unlink tmp segment autoseg9
-=======Goodbye world!=======
-=======Goodbye world!=======
-=======Goodbye world!=======
-=======Goodbye world!=======
-=======Goodbye world!=======
+autosegment is 027620B0
+chain_get_next: entering
+chain_get_next: leaving
+Process 0291DF98 is dying now
+Unlink tmp segment autoseg10
 =======Procedure has been executed successful=======
 =======Goodbye world!=======
-Process 028E0558 is dying now
+Process 0291C3C8 is dying now
 Unlink tmp segment autoseg0
 Loading fs segment lib/relation/META
 load_segment: Warning find homonym for /lib/relation/META/get_different_unorient_filter (/lib/test/META/get_different_unorient_filter)
 load_segment: Warning find homonym for /lib/relation/META/META (/META/META)
-autosegment is 027224E8
-autosegment is 027226C8
+autosegment is 027620B0
+autosegment is 027621A0
 chain_push_first: entering
-autosegment is 02722F38
-autosegment is 029EE430
-autosegment is 029EE520
+autosegment is 02762F38
+autosegment is 02A1C770
+autosegment is 02A1C950
 chain_get_next: entering
 chain_get_next: leaving
-Process 028E6340 is dying now
-Unlink tmp segment autoseg14
-Process 028E5C10 is dying now
-Unlink tmp segment autoseg13
-Process 028E4A90 is dying now
-Unlink tmp segment autoseg12
-chain_push_first: leaving
-Process 028E3730 is dying now
-Unlink tmp segment autoseg11
-autosegment is 027226C8
-chain_push_first: entering
-autosegment is 02722F38
-autosegment is 029EE7F0
-autosegment is 029EE520
-chain_get_next: entering
-chain_get_next: leaving
-Process 028E6B60 is dying now
-Unlink tmp segment autoseg18
-Process 028E5DA0 is dying now
-Unlink tmp segment autoseg17
-Process 028E52D8 is dying now
-Unlink tmp segment autoseg16
-chain_push_first: leaving
-Process 028E3ED8 is dying now
+Process 02910D70 is dying now
 Unlink tmp segment autoseg15
+Process 02910500 is dying now
+Unlink tmp segment autoseg14
+Process 0290F8D0 is dying now
+Unlink tmp segment autoseg13
+chain_push_first: leaving
+Process 0291F348 is dying now
+Unlink tmp segment autoseg12
+autosegment is 027621A0
+chain_push_first: entering
+autosegment is 02762F38
+autosegment is 02A1CC98
+autosegment is 02A1C608
+chain_get_next: entering
+chain_get_next: leaving
+Process 02911220 is dying now
+Unlink tmp segment autoseg19
+Process 02910708 is dying now
+Unlink tmp segment autoseg18
+Process 0290FAB0 is dying now
+Unlink tmp segment autoseg17
+chain_push_first: leaving
+Process 0291F230 is dying now
+Unlink tmp segment autoseg16
 call failed!
 Stopping process due to ERROR_STATE
-Process 028E0F30 is dying now
-Process 028DFC98 is dying now
-cache hits: 142
-cache misses:246
+Process 0291C6C0 is dying now
+Process 0291B180 is dying now
+cache hits: 156
+cache misses:257
 cache replaces:0
 
 Unloading all live segments of fs repository
@@ -415,7 +415,7 @@ Unlink tmp segment META
 Unlink tmp segment pm_proc_auto
 Unlink tmp segment service
 Unlink tmp segment autoseg
-Unlink tmp segment autoseg10
+Unlink tmp segment autoseg11
 Unlink tmp segment META
 Unlink tmp segment keynode
 Unlink tmp segment META
@@ -466,5 +466,3 @@ Unlink tmp segment agents
 Unlink tmp segment processes
 Unlink tmp segment commands
 Terminate batch job (Y/N)? 
-
-C:\M4SCP>
