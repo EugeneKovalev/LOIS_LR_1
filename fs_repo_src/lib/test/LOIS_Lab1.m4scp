@@ -11,6 +11,7 @@ M4SCS(	[[
 		debug1_message = /"=======Chains are created======="/,
 		history_message1 = /"=======History start======="/,
 		history_message2 = /"=======History end======="/,
+		node1_test_message = /"=======And node1 test======="/,
 		chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
 		chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",
 		chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
@@ -26,7 +27,7 @@ M4SEC(	[[
 		]]), 
 	[{node1, node2, node3, arc1,
 		descr,empty,
-		parameters,history, link, bullshit1, bullshit2,undf1,undf2}], 
+		parameters,history, link, bullshit1, bullshit2,undf1,undf2,undf3,undf4, singlet1, singlet2, ARC, singleton1, singleton2, singleton1_container, singleton2_container, singleton1_container_ARC}], 
 	{[]}) 
 
 DBG(M4SCS(printNl([1_: fixed_: start_message])))
@@ -62,42 +63,43 @@ genEl([1_: assign_: node_: const_: empty])
 genEl([1_: assign_: node_: const_: node1])
 genEl([1_: assign_: node_: const_: node2])
 
-DBG(M4SCS(printNl([1_: fixed_: history_message1])))
-DBG(M4SCS(printEl([1_: fixed_: history])))
-DBG(M4SCS(printNl([1_: fixed_: history_message2])))
-
+// # Создание первого синглетона
 call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm1 = [{1_: node1, 2_: history, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-DBG(M4SCS(printNl([1_: fixed_: history_message1])))
-DBG(M4SCS(printEl([1_: fixed_: history])))
-DBG(M4SCS(printNl([1_: fixed_: history_message2])))
+DBG(M4SCS(printEl([1_: fixed_: node1])))
 
+// # Создание второго синглетона
 call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2 = [{1_: history, 2_: node2, 3_: history, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-DBG(M4SCS(printNl([1_: fixed_: history_message1])))
-DBG(M4SCS(printEl([1_: fixed_: history])))
-DBG(M4SCS(printNl([1_: fixed_: history_message2])))
 
 
-DBG(M4SCS(printNl([1_: fixed_: debug1_message])))
-DBG(M4SCS(
-printEl([1_: fixed_: node1])
-printEl([1_: fixed_: node2])
-printEl([1_: fixed_: empty])
-))
-
-//# Check for a mono-set
-searchElStr3([1_:  assign_: undf1,
-              2_: assign_: undf2,
+// # поиск контейнера содержащего второй синглетон
+searchElStr3([1_:  assign_: singleton2,
+              2_: assign_: arc_: const_: ARC,
               3_: fixed_: node2],,do_main_call)
-//#======================
 
-DBG(M4SCS(
-printEl([1_: fixed_: undf2])
-))
+searchElStr3([1_: assign_: singleton2_container,
+              2_: assign_: arc_: const_: ARC,
+              3_: fixed_: singleton2],,do_main_call)
 
+DBG(M4SCS(printEl([1_: fixed_: singleton2_container])))
+
+// # поиск контейнера содержащего первый синглетон
+searchElStr3([1_: fixed_: singleton2_container,
+              2_: assign_: arc_: const_: ARC,
+              3_: assign_: arc_: const_: singleton1_container_ARC],,do_main_call)
+
+searchElStr3([1_: assign_: singleton1_container,
+              2_: fixed_: singleton1_container_ARC,
+              3_: assign_: singleton1],,do_main_call)
+
+searchElStr3([1_: fixed_: singleton1,
+              2_: assign_: arc_: const_: ARC,
+              3_: fixed_: node1],,do_main_call)
+
+DBG(M4SCS(printEl([1_: fixed_: node1])))
 DBG(M4SCS(printNl([1_: fixed_: start_message])))
 label(do_main_call)
 DBG(M4SCS(printNl([1_: fixed_: end_message])))
