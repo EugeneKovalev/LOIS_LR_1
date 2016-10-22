@@ -28,7 +28,8 @@ M4SEC(	[[
 		]]), 
 	[{node1, node2, node3, arc1,
 		descr,empty,
-		parameters,history, link, bullshit1, bullshit2,undf1,undf2,undf3,undf4, singlet1, singlet2, ARC, singleton1, singleton2, singleton1_container, singleton2_container, singleton1_container_ARC}], 
+		parameters,history, link, bullshit1, bullshit2,undf1,undf2,undf3,undf4, singlet1, singlet2, ARC, singleton1, singleton2, singleton1_container, singleton2_container, singleton1_container_ARC,
+		suspect_for_singleton2_container, suspect_for_singleton2}], 
 	{[]}) 
 
 DBG(M4SCS(printNl([1_: fixed_: start_message])))
@@ -68,8 +69,6 @@ genEl([1_: assign_: node_: const_: node2])
 call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm1 = [{1_: node1, 2_: history, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-DBG(M4SCS(printEl([1_: fixed_: node1])))
-
 // # —оздание второго синглетона
 call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2 = [{1_: history, 2_: node2, 3_: history, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
@@ -82,8 +81,6 @@ searchElStr3([1_:  assign_: singleton2,
 searchElStr3([1_: assign_: singleton2_container,
               2_: assign_: arc_: const_: ARC,
               3_: fixed_: singleton2],,exit)
-
-DBG(M4SCS(printEl([1_: fixed_: singleton2_container])))
 
 // # поиск контейнера содержащего первый синглетон и первого синглетона
 searchElStr3([1_: fixed_: singleton2_container,
@@ -98,6 +95,33 @@ searchElStr3([1_: assign_: singleton1_container,
 searchElStr3([1_: fixed_: singleton1,
               2_: assign_: arc_: const_: ARC,
               3_: fixed_: node1],,exit)
+
+DBG(M4SCS(printEl([1_: fixed_: node2])))
+DBG(M4SCS(printEl([1_: fixed_: singleton2])))
+DBG(M4SCS(printEl([1_: fixed_: singleton2_container])))
+DBG(M4SCS(printEl([1_: fixed_: node1])))
+DBG(M4SCS(printEl([1_: fixed_: singleton1])))
+DBG(M4SCS(printEl([1_: fixed_: singleton1_container])))
+
+//# Ќаходим последний элемент цепочки ()
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm3 = [{1_: history, 2_: suspect_for_singleton2_container, 3_: suspect_for_singleton2}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+//# ѕровер€ем, что найденный последний элемент цепочки совпадает с нашими ожидани€ми
+DBG(M4SCS(printNl([1_: fixed_: end_message])))
+ifVarAssign([1_: suspect_for_singleton2_container ], , exit)
+DBG(M4SCS(printNl([1_: fixed_: end_message])))
+ifVarAssign([1_: suspect_for_singleton2 ], , exit)
+DBG(M4SCS(printNl([1_: fixed_: end_message])))
+ifCoin([
+	1_: fixed_: suspect_for_singleton2_container,
+	2_: fixed_: singleton2_container
+], , exit)
+DBG(M4SCS(printNl([1_: fixed_: end_message])))
+ifCoin([
+	1_: fixed_: suspect_for_singleton2,
+	2_: fixed_: singleton2
+], , exit)
+DBG(M4SCS(printNl([1_: fixed_: end_message])))
 
 DBG(M4SCS(printNl([1_: fixed_: success_message])))
 label(exit)
