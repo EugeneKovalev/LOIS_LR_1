@@ -12,6 +12,7 @@ M4SCS(	[[
 		history_message1 = /"=======History start======="/,
 		history_message2 = /"=======History end======="/,
 		node1_test_message = /"=======And node1 test======="/,
+		success_message = /"=======Procedure has been executed successful======="/,
 		chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
 		chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",
 		chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
@@ -73,35 +74,33 @@ DBG(M4SCS(printEl([1_: fixed_: node1])))
 call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2 = [{1_: history, 2_: node2, 3_: history, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-
-
 // # поиск контейнера содержащего второй синглетон
 searchElStr3([1_:  assign_: singleton2,
               2_: assign_: arc_: const_: ARC,
-              3_: fixed_: node2],,do_main_call)
+              3_: fixed_: node2],,exit)
 
 searchElStr3([1_: assign_: singleton2_container,
               2_: assign_: arc_: const_: ARC,
-              3_: fixed_: singleton2],,do_main_call)
+              3_: fixed_: singleton2],,exit)
 
 DBG(M4SCS(printEl([1_: fixed_: singleton2_container])))
 
-// # поиск контейнера содержащего первый синглетон
+// # поиск контейнера содержащего первый синглетон и первого синглетона
 searchElStr3([1_: fixed_: singleton2_container,
               2_: assign_: arc_: const_: ARC,
-              3_: assign_: arc_: const_: singleton1_container_ARC],,do_main_call)
+              3_: assign_: arc_: const_: singleton1_container_ARC],,exit)
 
 searchElStr3([1_: assign_: singleton1_container,
               2_: fixed_: singleton1_container_ARC,
-              3_: assign_: singleton1],,do_main_call)
+              3_: assign_: singleton1],,exit)
 
+// # подтверждение нахождения node1 в первом синглетоне
 searchElStr3([1_: fixed_: singleton1,
               2_: assign_: arc_: const_: ARC,
-              3_: fixed_: node1],,do_main_call)
+              3_: fixed_: node1],,exit)
 
-DBG(M4SCS(printEl([1_: fixed_: node1])))
-DBG(M4SCS(printNl([1_: fixed_: start_message])))
-label(do_main_call)
+DBG(M4SCS(printNl([1_: fixed_: success_message])))
+label(exit)
 DBG(M4SCS(printNl([1_: fixed_: end_message])))
 
 return()
