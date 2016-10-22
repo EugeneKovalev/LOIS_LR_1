@@ -17,14 +17,18 @@ M4SCS(	[[
 		chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",
 		chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
 		chain_get_next = "/lib/chain/get_next/chain_get_next",
-		prm1, prm2, prm3, prm4, prm5
+		chain_pop_destroy_singlet = "/lib/chain/pop_destroy_singlet/chain_pop_destroy_singlet",
+		chain_destroy = "/lib/chain/destroy/chain_destroy",
+		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8
 		]])
 M4SEC(	[[	
 		chain_push_first_singlet = /../chain/push_first_singlet[SYFIX]/chain_push_first_singlet,
 		chain_push_singlet = /../chain/push_singlet[SYFIX]/chain_push_singlet,
 		chain_get_next_singlet = /../../chain/get_next_singlet[SYFIX]/chain_get_next_singlet,
 		chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
-		prm1, prm2, prm3, prm4, prm5
+		chain_pop_destroy_singlet = /../chain/pop_destroy[SYFIX]/chain_pop_destroy_singlet,
+		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
+		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8
 		]]), 
 	[{node1, node2, node3, arc1,
 		descr,empty,
@@ -33,33 +37,6 @@ M4SEC(	[[
 	{[]}) 
 
 DBG(M4SCS(printNl([1_: fixed_: start_message])))
-
-
-genEl([1_: assign_: node_: const_: node1])
-
-genElStr3([
-		1_: assign_: node_: const_: node2,
-		2_: assign_: arc_: permanent_: pos_: const_: arc1,
-		3_: assign_: node_: const_: node3])
-
-DBG(M4SCS(
-printEl([1_: fixed_: node1])
-printEl([1_: fixed_: node2])
-printEl([1_: fixed_: node3])
-printEl([1_: fixed_: arc1])
-))
-eraseEl([1_: fixed_: f_: node1])
-eraseEl([1_: fixed_: f_: node2])
-eraseEl([1_: fixed_: f_: node3])
-
-DBG(M4SCS(
-printEl([1_: fixed_: node1])
-printEl([1_: fixed_: node2])
-printEl([1_: fixed_: node3])
-printEl([1_: fixed_: arc1])
-))
-
-DBG(M4SCS(printNl([1_: fixed_: debug_message])))
 
 genEl([1_: assign_: node_: const_: empty])
 genEl([1_: assign_: node_: const_: node1])
@@ -96,13 +73,6 @@ searchElStr3([1_: fixed_: singleton1,
               2_: assign_: arc_: const_: ARC,
               3_: fixed_: node1],,exit)
 
-DBG(M4SCS(printEl([1_: fixed_: node2])))
-DBG(M4SCS(printEl([1_: fixed_: singleton2])))
-DBG(M4SCS(printEl([1_: fixed_: singleton2_container])))
-DBG(M4SCS(printEl([1_: fixed_: node1])))
-DBG(M4SCS(printEl([1_: fixed_: singleton1])))
-DBG(M4SCS(printEl([1_: fixed_: singleton1_container])))
-
 //# Находим последний элемент цепочки (Получаем два значения: элемент который должен быть контейнером второго синглетона и второй синглетон)
 call([1_: fixed_: chain_get_next, 2_: fixed_: prm3 = [{1_: history, 2_: suspect_for_singleton2_container, 3_: suspect_for_singleton2}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
@@ -132,6 +102,38 @@ ifCoin([
 	1_: fixed_: suspect_for_singleton1,
 	2_: fixed_: singleton1
 ], , exit)
+
+DBG(M4SCS(printEl([1_: fixed_: node2])))
+DBG(M4SCS(printEl([1_: fixed_: singleton2])))
+DBG(M4SCS(printEl([1_: fixed_: singleton2_container])))
+DBG(M4SCS(printEl([1_: fixed_: node1])))
+DBG(M4SCS(printEl([1_: fixed_: singleton1])))
+DBG(M4SCS(printEl([1_: fixed_: singleton1_container])))
+
+// # Удаляем синглетон 2 и потенциальный контейнер для 3-го синглетона
+call([	1_: fixed_: chain_pop_destroy_singlet, 2_: fixed_: prm5 = [{1_: history, 2_: history, 3_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+// # Удаляем node2
+eraseEl([1_: fixed_: f_: node2])
+
+// # Удаляем синглетон 1 и контейнер для 2-го синглетона
+call([	1_: fixed_: chain_pop_destroy_singlet, 2_: fixed_: prm6 = [{1_: history, 2_: history, 3_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+// # Удаляем node2
+eraseEl([1_: fixed_: f_: node1])
+
+// # Удаляем контейнер для 1-го синглетона
+call([1_: fixed_: chain_destroy, 2_: fixed_: prm8 = [{1_: history, 2_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+DBG(M4SCS(printEl([1_: fixed_: node2])))
+DBG(M4SCS(printEl([1_: fixed_: singleton2])))
+DBG(M4SCS(printEl([1_: fixed_: singleton2_container])))
+DBG(M4SCS(printEl([1_: fixed_: node1])))
+DBG(M4SCS(printEl([1_: fixed_: singleton1])))
+DBG(M4SCS(printEl([1_: fixed_: singleton1_container])))
 
 DBG(M4SCS(printNl([1_: fixed_: success_message])))
 label(exit)
