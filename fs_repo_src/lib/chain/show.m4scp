@@ -8,10 +8,12 @@ M4SCS([
 
 procedure(chain_show,
 M4SCS(	[[
-		enter_message = /"HOLY SHIT: entering\n"/,
-		leave_message = /"HOLY SHIT: leaving\n"/,
-		zzz1 = /"setA ASSIGNED\n"/,
-		zzz2 = /"setB ASSIGNED\n"/,
+		chain_representation_start_message = /"Chain representation started ====================>\n"/,
+		chain_representation_end_message = /"Chain representation finished <====================\n"/,
+		link_divider_help_message = /"===========================================================\n"/,
+		next_link_pointer_info_message = /"Next link pointer:\n"/,
+		singleton_info_message = /"Singleton:\n"/,
+		singleton_value_info_message = /"Singleton value:\n"/,
 		chain_get_next = "/lib/chain/get_next/chain_get_next",
 		chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
 		chain_push = "/lib/chain/push/chain_push",
@@ -37,17 +39,36 @@ M4SEC(	[[	chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
 		sc_mono_assigned = /../set/assigned[SYFIX]/sc_mono_assigned,
 		prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9, prm10, prm11, prm12, prm13,prm14,prm15, prm16,prm17,prm18,prm19]]), 
 	[{
-		link, empty, setC, setB, setA, setA_copy, setB_copy,
-		state, true, history, parameters, logger,
-		arc_history, empty, descr,
-		start_element1, start_element2, end_element1, end_element2, arc
+		link_pointer, local_link_pointer, singleton, singleton_value, ARC, descr
 	}], 
 	{[ 
-		1_: in_: chain_pointer
+		1_: in_: link_pointer
 	]}) 
 
-DBG(M4SCS(print([1_: fixed_: enter_message])))
-DBG(M4SCS(print([1_: fixed_: leave_message])))
+DBG(M4SCS(print([1_: fixed_: chain_representation_start_message])))
 
+varAssign([ 1_: assign_: local_link_pointer, 2_: fixed_: link_pointer ])
+
+label(continue_representation)
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm4 = [{1_: local_link_pointer, 2_: local_link_pointer, 3_: singleton}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: local_link_pointer ], ,stop_representation)
+
+DBG(M4SCS(print([1_: fixed_: next_link_pointer_info_message])))
+DBG(M4SCS(printEl([1_: fixed_: local_link_pointer])))
+DBG(M4SCS(print([1_: fixed_: singleton_info_message])))
+DBG(M4SCS(printEl([1_: fixed_: singleton])))
+DBG(M4SCS(print([1_: fixed_: singleton_value_info_message])))
+
+searchElStr3([1_: fixed_: singleton,
+              2_: assign_: arc_: const_: ARC,
+              3_: assign_: singleton_value],,)
+DBG(M4SCS(printEl([1_: fixed_: singleton_value])))
+DBG(M4SCS(print([1_: fixed_: link_divider_help_message])))
+ifVarAssign([1_: local_link_pointer ], continue_representation,)
+
+label(stop_representation)
+DBG(M4SCS(print([1_: fixed_: chain_representation_end_message])))
 return()
 end()
