@@ -15,29 +15,10 @@ M4SCS(	[[
 		singleton_info_message = /"Singleton:\n"/,
 		singleton_value_info_message = /"Singleton value:\n"/,
 		chain_get_next = "/lib/chain/get_next/chain_get_next",
-		chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
-		chain_push = "/lib/chain/push/chain_push",
-		chain_push_first = "/lib/chain/push_first/chain_push_first",
-		chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
-		chain_destroy = "/lib/chain/destroy/chain_destroy",
-		iterator_create_APA_output = "/lib/iterator/create_APA_output/iterator_create_APA_output",
-		iterator_embedded_cycle_filter = "/lib/iterator/embedded_cycle_filter/iterator_embedded_cycle_filter",
-		set_intersect_pair_filter = "/lib/set/intersect_pair_filter/set_intersect_pair_filter",
-		number_incrementor = "/lib/number/incrementor/number_incrementor",
-		sc_mono_assigned = "/lib/set/assigned/sc_mono_assigned",
-		prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9,prm10, prm11, prm12,prm13,prm14,prm15, prm16,prm17,prm18,prm19]])
-M4SEC(	[[	chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
-		chain_push = /../chain/push[SYFIX]/chain_push,
-		chain_push_first = /../chain/push_first[SYFIX]/chain_push_first,
-		chain_get_next_singlet = /../chain/get_next_singlet[SYFIX]/chain_get_next_singlet,
-		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
-		iterator_create_APA_output = /../iterator/create_APA_output[SYFIX]/iterator_create_APA_output,
-		iterator_embedded_cycle_filter = /../iterator/embedded_cycle_filter[SYFIX]/iterator_embedded_cycle_filter,
-		chain_push_first_singlet = /../chain/push_first_singlet[SYFIX]/chain_push_first_singlet,
-		number_incrementor = /../number/incrementor[SYFIX]/number_incrementor,
-		set_intersect_pair_filter = /../set/intersect_pair_filter[SYFIX]/set_intersect_pair_filter,
-		sc_mono_assigned = /../set/assigned[SYFIX]/sc_mono_assigned,
-		prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9, prm10, prm11, prm12, prm13,prm14,prm15, prm16,prm17,prm18,prm19]]), 
+		prm1]])
+M4SEC(	[[	
+			chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
+			prm1]]), 
 	[{
 		link_pointer, local_link_pointer, singleton, singleton_value, ARC, descr
 	}], 
@@ -50,7 +31,7 @@ DBG(M4SCS(print([1_: fixed_: chain_representation_start_message])))
 varAssign([ 1_: assign_: local_link_pointer, 2_: fixed_: link_pointer ])
 
 label(continue_representation)
-call([1_: fixed_: chain_get_next, 2_: fixed_: prm4 = [{1_: local_link_pointer, 2_: local_link_pointer, 3_: singleton}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm1 = [{1_: local_link_pointer, 2_: local_link_pointer, 3_: singleton}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
 ifVarAssign([1_: local_link_pointer ], ,stop_representation)
