@@ -7,11 +7,6 @@ procedure(test_LOIS_Lab1,
 M4SCS(	[[
 		start_message = /"=======Hello world!======="/, 
 		end_message = /"=======Goodbye world!======="/,
-		debug_message = /"=======Deletion successful======="/,
-		debug1_message = /"=======Chains are created======="/,
-		history_message1 = /"=======History start======="/,
-		history_message2 = /"=======History end======="/,
-		node1_test_message = /"=======And node1 test======="/,
 		success_message = /"=======Procedure has been executed successful======="/,
 		chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
 		chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",
@@ -19,6 +14,7 @@ M4SCS(	[[
 		chain_get_next = "/lib/chain/get_next/chain_get_next",
 		chain_pop_destroy_singlet = "/lib/chain/pop_destroy_singlet/chain_pop_destroy_singlet",
 		chain_destroy = "/lib/chain/destroy/chain_destroy",
+		chain_show = "/lib/chain/show/chain_show",
 		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8
 		]])
 M4SEC(	[[	
@@ -28,12 +24,11 @@ M4SEC(	[[
 		chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
 		chain_pop_destroy_singlet = /../chain/pop_destroy[SYFIX]/chain_pop_destroy_singlet,
 		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
+		chain_show = "/../chain/show[SYFIX]/chain_show",
 		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8
 		]]), 
-	[{node1, node2, node3, arc1,
-		descr,empty,
-		parameters,history, link, bullshit1, bullshit2,undf1,undf2,undf3,undf4, singlet1, singlet2, ARC, singleton1, singleton2, singleton1_container, singleton2_container, singleton1_container_ARC,
-		suspect_for_singleton1_container, suspect_for_singleton1, suspect_for_singleton2_container, suspect_for_singleton2}], 
+	[{history, parameters, empty, descr,
+	  node1, node2, node3}], 
 	{[]}) 
 
 DBG(M4SCS(printNl([1_: fixed_: start_message])))
@@ -41,6 +36,7 @@ DBG(M4SCS(printNl([1_: fixed_: start_message])))
 genEl([1_: assign_: node_: const_: empty])
 genEl([1_: assign_: node_: const_: node1])
 genEl([1_: assign_: node_: const_: node2])
+genEl([1_: assign_: node_: const_: node3])
 
 // # —оздание первого синглетона
 call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm1 = [{1_: node1, 2_: history, 3_: empty}], 3_: assign_: descr])
@@ -50,90 +46,18 @@ waitReturn([1_: fixed_: descr])
 call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2 = [{1_: history, 2_: node2, 3_: history, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-// # поиск контейнера содержащего второй синглетон
-searchElStr3([1_:  assign_: singleton2,
-              2_: assign_: arc_: const_: ARC,
-              3_: fixed_: node2],,exit)
-
-searchElStr3([1_: assign_: singleton2_container,
-              2_: assign_: arc_: const_: ARC,
-              3_: fixed_: singleton2],,exit)
-
-// # поиск контейнера содержащего первый синглетон и первого синглетона
-searchElStr3([1_: fixed_: singleton2_container,
-              2_: assign_: arc_: const_: ARC,
-              3_: assign_: arc_: const_: singleton1_container_ARC],,exit)
-
-searchElStr3([1_: assign_: singleton1_container,
-              2_: fixed_: singleton1_container_ARC,
-              3_: assign_: singleton1],,exit)
-
-// # подтверждение нахождени€ node1 в первом синглетоне
-searchElStr3([1_: fixed_: singleton1,
-              2_: assign_: arc_: const_: ARC,
-              3_: fixed_: node1],,exit)
-
-//# Ќаходим последний элемент цепочки (ѕолучаем два значени€: элемент который должен быть контейнером второго синглетона и второй синглетон)
-call([1_: fixed_: chain_get_next, 2_: fixed_: prm3 = [{1_: history, 2_: suspect_for_singleton2_container, 3_: suspect_for_singleton2}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-//# ѕровер€ем, что найденный последний элемент цепочки совпадает с нашими ожидани€ми
-ifVarAssign([1_: suspect_for_singleton2_container ], , exit)
-ifVarAssign([1_: suspect_for_singleton2 ], , exit)
-ifCoin([
-	1_: fixed_: suspect_for_singleton2_container,
-	2_: fixed_: singleton2_container
-], , exit)
-ifCoin([
-	1_: fixed_: suspect_for_singleton2,
-	2_: fixed_: singleton2
-], , exit)
-
-//# ѕродолжаем идти дальше по цепочке (ѕолучаем два значени€: элемент который должен быть контейнером второго синглетона и второй синглетон)
-call([1_: fixed_: chain_get_next, 2_: fixed_: prm4 = [{1_: suspect_for_singleton2_container, 2_: suspect_for_singleton1_container, 3_: suspect_for_singleton1}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-//# ѕровер€ем, что найденный последний элемент цепочки совпадает с нашими ожидани€ми
-ifVarAssign([1_: suspect_for_singleton1_container ], , exit)
-ifVarAssign([1_: suspect_for_singleton2 ], , exit)
-ifCoin([
-	1_: fixed_: suspect_for_singleton1_container,
-	2_: fixed_: singleton1_container
-], , exit)
-ifCoin([
-	1_: fixed_: suspect_for_singleton1,
-	2_: fixed_: singleton1
-], , exit)
-
-DBG(M4SCS(printEl([1_: fixed_: node2])))
-DBG(M4SCS(printEl([1_: fixed_: singleton2])))
-DBG(M4SCS(printEl([1_: fixed_: singleton2_container])))
-DBG(M4SCS(printEl([1_: fixed_: node1])))
-DBG(M4SCS(printEl([1_: fixed_: singleton1])))
-DBG(M4SCS(printEl([1_: fixed_: singleton1_container])))
-
-// # ”дал€ем синглетон 2 и потенциальный контейнер дл€ 3-го синглетона
-call([	1_: fixed_: chain_pop_destroy_singlet, 2_: fixed_: prm5 = [{1_: history, 2_: history, 3_: empty}], 3_: assign_: descr])
+// # —оздание третьего синглетона
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2=3 = [{1_: history, 2_: node3, 3_: history, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-// # ”дал€ем node2
-eraseEl([1_: fixed_: f_: node2])
-
-// # ”дал€ем синглетон 1 и контейнер дл€ 2-го синглетона
-call([	1_: fixed_: chain_pop_destroy_singlet, 2_: fixed_: prm6 = [{1_: history, 2_: history, 3_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_show, 2_: fixed_: prm4 = [{1_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-// # ”дал€ем node2
-eraseEl([1_: fixed_: f_: node1])
-
-// # ”дал€ем контейнер дл€ 1-го синглетона
-call([1_: fixed_: chain_destroy, 2_: fixed_: prm8 = [{1_: history, 2_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_show, 2_: fixed_: prm5 = [{1_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-DBG(M4SCS(printEl([1_: fixed_: node2])))
-DBG(M4SCS(printEl([1_: fixed_: singleton2])))
-DBG(M4SCS(printEl([1_: fixed_: singleton2_container])))
-DBG(M4SCS(printEl([1_: fixed_: node1])))
-DBG(M4SCS(printEl([1_: fixed_: singleton1])))
-DBG(M4SCS(printEl([1_: fixed_: singleton1_container])))
+call([1_: fixed_: chain_show, 2_: fixed_: prm6 = [{1_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
 
 DBG(M4SCS(printNl([1_: fixed_: success_message])))
 label(exit)
