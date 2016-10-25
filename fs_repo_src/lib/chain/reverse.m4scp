@@ -1,0 +1,60 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+///////////////////////////////////////////////////////
+//        File: reverse.m4scp
+//    Location: /lib/chain/reverse
+])
+
+procedure(chain_reverse,
+M4SCS(	[[
+			chain_get_next = "/lib/chain/get_next/chain_get_next",
+			chain_pop_destroy_singlet = "/lib/chain/pop_destroy_singlet/chain_pop_destroy_singlet",
+			chain_destroy = "/lib/chain/destroy/chain_destroy",
+			prm1, prm2]])
+M4SEC(	[[	
+			chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
+			chain_pop_destroy_singlet = /../chain/pop_destroy[SYFIX]/chain_pop_destroy_singlet,
+			chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
+			prm1,prm2]]), 
+	[{
+		link_pointer, next_link_pointer, singleton, singleton_value, ARC1, ARC2, descr, empty
+	}], 
+	{[ 
+		1_: in_: out_: state,
+		2_: in_: out_: true,
+		3_: in_: out_: history, 
+		4_: in_: parameters,
+		5_: in_: logger
+	]}) 
+
+genEl([1_: assign_: node_: const_: empty])
+
+ifVarAssign([1_: link_pointer ],, exit)
+
+label(continue_reverse)
+searchElStr5([1_: assign_: singleton,
+              2_: assign_: arc_: const_: ARC1,
+              3_: assign_: next_link_pointer,
+              4_: assign_: arc_: const_: ARC2,
+              5_: fixed_: link_pointer],,stop_reverse)
+
+searchElStr3([1_: fixed_: singleton,
+              2_: assign_: arc_: const_: ARC1,
+              3_: assign_: singleton_value],,stop_reverse)
+
+eraseEl([1_: fixed_: f_: singleton_value])
+
+call([	1_: fixed_: chain_pop_destroy_singlet, 2_: fixed_: prm1 = [{1_: link_pointer, 2_: link_pointer, 3_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: link_pointer ], continue_reverse,)
+
+label(stop_reverse)
+call([1_: fixed_: chain_destroy, 2_: fixed_: prm2 = [{1_: link_pointer, 2_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+label(exit)
+eraseEl([1_: fixed_: f_: empty])
+return()
+end()

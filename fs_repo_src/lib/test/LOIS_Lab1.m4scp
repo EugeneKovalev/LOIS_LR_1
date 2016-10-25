@@ -40,16 +40,22 @@ genEl([1_: assign_: node_: const_: node1])
 genEl([1_: assign_: node_: const_: node2])
 genEl([1_: assign_: node_: const_: node3])
 
-// # Создание первого синглетона
+// # Г‘Г®Г§Г¤Г Г­ГЁГҐ ГЇГҐГ°ГўГ®ГЈГ® Г±ГЁГ­ГЈГ«ГҐГІГ®Г­Г 
 call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm1 = [{1_: node1, 2_: last_link_pointer, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-// # Создание второго синглетона
+// # Г‘Г®Г§Г¤Г Г­ГЁГҐ ГўГІГ®Г°Г®ГЈГ® Г±ГЁГ­ГЈГ«ГҐГІГ®Г­Г 
 call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2 = [{1_: last_link_pointer, 2_: node2, 3_: last_link_pointer, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-// # Создание третьего синглетона
+// # Г‘Г®Г§Г¤Г Г­ГЁГҐ ГІГ°ГҐГІГјГҐГЈГ® Г±ГЁГ­ГЈГ«ГҐГІГ®Г­Г 
 call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2=3 = [{1_: last_link_pointer, 2_: node3, 3_: last_link_pointer, 4_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_show, 2_: fixed_: prm4 = [{1_: last_link_pointer}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: set_intersection, 2_: fixed_: prm5 = [{1_: empty, 2_: empty, 3_: last_link_pointer, 4_: parameters, 5_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
 call([1_: fixed_: chain_show, 2_: fixed_: prm4 = [{1_: last_link_pointer}], 3_: assign_: descr])
