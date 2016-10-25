@@ -30,29 +30,7 @@ M4SEC(	[[
 
 genEl([1_: assign_: node_: const_: empty])
 
-ifVarAssign([1_: link_pointer ],, exit)
 
-label(continue_reverse)
-searchElStr5([1_: assign_: singleton,
-              2_: assign_: arc_: const_: ARC1,
-              3_: assign_: next_link_pointer,
-              4_: assign_: arc_: const_: ARC2,
-              5_: fixed_: link_pointer],,stop_reverse)
-
-searchElStr3([1_: fixed_: singleton,
-              2_: assign_: arc_: const_: ARC1,
-              3_: assign_: singleton_value],,stop_reverse)
-
-eraseEl([1_: fixed_: f_: singleton_value])
-
-call([	1_: fixed_: chain_pop_destroy_singlet, 2_: fixed_: prm1 = [{1_: link_pointer, 2_: link_pointer, 3_: empty}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-
-ifVarAssign([1_: link_pointer ], continue_reverse,)
-
-label(stop_reverse)
-call([1_: fixed_: chain_destroy, 2_: fixed_: prm2 = [{1_: link_pointer, 2_: empty}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
 
 label(exit)
 eraseEl([1_: fixed_: f_: empty])

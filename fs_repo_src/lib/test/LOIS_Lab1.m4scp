@@ -16,6 +16,7 @@ M4SCS(	[[
 		chain_destroy = "/lib/chain/destroy/chain_destroy",
 		chain_show = "/lib/chain/show/chain_show",
 		chain_purge = "/lib/chain/purge/chain_purge",
+		chain_reverse = "/lib/chain/purge/chain_purge",
 		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8
 		]])
 M4SEC(	[[	
@@ -27,6 +28,7 @@ M4SEC(	[[
 		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
 		chain_show = "/../chain/show[SYFIX]/chain_show",
 		chain_purge = "/../chain/purge[SYFIX]/chain_purge",
+		chain_reverse = "/../chain/purge[SYFIX]/chain_purge",
 		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8
 		]]), 
 	[{last_link_pointer, parameters, empty, descr,
@@ -49,19 +51,19 @@ call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2 = [{1_: last_link_pointer
 waitReturn([1_: fixed_: descr])
 
 // # Ñîçäàíèå òðåòüåãî ñèíãëåòîíà
-call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2=3 = [{1_: last_link_pointer, 2_: node3, 3_: last_link_pointer, 4_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm3 = [{1_: last_link_pointer, 2_: node3, 3_: last_link_pointer, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
 call([1_: fixed_: chain_show, 2_: fixed_: prm4 = [{1_: last_link_pointer}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: set_intersection, 2_: fixed_: prm5 = [{1_: empty, 2_: empty, 3_: last_link_pointer, 4_: parameters, 5_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_reverse, 2_: fixed_: prm5 = [{1_: empty, 2_: empty, 3_: last_link_pointer, 4_: parameters, 5_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: chain_show, 2_: fixed_: prm4 = [{1_: last_link_pointer}], 3_: assign_: descr])
+call([1_: fixed_: chain_show, 2_: fixed_: prm6 = [{1_: last_link_pointer}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: chain_purge, 2_: fixed_: prm5 = [{1_: last_link_pointer}], 3_: assign_: descr])
+call([1_: fixed_: chain_purge, 2_: fixed_: prm7 = [{1_: last_link_pointer}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
 ifVarAssign([1_: last_link_pointer ], exit,)
