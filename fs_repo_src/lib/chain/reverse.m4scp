@@ -18,21 +18,64 @@ M4SEC(	[[
 			chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
 			prm1,prm2]]), 
 	[{
-		link_pointer, next_link_pointer, singleton, singleton_value, ARC1, ARC2, descr, empty
+		state, true, stack, parameters, logger,
+		link_pointer, next_link_pointer, previous_link_pointer, singleton, singleton_value, ARC1, ARC2, descr, empty
 	}], 
 	{[ 
 		1_: in_: out_: state,
 		2_: in_: out_: true,
-		3_: in_: out_: history, 
+		3_: in_: out_: stack, 
 		4_: in_: parameters,
 		5_: in_: logger
 	]}) 
 
 genEl([1_: assign_: node_: const_: empty])
+varAssign([ 1_: assign_: link_pointer, 2_: fixed_: stack ])
+
+// # last chain processing
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm1 = [{1_: link_pointer, 2_: next_link_pointer, 3_: singleton}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+eraseEl([1_: fixed_: f_: link_pointer])
 
 
+label(change_direction_of_a_chain_link)
+// Код где строится стрелка
+ifVarAssign([1_: previous_link_pointer ], ,xxx)
+searchElStr3([1_: fixed_: previous_link_pointer,
+              2_: assign_: arc_: const_: ARC1,
+              3_: assign_: node_: singleton],,xxx)
+genElStr3([	1_: fixed_: next_link_pointer,
+		2_: assign_: arc_: const_: ARC2,
+		3_: fixed_: ARC1])
 
-label(exit)
+// #===============================================================
+label(xxx)
+varAssign([ 1_: assign_: link_pointer, 2_: fixed_: next_link_pointer ])
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm2 = [{1_: link_pointer, 2_: next_link_pointer, 3_: singleton}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+searchElStr5([1_: fixed_: next_link_pointer,
+              2_: assign_: arc_: const_: ARC1,
+              3_: fixed_: singleton,
+              4_: assign_: arc_: const_: ARC2,
+              5_: fixed_: link_pointer],,)
+eraseEl([1_: fixed_: f_: ARC2])
+
+varAssign([ 1_: assign_: previous_link_pointer, 2_: fixed_: link_pointer ])
+
+ifVarAssign([1_: previous_link_pointer ], change_direction_of_a_chain_link,)
+// #===============================================================
+
+
+label(final_step)
+searchElStr3([1_: fixed_: link_pointer,
+              2_: assign_: arc_: const_: ARC1,
+              3_: assign_: node_: singleton],,)
+
+genElStr3([1_: assign_: node_: stack,
+              2_: assign_: arc_: const_: ARC1,
+              3_: fixed_: ARC1],,)
+
 eraseEl([1_: fixed_: f_: empty])
 return()
 end()
