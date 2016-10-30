@@ -16,11 +16,11 @@ M4SEC(	[[
 	[{
 		descr}])
 
-call([1_: fixed_: test_LOIS_Lab1, 2_: fixed_: prm1488=[{}], 3_: assign_: descr])
+call([1_: fixed_: test_LOIS_Lab1, 2_: fixed_: prm1=[{}], 3_: assign_: descr])
 
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: test_get_different_unorient_filter, 2_: fixed_: prm9=[{}], 3_: assign_: descr])
+call([1_: fixed_: test_get_different_unorient_filter, 2_: fixed_: prm2=[{}], 3_: assign_: descr])
 
 waitReturn([1_: fixed_: descr])
 

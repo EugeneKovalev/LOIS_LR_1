@@ -16,7 +16,7 @@ M4SCS(	[[
 		chain_destroy = "/lib/chain/destroy/chain_destroy",
 		chain_show = "/lib/chain/show/chain_show",
 		chain_purge = "/lib/chain/purge/chain_purge",
-		chain_reverse = "/lib/chain/purge/chain_purge",
+		chain_reverse = "/lib/chain/reverse/chain_reverse",
 		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8
 		]])
 M4SEC(	[[	
@@ -28,7 +28,7 @@ M4SEC(	[[
 		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
 		chain_show = "/../chain/show[SYFIX]/chain_show",
 		chain_purge = "/../chain/purge[SYFIX]/chain_purge",
-		chain_reverse = "/../chain/purge[SYFIX]/chain_purge",
+		chain_reverse = "/../chain/reverse[SYFIX]/chain_reverse",
 		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8
 		]]), 
 	[{last_link_pointer, parameters, empty, descr,
@@ -38,6 +38,7 @@ M4SEC(	[[
 DBG(M4SCS(printNl([1_: fixed_: start_message])))
 
 genEl([1_: assign_: node_: const_: empty])
+genEl([1_: assign_: node_: const_: parameters])
 genEl([1_: assign_: node_: const_: node1])
 genEl([1_: assign_: node_: const_: node2])
 genEl([1_: assign_: node_: const_: node3])
@@ -57,7 +58,14 @@ waitReturn([1_: fixed_: descr])
 call([1_: fixed_: chain_show, 2_: fixed_: prm4 = [{1_: last_link_pointer}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
+
+
 call([1_: fixed_: chain_reverse, 2_: fixed_: prm5 = [{1_: empty, 2_: empty, 3_: last_link_pointer, 4_: parameters, 5_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+
+
+call([1_: fixed_: chain_show, 2_: fixed_: prm6 = [{1_: last_link_pointer}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
 call([1_: fixed_: chain_show, 2_: fixed_: prm6 = [{1_: last_link_pointer}], 3_: assign_: descr])

@@ -8,6 +8,8 @@ M4SCS([
 
 procedure(chain_reverse,
 M4SCS(	[[
+			msg1 = /"SUCCESSFUL REVERSE\n"/,
+			msg2 = /"STAART REVERSE\n"/,
 			chain_get_next = "/lib/chain/get_next/chain_get_next",
 			chain_pop_destroy_singlet = "/lib/chain/pop_destroy_singlet/chain_pop_destroy_singlet",
 			chain_destroy = "/lib/chain/destroy/chain_destroy",
@@ -29,6 +31,7 @@ M4SEC(	[[
 		5_: in_: logger
 	]}) 
 
+DBG(M4SCS(print([1_: fixed_: msg2])))
 genEl([1_: assign_: node_: const_: empty])
 varAssign([ 1_: assign_: link_pointer, 2_: fixed_: stack ])
 
@@ -77,5 +80,8 @@ genElStr3([1_: assign_: node_: stack,
               3_: fixed_: ARC1],,)
 
 eraseEl([1_: fixed_: f_: empty])
+
+
+DBG(M4SCS(print([1_: fixed_: msg1])))
 return()
 end()
