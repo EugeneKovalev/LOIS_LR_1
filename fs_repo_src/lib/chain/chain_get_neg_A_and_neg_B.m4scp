@@ -8,10 +8,10 @@ M4SCS([
 
 procedure(chain_get_neg_A_and_neg_B,
 M4SCS(	[[
-			entering_msg = /"<<<<<<<< entering chain_reverse\n"/,
-			leaving_msg = /"<<<<<<<< leaving chain_reverse\n"/,
-			msg3 = /"REVERSE ERROR\n"/,
-			msg4 = /"REVERSE SUCCESS\n"/,
+			entering_msg = /"<<<<<<<< entering chain_get_neg_A_and_neg_B\n"/,
+			leaving_msg = /"<<<<<<<< leaving chain_get_neg_A_and_neg_B\n"/,
+			msg3 = /"GET FORMULA ERROR\n"/,
+			msg4 = /"GET FORMULA SUCCESS\n"/,
 			chain_get_next = "/lib/chain/get_next/chain_get_next",
 			chain_get_singlet_value = "/lib/chain/get_singlet_value/chain_get_singlet_value",
 			chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
@@ -38,7 +38,7 @@ M4SEC(	[[
 		5_: in_: logger
 	]}) 
 
-DBG(M4SCS(print([1_: fixed_: chain_representation_start_message])))
+DBG(M4SCS(print([1_: fixed_: entering_msg])))
 
 // >>>>>>>>>>>>>>>>>> VALIDATION PART
 call([1_: fixed_: chain_get_next, 2_: fixed_: prm1 = [{1_: stack, 2_: stack, 3_: singleton}], 3_: assign_: descr])
@@ -94,15 +94,15 @@ waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: result_formula ], success, error)
 
 label(error)
-DBG(M4SCS(printNl([1_: fixed_: end_error_message])))
-DBG(M4SCS(print([1_: fixed_: chain_representation_end_message])))
+DBG(M4SCS(printNl([1_: fixed_: msg3])))
+DBG(M4SCS(print([1_: fixed_: leaving_msg])))
 return()
 
 label(success)
 varAssign([ 1_: assign_: stack, 2_: fixed_: result_formula ])
 varAssign([ 1_: assign_: state, 2_: fixed_: true ])
 
-DBG(M4SCS(printNl([1_: fixed_: end_success_message])))
-DBG(M4SCS(print([1_: fixed_: chain_representation_end_message])))
+DBG(M4SCS(printNl([1_: fixed_: msg4])))
+DBG(M4SCS(print([1_: fixed_: leaving_msg])))
 return()
 end()
