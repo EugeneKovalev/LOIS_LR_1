@@ -1,0 +1,71 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+///////////////////////////////////////////////////////
+//        File: show.m4scp
+//    Location: /lib/chain/show
+])
+
+procedure(chain_show,
+M4SCS(	[[
+		chain_representation_start_message = /"Chain representation started ====================>\n"/,
+		chain_representation_end_message = /"Chain representation finished <====================\n"/,
+		link_divider_help_message = /"===========================================================\n"/,
+		next_link_pointer_info_message = /"Next link pointer:\n"/,
+		singleton_info_message = /"Singleton:\n"/,
+		singleton_value_info_message = /"Singleton value:\n"/,
+		chain_get_next = "/lib/chain/get_next/chain_get_next",
+		prm1]])
+M4SEC(	[[	
+			chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
+			prm1]]), 
+	[{
+		link_pointer, local_link_pointer, singleton, singleton_value, ARC, descr
+	}], 
+	{[ 
+		1_: in_: link_pointer
+	]}) 
+
+DBG(M4SCS(print([1_: fixed_: chain_representation_start_message])))
+
+
+// ===========> check the impl
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm1 = [{1_: A_or_B, 2_: A_or_B, 3_: singleton}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: singleton ], , error)
+ifCoin([1_: fixed_: singleton, 2_: fixed_: impl], , error)
+// ===========
+
+// check existense of the first element
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm1 = [{1_: A_or_B, 2_: A_or_B, 3_: elem1}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: elem1 ], , error)
+
+// check existense of the second element
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm1 = [{1_: A_or_B, 2_: A_or_B, 3_: elem2}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: elem2 ], , error)
+
+// check existense of the second element
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm1 = [{1_: A_or_B, 2_: A_or_B, 3_: elem2}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: elem2 ], , error)
+
+// check existense of the third element
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm1 = [{1_: A_or_B, 2_: A_or_B, 3_: elem3}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: elem3 ], error,)
+
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm1 = [{1_: A_or_B, 2_: A_or_B, 3_: elem3}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: elem3 ], error,)
+
+
+
+
+
+
+DBG(M4SCS(print([1_: fixed_: chain_representation_end_message])))
+return()
+end()
