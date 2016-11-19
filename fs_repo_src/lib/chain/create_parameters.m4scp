@@ -1,0 +1,69 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+///////////////////////////////////////////////////////
+//        File: create_parameters.m4scp
+//    Location: /lib/chain/create_parameters
+])
+
+procedure(chain_create_parameters,
+M4SCS(	[[
+			entering_msg = /">>>>>>>> entering chain_create_parameters\n"/,
+			leaving_msg = /"<<<<<<<< leaving chain_create_parameters\n"/,
+			chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
+			chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",
+			prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8
+		]])
+M4SEC(	[[	
+			chain_push_first_singlet = /../chain/push_first_singlet[SYFIX]/chain_push_first_singlet,
+			chain_push_singlet = /../chain/push_singlet[SYFIX]/chain_push_singlet,
+			prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8
+		]]), 
+	[{
+		parameters, logger,
+		conjunction, disjunction, implication, negotiation,
+		then, else, strategy, comparator,
+		descr
+	}], 
+	{[ 
+		1_: in_: out_: parameters,
+		2_: in_: logger
+	]}) 
+DBG(M4SCS(print([1_: fixed_: entering_msg])))
+
+genEl([1_: assign_: node_: const_: conjunction])
+genEl([1_: assign_: node_: const_: disjunction])
+genEl([1_: assign_: node_: const_: implication])
+genEl([1_: assign_: node_: const_: negotiation])
+
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm1 = [{1_: negotiation, 2_: strategy, 3_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2 = [{1_: strategy, 2_: implication, 3_: strategy, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm3 = [{1_: strategy, 2_: disjunction, 3_: strategy, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm4 = [{1_: strategy, 2_: conjunction, 3_: strategy, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+genEl([1_: assign_: node_: const_: then])
+genEl([1_: assign_: node_: const_: else])
+genEl([1_: assign_: node_: const_: comparator])
+
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm5 = [{1_: comparator, 2_: parameters, 3_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm6 = [{1_: parameters, 2_: strategy, 3_: parameters, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm7 = [{1_: parameters, 2_: else, 3_: parameters, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm8 = [{1_: parameters, 2_: then, 3_: parameters, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+DBG(M4SCS(print([1_: fixed_: leaving_msg])))
+return()
+end()

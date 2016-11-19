@@ -11,6 +11,9 @@ M4SCS(	[[
 		chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
 		chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",
 		chain_show = "/lib/chain/show/chain_show",
+		chain_create_parameters = "/lib/chain/create_parameters/chain_create_parameters",
+		chain_get_disjunction = "/lib/chain/get_disjunction/chain_get_disjunction",
+		chain_get_negotiation = "/lib/chain/get_negotiation/chain_get_negotiation",
 		chain_get_neg_A_and_neg_B = "/lib/chain/get_neg_A_and_neg_B/chain_get_neg_A_and_neg_B",
 		chain_remove_neg_A_and_neg_B = "/lib/chain/remove_neg_A_and_neg_B/chain_remove_neg_A_and_neg_B",
 		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm66
@@ -19,6 +22,9 @@ M4SEC(	[[
 		chain_push_first_singlet = /../chain/push_first_singlet[SYFIX]/chain_push_first_singlet,
 		chain_push_singlet = /../chain/push_singlet[SYFIX]/chain_push_singlet,
 		chain_show = /../chain/show[SYFIX]/chain_show,
+		chain_create_parameters = /../chain/create_parameters[SYFIX]/chain_create_parameters,
+		chain_get_disjunction = /../chain/get_disjunction[SYFIX]/chain_get_disjunction,
+		chain_get_negotiation = /../chain/get_negotiation[SYFIX]/chain_get_negotiation,
 		chain_get_neg_A_and_neg_B = /../chain/get_neg_A_and_neg_B[SYFIX]/chain_get_neg_A_and_neg_B,
 		chain_remove_neg_A_and_neg_B = /../chain/remove_neg_A_and_neg_B[SYFIX]/chain_remove_neg_A_and_neg_B,
 		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm66
@@ -31,38 +37,52 @@ M4SEC(	[[
 
 DBG(M4SCS(printNl([1_: fixed_: start_message])))
 
-genEl([1_: assign_: node_: const_: implication])
-genEl([1_: assign_: node_: const_: conjunction])
+genEl([1_: assign_: node_: const_: state])
+genEl([1_: assign_: node_: const_: true])
+genEl([1_: assign_: node_: const_: parameters])
+genEl([1_: assign_: node_: const_: empty])
+
 genEl([1_: assign_: node_: const_: disjunction])
 genEl([1_: assign_: node_: const_: negotiation])
 
+call([1_: fixed_: chain_create_parameters, 2_: fixed_: prm1 = [{1_: parameters, 2_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_get_disjunction, 2_: fixed_: prm2 = [{1_: parameters, 2_: disjunction, 3_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: disjunction ], , error)
+
+call([1_: fixed_: chain_get_negotiation, 2_: fixed_: prm3 = [{1_: parameters, 2_: negotiation, 3_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: negotiation ], , error)
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Generate test chain !(A or B)
 genEl([1_: assign_: node_: const_: node_A])
 genEl([1_: assign_: node_: const_: node_B])
-genEl([1_: assign_: node_: const_: empty])
-genEl([1_: assign_: node_: const_: parameters])
-genEl([1_: assign_: node_: const_: state])
-genEl([1_: assign_: node_: const_: true])
 
-// build A\/B
-call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm1 = [{1_: node_B, 2_: A_or_B, 3_: empty}], 3_: assign_: descr])
+// >>>>>>>>>>> A or B
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm4 = [{1_: node_B, 2_: A_or_B, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2 = [{1_: A_or_B, 2_: node_A, 3_: A_or_B, 4_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm5 = [{1_: A_or_B, 2_: node_A, 3_: A_or_B, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm3 = [{1_: A_or_B, 2_: disjunction, 3_: A_or_B, 4_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm6 = [{1_: A_or_B, 2_: disjunction, 3_: A_or_B, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-
-call([1_: fixed_: chain_show, 2_: fixed_: prm66 = [{1_: A_or_B}], 3_: assign_: descr])
+call([1_: fixed_: chain_show, 2_: fixed_: prm7 = [{1_: A_or_B}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
+// <<<<<<<<<<< A or B
 
-// build !(A\/B)
-call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm4 = [{1_: A_or_B, 2_: neg_A_or_B, 3_: empty}], 3_: assign_: descr])
+// >>>>>>>>>>> !(A or B)
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm8 = [{1_: A_or_B, 2_: neg_A_or_B, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
 call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm5 = [{1_: neg_A_or_B, 2_: negotiation, 3_: neg_A_or_B, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
+// >>>>>>>>>>> !(A or B)
+
+
 
 varAssign([ 1_: assign_: formula, 2_: fixed_: neg_A_or_B ])
 

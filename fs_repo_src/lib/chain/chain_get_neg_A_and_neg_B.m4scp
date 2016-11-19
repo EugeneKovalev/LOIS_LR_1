@@ -58,9 +58,21 @@ call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm2 = [{1_: stack, 2_: st
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: disjunction_formula ], , error)
 
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm1 = [{1_: stack, 2_: stack, 3_: negotiation}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: negotiation ], , error)
 
-DBG(M4SCS(print([1_: fixed_: holly])))
-call([1_: fixed_: chain_show, 2_: fixed_: prm6 = [{1_: disjunction_formula}], 3_: assign_: descr])
+
+
+
+
+
+
+
+
+
+
+call([1_: fixed_: chain_show, 2_: fixed_: prm3 = [{1_: disjunction_formula}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
 
