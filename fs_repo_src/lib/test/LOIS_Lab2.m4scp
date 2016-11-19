@@ -1,9 +1,9 @@
 m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
 M4SCS(
 #include "../../include/sckp_keynodes.scsy" 
-// Location: /lib/test/LOIS_Lab1
+// Location: /lib/test/LOIS_Lab2
 )
-procedure(test_LOIS_Lab1,
+procedure(test_LOIS_Lab2,
 M4SCS(	[[
 		start_message = /"=======LOIS LR2 START======="/, 
 		end_success_message = /"=======LOIS LR2 SUCCESFUL END======="/,
@@ -11,21 +11,21 @@ M4SCS(	[[
 		chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
 		chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",
 		chain_show = "/lib/chain/show/chain_show",
-		chain_get_neg_A_and_neg_B = "/lib/chain/show/chain_get_neg_A_and_neg_B",
-		chain_remove_neg_A_and_neg_B = "/lib/chain/show/chain_remove_neg_A_and_neg_B",
-		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11
+		chain_get_neg_A_and_neg_B = "/lib/chain/get_neg_A_and_neg_B/chain_get_neg_A_and_neg_B",
+		chain_remove_neg_A_and_neg_B = "/lib/chain/remove_neg_A_and_neg_B/chain_remove_neg_A_and_neg_B",
+		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm66
 		]])
 M4SEC(	[[	
 		chain_push_first_singlet = /../chain/push_first_singlet[SYFIX]/chain_push_first_singlet,
 		chain_push_singlet = /../chain/push_singlet[SYFIX]/chain_push_singlet,
-		chain_show = "/../chain/show[SYFIX]/chain_show",
-		chain_get_neg_A_and_neg_B = "/../chain/get_neg_A_and_neg_B[SYFIX]/chain_get_neg_A_and_neg_B",
-		chain_remove_neg_A_and_neg_B = "/../chain/remove_neg_A_and_neg_B[SYFIX]/chain_remove_neg_A_and_neg_B",
-		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11
+		chain_show = /../chain/show[SYFIX]/chain_show,
+		chain_get_neg_A_and_neg_B = /../chain/get_neg_A_and_neg_B[SYFIX]/chain_get_neg_A_and_neg_B,
+		chain_remove_neg_A_and_neg_B = /../chain/remove_neg_A_and_neg_B[SYFIX]/chain_remove_neg_A_and_neg_B,
+		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm66
 		]]), 
 	[{
 		implication, conjunction, disjunction, negotiation, 
-		node_A, node_B, A_or_B, neg_A_or_B, neg_A_and_neg_B 
+		node_A, node_B, A_or_B, neg_A_or_B, neg_A_and_neg_B, 
 		state, true, formula, parameters, empty, descr}], 
 	{[]}) 
 
@@ -38,6 +38,10 @@ genEl([1_: assign_: node_: const_: negotiation])
 
 genEl([1_: assign_: node_: const_: node_A])
 genEl([1_: assign_: node_: const_: node_B])
+genEl([1_: assign_: node_: const_: empty])
+genEl([1_: assign_: node_: const_: parameters])
+genEl([1_: assign_: node_: const_: state])
+genEl([1_: assign_: node_: const_: true])
 
 // build A\/B
 call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm1 = [{1_: node_B, 2_: A_or_B, 3_: empty}], 3_: assign_: descr])
@@ -47,6 +51,10 @@ call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm2 = [{1_: A_or_B, 2_: node_
 waitReturn([1_: fixed_: descr])
 
 call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm3 = [{1_: A_or_B, 2_: disjunction, 3_: A_or_B, 4_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+
+call([1_: fixed_: chain_show, 2_: fixed_: prm66 = [{1_: A_or_B}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
 // build !(A\/B)
@@ -65,6 +73,7 @@ waitReturn([1_: fixed_: descr])
 // get reformed chain
 call([1_: fixed_: chain_get_neg_A_and_neg_B, 2_: fixed_: prm7 = [{1_: state, 2_: true, 3_: formula, 4_: parameters, 5_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
+
 ifCoin([1_: fixed_: state,2_: fixed_: true], , error)
 
 // show output chain
@@ -73,25 +82,14 @@ waitReturn([1_: fixed_: descr])
 
 varAssign([ 1_: assign_: neg_A_and_neg_B, 2_: fixed_: formula ])
 
-// remove reformed chain
-call([1_: fixed_: chain_remove_neg_A_and_neg_B, 2_: fixed_: prm9 = [{1_: state, 2_: true, 3_: formula, 4_: parameters, 5_: empty}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-ifCoin([1_: fixed_: state, 2_: fixed_: true], , error)
-
-// show neg_A_or_B chain
-call([1_: fixed_: chain_show, 2_: fixed_: prm10 = [{1_: neg_A_or_B}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-
-// show neg_A_and_neg_B chain (should be empty)
-call([1_: fixed_: chain_show, 2_: fixed_: prm11 = [{1_: neg_A_and_neg_B}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-
 ifVarAssign([1_: neg_A_and_neg_B ], error, success)
 
 label(error)
 DBG(M4SCS(printNl([1_: fixed_: end_error_message])))
+eraseEl([1_: fixed_: f_: empty])
 return()
 label(success)
 DBG(M4SCS(printNl([1_: fixed_: end_success_message])))
+eraseEl([1_: fixed_: f_: empty])
 return()
 end()

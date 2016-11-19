@@ -8,27 +8,35 @@ M4SCS([
 
 procedure(chain_get_neg_A_and_neg_B,
 M4SCS(	[[
-			entering_msg = /"<<<<<<<< entering chain_get_neg_A_and_neg_B\n"/,
+			entering_msg = /">>>>>>>> entering chain_get_neg_A_and_neg_B\n"/,
 			leaving_msg = /"<<<<<<<< leaving chain_get_neg_A_and_neg_B\n"/,
 			msg3 = /"GET FORMULA ERROR\n"/,
 			msg4 = /"GET FORMULA SUCCESS\n"/,
+			holly = /"HOLLY MOLLY\n"/,
 			chain_get_next = "/lib/chain/get_next/chain_get_next",
 			chain_get_singlet_value = "/lib/chain/get_singlet_value/chain_get_singlet_value",
 			chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
 			chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",
-			prm1,prm2,prm3,prm4
+			chain_show = "/lib/chain/show/chain_show",
+			chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
+			prm1,prm2,prm3,prm4, prm5, prm6
 		]])
 M4SEC(	[[	
 			chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
+			chain_get_next_singlet = /../chain/get_next[SYFIX]/chain_get_next_singlet,
 			chain_get_singlet_value = /../chain/get_singlet_value[SYFIX]/chain_get_singlet_value,
 			chain_push_first_singlet = /../chain/push_first_singlet[SYFIX]/chain_push_first_singlet,
 			chain_push_singlet = /../chain/push_singlet[SYFIX]/chain_push_singlet,
-			prm1,prm2,prm3,prm4
+			chain_show = /../chain/show[SYFIX]/chain_show,
+			prm1,prm2,prm3,prm4, prm5, prm6
 		]]), 
 	[{
 		state, true, stack, parameters, logger,
-		link_pointer, next_link_pointer, previous_link_pointer, singleton, singleton_value, ARC1, ARC2, previous_linker_ARC, 
-		linker_ARC, descr, empty, abstract_link_pointer, new_pointer, is_the_first_link_has_been_processed
+		implication, conjunction, disjunction, negotiation,
+		singleton, singleton_value, elem1, elem2,
+		neg_elem1, neg_elem2, result_formula, descr, empty,
+		arc3,arc2,
+		disjunction_formula
 	}], 
 	{[ 
 		1_: in_: out_: state,
@@ -39,29 +47,70 @@ M4SEC(	[[
 	]}) 
 
 DBG(M4SCS(print([1_: fixed_: entering_msg])))
+genEl([1_: assign_: node_: const_: singleton_value])
 
 // >>>>>>>>>>>>>>>>>> VALIDATION PART
-call([1_: fixed_: chain_get_next, 2_: fixed_: prm1 = [{1_: stack, 2_: stack, 3_: singleton}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm1 = [{1_: stack, 2_: stack, 3_: negotiation}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-ifVarAssign([1_: singleton ], , error)
-ifCoin([1_: fixed_: singleton, 2_: fixed_: negotiation], , error)
+ifVarAssign([1_: negotiation ], , error)
 
-varAssign([ 1_: assign_: stack, 2_: fixed_: singleton ])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm2 = [{1_: stack, 2_: stack, 3_: disjunction_formula}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: disjunction_formula ], , error)
+
+
+DBG(M4SCS(print([1_: fixed_: holly])))
+call([1_: fixed_: chain_show, 2_: fixed_: prm6 = [{1_: disjunction_formula}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+
+
+
+
+
+
+
 
 call([1_: fixed_: chain_get_next, 2_: fixed_: prm2 = [{1_: stack, 2_: stack, 3_: singleton}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: singleton ], , error)
-ifCoin([1_: fixed_: singleton, 2_: fixed_: conjunction], , error)
+
+
+
+
+
+
+call([1_: fixed_: chain_get_singlet_value, 2_: fixed_: prm3 = [{1_: singleton, 2_: singleton_value}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: singleton_value ], , error)
+
+searchElStr3([
+	1_: fixed_: singleton_value,
+	2_: assign_: arc_:  arc2,
+	3_: assign_: arc_:  arc3
+], , )
+
+DBG(M4SCS(printEl([1_: fixed_: singleton_value])))
+DBG(M4SCS(printEl([1_: fixed_: arc3])))
+
+varAssign([ 1_: assign_: stack, 2_: fixed_: singleton_value ])
+
+DBG(M4SCS(print([1_: fixed_: entering_msg])))
+// check existense of the conjunction
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm4 = [{1_: stack, 2_: stack, 3_: conjunction}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
 
 // check existense of the first element
-call([1_: fixed_: chain_get_next, 2_: fixed_: prm3 = [{1_: stack, 2_: stack, 3_: elem1}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm5 = [{1_: stack, 2_: stack, 3_: elem1}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: elem1 ], , error)
 
 // check existense of the second element
-call([1_: fixed_: chain_get_next, 2_: fixed_: prm4 = [{1_: stack, 2_: stack, 3_: elem2}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm6 = [{1_: stack, 2_: stack, 3_: elem2}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: elem2 ], , error)
+
+
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
