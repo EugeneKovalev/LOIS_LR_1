@@ -14,7 +14,7 @@ M4SCS(	[[
 		chain_create_parameters = "/lib/chain/create_parameters/chain_create_parameters",
 		chain_get_disjunction = "/lib/chain/get_disjunction/chain_get_disjunction",
 		chain_get_negotiation = "/lib/chain/get_negotiation/chain_get_negotiation",
-		chain_get_neg_A_and_neg_B = "/lib/chain/get_neg_A_and_neg_B/chain_get_neg_A_and_neg_B",
+		chain_transform_to_conjunction_of_negotiations = "/lib/chain/transform_to_conjunction_of_negotiations/chain_transform_to_conjunction_of_negotiations",
 		chain_remove_neg_A_and_neg_B = "/lib/chain/remove_neg_A_and_neg_B/chain_remove_neg_A_and_neg_B",
 		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm66
 		]])
@@ -25,7 +25,7 @@ M4SEC(	[[
 		chain_create_parameters = /../chain/create_parameters[SYFIX]/chain_create_parameters,
 		chain_get_disjunction = /../chain/get_disjunction[SYFIX]/chain_get_disjunction,
 		chain_get_negotiation = /../chain/get_negotiation[SYFIX]/chain_get_negotiation,
-		chain_get_neg_A_and_neg_B = /../chain/get_neg_A_and_neg_B[SYFIX]/chain_get_neg_A_and_neg_B,
+		chain_transform_to_conjunction_of_negotiations = /../chain/transform_to_conjunction_of_negotiations[SYFIX]/chain_transform_to_conjunction_of_negotiations,
 		chain_remove_neg_A_and_neg_B = /../chain/remove_neg_A_and_neg_B[SYFIX]/chain_remove_neg_A_and_neg_B,
 		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm66
 		]]), 
@@ -78,31 +78,22 @@ waitReturn([1_: fixed_: descr])
 call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm8 = [{1_: A_or_B, 2_: neg_A_or_B, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm5 = [{1_: neg_A_or_B, 2_: negotiation, 3_: neg_A_or_B, 4_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm9 = [{1_: neg_A_or_B, 2_: negotiation, 3_: neg_A_or_B, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-// >>>>>>>>>>> !(A or B)
+// <<<<<<<<<<< !(A or B)
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Generate test chain !(A or B)
 
-
-
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Get conjunction of negotiations
 varAssign([ 1_: assign_: formula, 2_: fixed_: neg_A_or_B ])
 
-// show input chain
-call([1_: fixed_: chain_show, 2_: fixed_: prm6 = [{1_: formula}], 3_: assign_: descr])
+call([1_: fixed_: chain_transform_to_conjunction_of_negotiations, 2_: fixed_: prm10 = [{1_: state, 2_: true, 3_: formula, 4_: parameters, 5_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-
-// get reformed chain
-call([1_: fixed_: chain_get_neg_A_and_neg_B, 2_: fixed_: prm7 = [{1_: state, 2_: true, 3_: formula, 4_: parameters, 5_: empty}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-
 ifCoin([1_: fixed_: state,2_: fixed_: true], , error)
 
-// show output chain
-call([1_: fixed_: chain_show, 2_: fixed_: prm8 = [{1_: formula}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-
 varAssign([ 1_: assign_: neg_A_and_neg_B, 2_: fixed_: formula ])
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Get conjunction of negotiations
 
-ifVarAssign([1_: neg_A_and_neg_B ], error, success)
+ifVarAssign([1_: neg_A_and_neg_B ], success, error)
 
 label(error)
 DBG(M4SCS(printNl([1_: fixed_: end_error_message])))

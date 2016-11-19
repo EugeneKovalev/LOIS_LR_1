@@ -22,7 +22,7 @@ M4SEC(	[[
 		parameters, disjunction, logger,
 		then, else, strategy,
 		conjunction, disjunction,
-		descr
+		link, descr
 	}], 
 	{[ 
 		1_: in_: out_: parameters,
@@ -31,31 +31,31 @@ M4SEC(	[[
 	]}) 
 DBG(M4SCS(print([1_: fixed_: entering_msg])))
 
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm1 = [{1_: parameters, 2_: parameters, 3_: then}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm1 = [{1_: parameters, 2_: link, 3_: then}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: then ], , error)
 
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm2 = [{1_: parameters, 2_: parameters, 3_: else}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm2 = [{1_: link, 2_: link, 3_: else}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: else ], , error)
 
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm3 = [{1_: parameters, 2_: parameters, 3_: strategy}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm3 = [{1_: link, 2_: link, 3_: strategy}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: strategy ], , error)
 
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm4 = [{1_: strategy, 2_: strategy, 3_: conjunction}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm4 = [{1_: strategy, 2_: link, 3_: conjunction}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: conjunction ], , error)
 
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm5 = [{1_: strategy, 2_: strategy, 3_: disjunction}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm5 = [{1_: link, 2_: link, 3_: disjunction}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: disjunction ], , error)
 
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm6 = [{1_: strategy, 2_: strategy, 3_: implication}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm6 = [{1_: link, 2_: link, 3_: implication}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: implication ], , error)
 
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm7 = [{1_: strategy, 2_: strategy, 3_: negotiation}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm7 = [{1_: link, 2_: link, 3_: negotiation}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: negotiation ], success, error)
 
