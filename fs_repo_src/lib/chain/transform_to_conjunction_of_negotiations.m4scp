@@ -10,7 +10,15 @@ procedure(chain_transform_to_conjunction_of_negotiations,
 M4SCS(	[[
 			entering_msg = /"<<<<<<<< entering chain_transform_to_conjunction_of_negotiations\n"/,
 			leaving_msg = /"<<<<<<<< leaving chain_transform_to_conjunction_of_negotiations\n"/,
-			error_msg = /"GET FORMULA ERROR\n"/,
+			error_msg = /"======== error chain_transform_to_conjunction_of_negotiations\n"/,
+			chain_get_conjunction = "/lib/chain/get_conjunction/chain_get_conjunction",
+			chain_get_disjunction = "/lib/chain/get_disjunction/chain_get_disjunction",
+			chain_get_negotiation = "/lib/chain/get_negotiation/chain_get_negotiation",
+			chain_transform_to_conjunction_of_negotiations = "/lib/chain/transform_to_conjunction_of_negotiations/chain_transform_to_conjunction_of_negotiations",
+			chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
+
+
+
 			chain_get_next = "/lib/chain/get_next/chain_get_next",
 			chain_get_singlet_value = "/lib/chain/get_singlet_value/chain_get_singlet_value",
 			chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
@@ -18,6 +26,12 @@ M4SCS(	[[
 			prm1,prm2,prm3,prm4
 		]])
 M4SEC(	[[	
+			chain_get_conjunction = /../chain/get_conjunction[SYFIX]/chain_get_conjunction,
+			chain_get_disjunction = /../chain/get_disjunction[SYFIX]/chain_get_disjunction,
+			chain_get_negotiation = /../chain/get_negotiation[SYFIX]/chain_get_negotiation,
+			chain_transform_to_conjunction_of_negotiations = /../chain/transform_to_conjunction_of_negotiations[SYFIX]/chain_transform_to_conjunction_of_negotiations,
+			chain_get_singlet_value = /../chain/get_singlet_value[SYFIX]/chain_get_singlet_value,
+			
 			chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
 			chain_get_singlet_value = /../chain/get_singlet_value[SYFIX]/chain_get_singlet_value,
 			chain_push_first_singlet = /../chain/push_first_singlet[SYFIX]/chain_push_first_singlet,
@@ -26,7 +40,11 @@ M4SEC(	[[
 		]]), 
 	[{
 		state, true, stack, parameters, logger,
-		link, descr
+		inner_state, inner_true,
+		conjunction, disjunction, negotiation,
+		singleton_value, subformula_1, subformula_2, neg_subformula_1, neg_subformula_2,
+		result_formula,
+		link, descr, empty
 	}], 
 	{[ 
 		1_: in_: out_: state,
@@ -38,6 +56,11 @@ M4SEC(	[[
 
 DBG(M4SCS(print([1_: fixed_: entering_msg])))
 
+genEl([1_: assign_: node_: const_: empty])
+genEl([1_: assign_: node_: const_: conjunction])
+genEl([1_: assign_: node_: const_: disjunction])
+genEl([1_: assign_: node_: const_: negotiation])
+
 call([1_: fixed_: chain_get_conjunction, 2_: fixed_: prm1 = [{1_: parameters, 2_: conjunction, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: conjunction ], , error)
@@ -46,67 +69,70 @@ call([1_: fixed_: chain_get_disjunction, 2_: fixed_: prm2 = [{1_: parameters, 2_
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: disjunction ], , error)
 
-call([1_: fixed_: chain_get_disjunction, 2_: fixed_: prm2 = [{1_: parameters, 2_: negotiation, 3_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_negotiation, 2_: fixed_: prm3 = [{1_: parameters, 2_: negotiation, 3_: logger}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: disjunction ], , error)
 
 // >>>>>>>>>>> Extract 2 subformulas from the input formula
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm3 = [{1_: stack, 2_: link, 3_: singleton_value}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm4 = [{1_: stack, 2_: link, 3_: singleton_value}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: singleton_value ], , error)
 ifCoin([1_: fixed_: negotiation, 2_: fixed_: singleton_value], , error)
 
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm4 = [{1_: link, 2_: link, 3_: singleton_value}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm5 = [{1_: link, 2_: link, 3_: singleton_value}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: singleton_value ], , error)
 
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm5 = [{1_: disjunction_formula, 2_: link, 3_: disjunction}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm6 = [{1_: singleton_value, 2_: link, 3_: singleton_value}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-ifVarAssign([1_: disjunction ], , error)
+ifVarAssign([1_: singleton_value ], , error)
+ifCoin([1_: fixed_: disjunction, 2_: fixed_: singleton_value], , error)
 
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm6 = [{1_: link, 2_: link, 3_: subformula_1}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm7 = [{1_: link, 2_: link, 3_: subformula_1}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: subformula_1 ], , error)
 
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm7 = [{1_: link, 2_: link, 3_: subformula_2}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm8 = [{1_: link, 2_: link, 3_: subformula_2}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: subformula_2 ], , error)
 // <<<<<<<<<<< Extract 2 subformulas from the input formula
 
 // >>>>>>>>>>> Create negative subformula_1
-call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm8 = [{1_: subformula_1, 2_: neg_subformula_1, 3_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm9 = [{1_: subformula_1, 2_: neg_subformula_1, 3_: logger}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm9 = [{1_: neg_subformula_1, 2_: negotiation, 3_: neg_subformula_1, 4_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm10 = [{1_: neg_subformula_1, 2_: negotiation, 3_: neg_subformula_1, 4_: logger}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 // <<<<<<<<<<< Create negative subformula_1
 
 // >>>>>>>>>>> Create negative subformula_2
-call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm10 = [{1_: subformula_2, 2_: neg_subformula_2, 3_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm11 = [{1_: subformula_2, 2_: neg_subformula_2, 3_: logger}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm11 = [{1_: neg_subformula_2, 2_: negotiation, 3_: neg_subformula_2, 4_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm12 = [{1_: neg_subformula_2, 2_: negotiation, 3_: neg_subformula_2, 4_: logger}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 // <<<<<<<<<<< Create negative subformula_2
 
 // >>>>>>>>>>> Recursive call which returns conjunction of negotiations
-call([1_: fixed_: chain_transform_to_conjunction_of_negotiations, 2_: fixed_: prm11 = [{1_: state, 2_: true, 3_: neg_subformula_1, 4_: parameters, 5_: empty}], 3_: assign_: descr])
+genEl([1_: assign_: node_: const_: inner_state])
+genEl([1_: assign_: node_: const_: inner_true])
+call([1_: fixed_: chain_transform_to_conjunction_of_negotiations, 2_: fixed_: prm13 = [{1_: inner_state, 2_: inner_true, 3_: neg_subformula_1, 4_: parameters, 5_: logger}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-ifCoin([1_: fixed_: state, 2_: fixed_: true], , error)
 
-call([1_: fixed_: chain_transform_to_conjunction_of_negotiations, 2_: fixed_: prm12 = [{1_: state, 2_: true, 3_: neg_subformula_2, 4_: parameters, 5_: empty}], 3_: assign_: descr])
+genEl([1_: assign_: node_: const_: inner_state])
+genEl([1_: assign_: node_: const_: inner_true])
+call([1_: fixed_: chain_transform_to_conjunction_of_negotiations, 2_: fixed_: prm14 = [{1_: inner_state, 2_: inner_true, 3_: neg_subformula_2, 4_: parameters, 5_: logger}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-ifCoin([1_: fixed_: state, 2_: fixed_: true], , error)
 // <<<<<<<<<<< Recursive call which returns conjunction of negotiations
 
 // >>>>>>>>>>> Create conjunction of negative subformulas
-call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm13 = [{1_: neg_subformula_2, 2_: result_formula, 3_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm15 = [{1_: neg_subformula_2, 2_: result_formula, 3_: logger}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm14 = [{1_: result_formula, 2_: neg_subformula_1, 3_: result_formula, 4_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm16 = [{1_: result_formula, 2_: neg_subformula_1, 3_: result_formula, 4_: logger}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm15 = [{1_: result_formula, 2_: negotiation, 3_: result_formula, 4_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm17 = [{1_: result_formula, 2_: negotiation, 3_: result_formula, 4_: logger}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 // <<<<<<<<<<< Create conjunction of negative subformulas
 

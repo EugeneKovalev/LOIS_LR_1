@@ -12,11 +12,11 @@ M4SCS(	[[
 			leaving_msg = /"<<<<<<<< leaving chain_get_conjunction\n"/,
 			error_msg = /"======== error chain_get_conjunction\n"/,
 			chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
-			prm1, prm2, prm3, prm4, prm5
+			prm1, prm2, prm3, prm4
 		]])
 M4SEC(	[[	
 			chain_get_singlet_value = /../chain/get_singlet_value[SYFIX]/chain_get_singlet_value,
-			prm1, prm2, prm3, prm4, prm5
+			prm1, prm2, prm3, prm4
 		]]), 
 	[{
 		parameters, conjunction, logger,
@@ -44,7 +44,7 @@ ifVarAssign([1_: strategy ], , error)
 
 call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm4 = [{1_: strategy, 2_: link, 3_: conjunction}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-ifVarAssign([1_: conjunction ], , error)
+ifVarAssign([1_: conjunction ], success, error)
 
 label(error)
 DBG(M4SCS(printNl([1_: fixed_: error_msg])))
