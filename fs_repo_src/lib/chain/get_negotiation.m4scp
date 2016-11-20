@@ -16,12 +16,13 @@ M4SCS(	[[
 		]])
 M4SEC(	[[	
 			chain_get_singlet_value = /../chain/get_singlet_value[SYFIX]/chain_get_singlet_value,
+			chain_show = /../chain/show[SYFIX]/chain_show,
 			prm1, prm2, prm3, prm4, prm5, prm6
 		]]), 
 	[{
 		parameters, disjunction, logger,
 		then, else, strategy,
-		conjunction, disjunction,
+		conjunction, implication, negotiation,
 		link, descr
 	}], 
 	{[ 

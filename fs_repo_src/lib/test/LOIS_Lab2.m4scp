@@ -69,9 +69,6 @@ waitReturn([1_: fixed_: descr])
 
 call([1_: fixed_: chain_push_singlet, 2_: fixed_: prm6 = [{1_: A_or_B, 2_: disjunction, 3_: A_or_B, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-
-call([1_: fixed_: chain_show, 2_: fixed_: prm7 = [{1_: A_or_B}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
 // <<<<<<<<<<< A or B
 
 // >>>>>>>>>>> !(A or B)

@@ -46,14 +46,19 @@ call([1_: fixed_: chain_get_disjunction, 2_: fixed_: prm2 = [{1_: parameters, 2_
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: disjunction ], , error)
 
-// >>>>>>>>>>> Extract 2 subformulas from the input formula
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm3 = [{1_: stack, 2_: link, 3_: negotiation}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_disjunction, 2_: fixed_: prm2 = [{1_: parameters, 2_: negotiation, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-ifVarAssign([1_: negotiation ], , error)
+ifVarAssign([1_: disjunction ], , error)
 
-call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm4 = [{1_: link, 2_: link, 3_: disjunction_formula}], 3_: assign_: descr])
+// >>>>>>>>>>> Extract 2 subformulas from the input formula
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm3 = [{1_: stack, 2_: link, 3_: singleton_value}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-ifVarAssign([1_: disjunction_formula ], , error)
+ifVarAssign([1_: singleton_value ], , error)
+ifCoin([1_: fixed_: negotiation, 2_: fixed_: singleton_value], , error)
+
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm4 = [{1_: link, 2_: link, 3_: singleton_value}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: singleton_value ], , error)
 
 call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm5 = [{1_: disjunction_formula, 2_: link, 3_: disjunction}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
