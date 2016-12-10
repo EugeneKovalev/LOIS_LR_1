@@ -11,7 +11,7 @@ Loading fs segment home/shell/profile
 Loading fs segment home/META
 load_segment: Warning find homonym for /home/META/META (/META/META)
 load_segment: Warning find homonym for /home/META/shell (/home/shell/profile/shell)
-scp_segment is 009C09F0
+scp_segment is 02120888
 scp_operator: registering operator genEl
 scp_operator: registering operator genElStr3
 scp_operator: registering operator genElStr5
@@ -417,1312 +417,1374 @@ load_segment: Warning find homonym for /lib/chain/reverse/ARC1 (/lib/chain/purge
 load_segment: Warning find homonym for /lib/chain/reverse/ARC2 (/lib/chain/purge/ARC2)
 load_segment: Warning find homonym for /lib/chain/reverse/descr (/lib/test/main/descr)
 load_segment: Warning find homonym for /lib/chain/reverse/empty (/lib/test/get_different_unorient_filter/empty)
+Loading fs segment lib/chain/get_else_routine
+load_segment: Warning find homonym for /lib/chain/get_else_routine/entering_msg (/lib/chain/create_parameters/entering_msg)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/leaving_msg (/lib/chain/create_parameters/leaving_msg)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/error_msg (/lib/chain/get_disjunction/error_msg)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/prm1 (/lib/test/main/prm1)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/prm2 (/lib/test/main/prm2)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/prm3 (/lib/test/get_different_unorient_filter/prm3)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/prm4 (/lib/test/get_different_unorient_filter/prm4)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/prm5 (/lib/test/get_different_unorient_filter/prm5)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/prm6 (/lib/test/get_different_unorient_filter/prm6)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/parameters (/lib/test/get_different_unorient_filter/parameters)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/disjunction (/lib/test/LOIS_Lab2/disjunction)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/logger (/lib/chain/push/logger)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/then (/lib/chain/create_parameters/then)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/else (/lib/chain/create_parameters/else)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/strategy (/lib/chain/create_parameters/strategy)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/conjunction (/lib/test/LOIS_Lab2/conjunction)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/else_routine (/lib/chain/reverse/else_routine)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/link (/lib/chain/get_disjunction/link)
+load_segment: Warning find homonym for /lib/chain/get_else_routine/descr (/lib/test/main/descr)
+Loading fs segment lib/chain/get_then_routine
+load_segment: Warning find homonym for /lib/chain/get_then_routine/entering_msg (/lib/chain/create_parameters/entering_msg)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/leaving_msg (/lib/chain/create_parameters/leaving_msg)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/error_msg (/lib/chain/get_disjunction/error_msg)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/prm1 (/lib/test/main/prm1)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/prm2 (/lib/test/main/prm2)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/prm3 (/lib/test/get_different_unorient_filter/prm3)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/prm4 (/lib/test/get_different_unorient_filter/prm4)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/prm5 (/lib/test/get_different_unorient_filter/prm5)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/prm6 (/lib/test/get_different_unorient_filter/prm6)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/parameters (/lib/test/get_different_unorient_filter/parameters)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/disjunction (/lib/test/LOIS_Lab2/disjunction)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/logger (/lib/chain/push/logger)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/then (/lib/chain/create_parameters/then)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/else (/lib/chain/create_parameters/else)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/strategy (/lib/chain/create_parameters/strategy)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/conjunction (/lib/test/LOIS_Lab2/conjunction)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/then_routine (/lib/chain/reverse/then_routine)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/link (/lib/chain/get_disjunction/link)
+load_segment: Warning find homonym for /lib/chain/get_then_routine/descr (/lib/test/main/descr)
 Loading fs segment lib/test/META
 load_segment: Warning find homonym for /lib/test/META/META (/META/META)
-autosegment is 02B019F8
+autosegment is 02BA5308
 Switching to dedicated mode
 Loading fs segment lib/chain/META
 load_segment: Warning find homonym for /lib/chain/META/META (/META/META)
-autosegment is 02B01728
+autosegment is 02BA5A10
 =======Hello world!=======
-autosegment is 02B01548
+autosegment is 02BA5CE0
 >>>>>>>> entering chain_create_parameters
 Loading fs segment lib/log/META
 load_segment: Warning find homonym for /lib/log/META/META (/META/META)
-autosegment is 02B01890
+autosegment is 02BA5B00
 chain_push_first_singlet: entering
-autosegment is 02B01A70
-autosegment is 02B016B0
-autosegment is 02B014D0
+autosegment is 02BA5DD0
+autosegment is 02BA56C8
+autosegment is 02BA5650
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD6BD0 is dying now
+Process 02D0C340 is dying now
 Unlink tmp segment autoseg5
-Process 02BD6130 is dying now
+Process 02D1B318 is dying now
 Unlink tmp segment autoseg4
-Process 02BD5078 is dying now
+Process 02D1A968 is dying now
 Unlink tmp segment autoseg3
 chain_push_first_singlet: leaving
-Process 02BD43F8 is dying now
+Process 02D193D8 is dying now
 Unlink tmp segment autoseg2
-autosegment is 02B016B0
+autosegment is 02BA53F8
 chain_push_singlet: entering
-autosegment is 02B01908
-autosegment is 02B01890
-autosegment is 02B01F20
+autosegment is 02BA5470
+autosegment is 02BA5EC0
+autosegment is 02BA5C68
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD71E8 is dying now
+Process 02D0CEF8 is dying now
 Unlink tmp segment autoseg9
-Process 02BD66F8 is dying now
+Process 02D1BF20 is dying now
 Unlink tmp segment autoseg8
-Process 02BD5488 is dying now
+Process 02D1ACB0 is dying now
 Unlink tmp segment autoseg7
 chain_push_singlet: leaving
-Process 02BD3F70 is dying now
+Process 02D19478 is dying now
 Unlink tmp segment autoseg6
-autosegment is 02B01278
+autosegment is 02BA5B00
 chain_push_singlet: entering
-autosegment is 02B01D40
-autosegment is 02B01C50
-autosegment is 02B01890
+autosegment is 02BA5920
+autosegment is 02BA5560
+autosegment is 02BA53F8
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD7990 is dying now
+Process 02D0CF98 is dying now
 Unlink tmp segment autoseg13
-Process 02BD69F0 is dying now
+Process 02D0C458 is dying now
 Unlink tmp segment autoseg12
-Process 02BD5910 is dying now
+Process 02D1B4A8 is dying now
 Unlink tmp segment autoseg11
 chain_push_singlet: leaving
-Process 02BD40D8 is dying now
+Process 02D19888 is dying now
 Unlink tmp segment autoseg10
-autosegment is 02B01A70
+autosegment is 02BA50B0
 chain_push_singlet: entering
-autosegment is 02B016B0
-autosegment is 02B014D0
-autosegment is 02B01890
+autosegment is 02BA5B00
+autosegment is 02BA53F8
+autosegment is 02BA5650
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD7B98 is dying now
+Process 02D0D240 is dying now
 Unlink tmp segment autoseg17
-Process 02BD6CC0 is dying now
+Process 02D0CA70 is dying now
 Unlink tmp segment autoseg16
-Process 02BD61F8 is dying now
+Process 02D1B8E0 is dying now
 Unlink tmp segment autoseg15
 chain_push_singlet: leaving
-Process 02BD4088 is dying now
+Process 02D19B08 is dying now
 Unlink tmp segment autoseg14
-autosegment is 02B01CC8
+autosegment is 02BA5920
 chain_push_first_singlet: entering
-autosegment is 02B01200
-autosegment is 02B01C50
-autosegment is 02B01A70
+autosegment is 02BA50B0
+autosegment is 02BA58A8
+autosegment is 02BA5128
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD82C8 is dying now
+Process 02D0DD30 is dying now
 Unlink tmp segment autoseg21
-Process 02BD7738 is dying now
+Process 02D0CF20 is dying now
 Unlink tmp segment autoseg20
-Process 02BD6A68 is dying now
+Process 02D0C5E8 is dying now
 Unlink tmp segment autoseg19
 chain_push_first_singlet: leaving
-Process 02BD48D0 is dying now
+Process 02D19F90 is dying now
 Unlink tmp segment autoseg18
-autosegment is 02B01A70
+autosegment is 02BA53F8
 chain_push_singlet: entering
-autosegment is 02B016B0
-autosegment is 02B01AE8
-autosegment is 02B01890
+autosegment is 02BA5128
+autosegment is 02BA5C68
+autosegment is 02BA50B0
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD8688 is dying now
+Process 02D0DF38 is dying now
 Unlink tmp segment autoseg25
-Process 02BD7DF0 is dying now
+Process 02D0D3F8 is dying now
 Unlink tmp segment autoseg24
-Process 02BD6EC8 is dying now
+Process 02D0CA20 is dying now
 Unlink tmp segment autoseg23
 chain_push_singlet: leaving
-Process 02BD4B78 is dying now
+Process 02D1A170 is dying now
 Unlink tmp segment autoseg22
-autosegment is 02B016B0
+autosegment is 02BA53F8
 chain_push_singlet: entering
-autosegment is 02B01908
-autosegment is 02B01CC8
-autosegment is 02B01C50
+autosegment is 02BA5B00
+autosegment is 02BA5DD0
+autosegment is 02BA5470
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD8BD8 is dying now
+Process 02D0E460 is dying now
 Unlink tmp segment autoseg29
-Process 02BD8480 is dying now
+Process 02D0D510 is dying now
 Unlink tmp segment autoseg28
-Process 02BD7648 is dying now
+Process 02D0CEA8 is dying now
 Unlink tmp segment autoseg27
 chain_push_singlet: leaving
-Process 02BD49E8 is dying now
+Process 02D19E78 is dying now
 Unlink tmp segment autoseg26
-autosegment is 02B01278
+autosegment is 02BA5128
 chain_push_singlet: entering
-autosegment is 02B01200
-autosegment is 02B01C50
-autosegment is 02B01890
+autosegment is 02BA5EC0
+autosegment is 02BA57B8
+autosegment is 02BA50B0
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BC8418 is dying now
+Process 02D0EB40 is dying now
 Unlink tmp segment autoseg33
-Process 02BD87F0 is dying now
+Process 02D0DC68 is dying now
 Unlink tmp segment autoseg32
-Process 02BD7AD0 is dying now
+Process 02D0CCC8 is dying now
 Unlink tmp segment autoseg31
 chain_push_singlet: leaving
-Process 02BD4AB0 is dying now
+Process 02D19FE0 is dying now
 Unlink tmp segment autoseg30
 <<<<<<<< leaving chain_create_parameters
-Process 02BD2DF0 is dying now
+Process 02D18758 is dying now
 Unlink tmp segment autoseg1
-autosegment is 02B014D0
+autosegment is 02BA58A8
 chain_push_first_singlet: entering
-autosegment is 02B01CC8
-autosegment is 02B01548
-autosegment is 02B016B0
+autosegment is 02BA5EC0
+autosegment is 02BA5C68
+autosegment is 02BA5CE0
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD8458 is dying now
+Process 02D0DCB8 is dying now
 Unlink tmp segment autoseg37
-Process 02BD7508 is dying now
+Process 02D0C688 is dying now
 Unlink tmp segment autoseg36
-Process 02BD52A8 is dying now
+Process 02D1A968 is dying now
 Unlink tmp segment autoseg35
 chain_push_first_singlet: leaving
-Process 02BD2D28 is dying now
+Process 02D184B0 is dying now
 Unlink tmp segment autoseg34
-autosegment is 02B01F20
+autosegment is 02BA5920
 chain_push_singlet: entering
-autosegment is 02B01890
-autosegment is 02B01110
-autosegment is 02B01908
+autosegment is 02BA5560
+autosegment is 02BA5DD0
+autosegment is 02BA58A8
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD8C50 is dying now
+Process 02D0DFB0 is dying now
 Unlink tmp segment autoseg41
-Process 02BD7D00 is dying now
+Process 02D0D1C8 is dying now
 Unlink tmp segment autoseg40
-Process 02BD6388 is dying now
+Process 02D1B660 is dying now
 Unlink tmp segment autoseg39
 chain_push_singlet: leaving
-Process 02BD32F0 is dying now
+Process 02D18758 is dying now
 Unlink tmp segment autoseg38
-autosegment is 02B01B60
+autosegment is 02BA53F8
 chain_push_singlet: entering
-autosegment is 02B01D40
-autosegment is 02B01AE8
-autosegment is 02B01C50
+autosegment is 02BA5B00
+autosegment is 02BA58A8
+autosegment is 02BA5128
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BC85D0 is dying now
+Process 02D0E730 is dying now
 Unlink tmp segment autoseg45
-Process 02BD81B0 is dying now
+Process 02D0D998 is dying now
 Unlink tmp segment autoseg44
-Process 02BD6C98 is dying now
+Process 02D0C430 is dying now
 Unlink tmp segment autoseg43
 chain_push_singlet: leaving
-Process 02BD3318 is dying now
+Process 02D186B8 is dying now
 Unlink tmp segment autoseg42
-autosegment is 02B01890
+autosegment is 02BA5B00
 Chain representation started ====================>
-autosegment is 02B01CC8
+autosegment is 02BA58A8
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD5FF0 is dying now
+Process 02D1B5C0 is dying now
 Unlink tmp segment autoseg47
 Next link pointer:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@90
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@90
 Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@92 >- arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@91
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@9e >- node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@9c
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@92 >- arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@91
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@9e >- node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@9c
 
 Input arcs:
 
 Singleton:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@9c
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@9c
 Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@a0 >- node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@b
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@a0 >- node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@b
 
 Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@9e -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@90
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@9e -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@90
 
 Singleton value:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@b
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@b
 Output arcs:
 
 Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@a0 -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@9c
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@a0 -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@9c
 
 ===========================================================
-autosegment is 02B01548
+autosegment is 02BA5920
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD7198 is dying now
+Process 02D0C688 is dying now
 Unlink tmp segment autoseg48
 Next link pointer:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@83
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@83
 Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@85 >- arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@84
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@91 >- node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@8f
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@85 >- arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@84
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@91 >- node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@8f
 
 Input arcs:
 
 Singleton:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@8f
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@8f
 Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@93 >- node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@a
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@93 >- node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@a
 
 Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@91 -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@83
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@91 -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@83
 
 Singleton value:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@a
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@a
 Output arcs:
 
 Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@93 -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@8f
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@93 -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@8f
 
 ===========================================================
-autosegment is 02B01A70
+autosegment is 02BA5C68
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD75D0 is dying now
+Process 02D0C778 is dying now
 Unlink tmp segment autoseg49
 Next link pointer:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@81
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@81
 Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@84 >- node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@82
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@84 >- node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@82
 
 Input arcs:
 
 Singleton:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@82
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@82
 Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@86 >- node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@9
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@86 >- node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@9
 
 Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@84 -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@81
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@84 -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@81
 
 Singleton value:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@9
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@9
 Output arcs:
 
 Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@86 -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@82
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@86 -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@82
 
 ===========================================================
-autosegment is 02B01908
+autosegment is 02BA53F8
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD6838 is dying now
+Process 02D0CD18 is dying now
 Unlink tmp segment autoseg50
 Chain representation finished <====================
-Process 02BD3200 is dying now
+Process 02D18A50 is dying now
 Unlink tmp segment autoseg46
-autosegment is 02B01D40
+autosegment is 02BA5830
 chain_push_first_singlet: entering
-autosegment is 02B01A70
-autosegment is 02B01890
-autosegment is 02B01908
+autosegment is 02BA53F8
+autosegment is 02BA5920
+autosegment is 02BA5CE0
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BC8BC0 is dying now
+Process 02D0F5E0 is dying now
 Unlink tmp segment autoseg54
-Process 02BC83F0 is dying now
+Process 02D0E690 is dying now
 Unlink tmp segment autoseg53
-Process 02BD8480 is dying now
+Process 02D0DDF8 is dying now
 Unlink tmp segment autoseg52
 chain_push_first_singlet: leaving
-Process 02BD3200 is dying now
+Process 02D18CA8 is dying now
 Unlink tmp segment autoseg51
-autosegment is 02B01890
+autosegment is 02BA5560
 <<<<<<<< entering chain_reverse
-autosegment is 02B016B0
+autosegment is 02BA5470
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02BD8B88 is dying now
+Process 02D0E410 is dying now
 Unlink tmp segment autoseg56
-autosegment is 02B01188
+autosegment is 02BA5B00
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02BC8170 is dying now
+Process 02D0EA78 is dying now
 Unlink tmp segment autoseg57
-autosegment is 02B016B0
-chain_push_first_singlet: entering
-autosegment is 02B01458
-autosegment is 02B01E30
-autosegment is 02B014D0
-chain_get_next: entering
-chain_get_next: leaving
-Process 02CB9EA0 is dying now
-Unlink tmp segment autoseg61
-Process 02CB8FF0 is dying now
-Unlink tmp segment autoseg60
-Process 02BC9890 is dying now
-Unlink tmp segment autoseg59
-chain_push_first_singlet: leaving
-Process 02BC8440 is dying now
+autosegment is 02BA53F8
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02D0EA78 is dying now
 Unlink tmp segment autoseg58
-autosegment is 02B01CC8
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8C08 is dying now
-Unlink tmp segment autoseg62
-autosegment is 02B01548
-chain_push_singlet: entering
-autosegment is 02B01B60
-autosegment is 02B01458
-autosegment is 02B014D0
-chain_get_next: entering
-chain_get_next: leaving
-Process 02CBBAE8 is dying now
-Unlink tmp segment autoseg66
-Process 02CBA940 is dying now
-Unlink tmp segment autoseg65
-Process 02CBA2B0 is dying now
-Unlink tmp segment autoseg64
-chain_push_singlet: leaving
-Process 02CB9018 is dying now
-Unlink tmp segment autoseg63
-autosegment is 02B01908
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB92C0 is dying now
-Unlink tmp segment autoseg67
-autosegment is 02B016B0
-chain_push_singlet: entering
-autosegment is 02B01D40
-autosegment is 02B01908
-autosegment is 02B01A70
-chain_get_next: entering
-chain_get_next: leaving
-Process 02CBBEF8 is dying now
-Unlink tmp segment autoseg71
-Process 02CBAE40 is dying now
-Unlink tmp segment autoseg70
-Process 02CBA508 is dying now
-Unlink tmp segment autoseg69
-chain_push_singlet: leaving
-Process 02CB9220 is dying now
-Unlink tmp segment autoseg68
-autosegment is 02B016B0
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB91F8 is dying now
-Unlink tmp segment autoseg72
-autosegment is 02B01CC8
+autosegment is 02BA53F8
 chain_push_first_singlet: entering
-autosegment is 02B01D40
-autosegment is 02B01278
-autosegment is 02B01C50
+autosegment is 02BA58A8
+autosegment is 02BA57B8
+autosegment is 02BA5B00
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CBC308 is dying now
-Unlink tmp segment autoseg76
-Process 02CBB570 is dying now
-Unlink tmp segment autoseg75
-Process 02CBAC38 is dying now
-Unlink tmp segment autoseg74
+Process 02D11750 is dying now
+Unlink tmp segment autoseg62
+Process 02D10A30 is dying now
+Unlink tmp segment autoseg61
+Process 02D10170 is dying now
+Unlink tmp segment autoseg60
 chain_push_first_singlet: leaving
-Process 02CB9388 is dying now
-Unlink tmp segment autoseg73
-<<<<<<<< leaving chain_reverse
-Process 02BD3598 is dying now
-Unlink tmp segment autoseg55
-autosegment is 02B01A70
+Process 02D0EA78 is dying now
+Unlink tmp segment autoseg59
+autosegment is 02BA50B0
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02CBAD78 is dying now
-Unlink tmp segment autoseg77
-autosegment is 02B01890
-Chain representation started ====================>
-autosegment is 02B01548
+Process 02D0E410 is dying now
+Unlink tmp segment autoseg63
+autosegment is 02BA5B00
+chain_push_singlet: entering
+autosegment is 02BA56C8
+autosegment is 02BA5DD0
+autosegment is 02BA53F8
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CBB8B8 is dying now
-Unlink tmp segment autoseg79
-Next link pointer:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@dc
-Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@de >- arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@dd
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@ec >- node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@ea
-
-Input arcs:
-
-Singleton:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@ea
-Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@ee >- node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@9
-
-Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@ec -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@dc
-
-Singleton value:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@9
-Output arcs:
-
-Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@86 -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@82
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@ee -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@ea
-
-===========================================================
-autosegment is 02B016B0
+Process 02D117C8 is dying now
+Unlink tmp segment autoseg67
+Process 02D110C0 is dying now
+Unlink tmp segment autoseg66
+Process 02D10468 is dying now
+Unlink tmp segment autoseg65
+chain_push_singlet: leaving
+Process 02D0EC30 is dying now
+Unlink tmp segment autoseg64
+autosegment is 02BA53F8
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02D0EAC8 is dying now
+Unlink tmp segment autoseg68
+autosegment is 02BA5128
+chain_push_singlet: entering
+autosegment is 02BA5B00
+autosegment is 02BA53F8
+autosegment is 02BA5C68
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CBB930 is dying now
+Process 02D11C28 is dying now
+Unlink tmp segment autoseg72
+Process 02D113B8 is dying now
+Unlink tmp segment autoseg71
+Process 02D104E0 is dying now
+Unlink tmp segment autoseg70
+chain_push_singlet: leaving
+Process 02D0ED70 is dying now
+Unlink tmp segment autoseg69
+autosegment is 02BA5C68
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02D0ED70 is dying now
+Unlink tmp segment autoseg73
+autosegment is 02BA5B00
+>>>>>>>> entering chain_get_then_routine
+autosegment is 02BA5650
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02D10378 is dying now
+Unlink tmp segment autoseg75
+autosegment is 02BA53F8
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02D102D8 is dying now
+Unlink tmp segment autoseg76
+======== error chain_get_then_routine
+
+<<<<<<<< leaving chain_get_then_routine
+Process 02D0EED8 is dying now
+Unlink tmp segment autoseg74
+autosegment is 02BA53F8
+chain_push_first_singlet: entering
+autosegment is 02BA5EC0
+autosegment is 02BA5470
+autosegment is 02BA5C68
+chain_get_next: entering
+chain_get_next: leaving
+Process 02D12588 is dying now
 Unlink tmp segment autoseg80
-Next link pointer:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@cd
-Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@cf >- arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@ce
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@dd >- node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@db
-
-Input arcs:
-
-Singleton:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@db
-Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@df >- node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@a
-
-Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@dd -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@cd
-
-Singleton value:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@a
-Output arcs:
-
-Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@93 -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@8f
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@df -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@db
-
-===========================================================
-autosegment is 02B01908
-chain_get_next: entering
-chain_get_next: leaving
-Process 02CBBC00 is dying now
-Unlink tmp segment autoseg81
-Next link pointer:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@cb
-Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@ce >- node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@cc
-
-Input arcs:
-
-Singleton:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@cc
-Output arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@d0 >- node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@b
-
-Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@ce -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@cb
-
-Singleton value:
-printEl: node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@b
-Output arcs:
-
-Input arcs:
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@a0 -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@9c
-	arc|const|pos|temporary|actual:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@d0 -< node|const:/tmp/autoseg/@@e6b814e9-2a16-40b0-844f-0ca813756607@cc
-
-===========================================================
-autosegment is 02B01CC8
-chain_get_next: entering
-chain_get_next: leaving
-Process 02CBB8E0 is dying now
-Unlink tmp segment autoseg82
-Chain representation finished <====================
-Process 02CBA940 is dying now
+Process 02D119A8 is dying now
+Unlink tmp segment autoseg79
+Process 02D10CD8 is dying now
 Unlink tmp segment autoseg78
+chain_push_first_singlet: leaving
+Process 02D0EED8 is dying now
+Unlink tmp segment autoseg77
+<<<<<<<< leaving chain_reverse
+Process 02D18F28 is dying now
+Unlink tmp segment autoseg55
+autosegment is 02BA5C68
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02D18F78 is dying now
+Unlink tmp segment autoseg81
+autosegment is 02BA54E8
+Chain representation started ====================>
+autosegment is 02BA5EC0
+chain_get_next: entering
+chain_get_next: leaving
+Process 02D0DE98 is dying now
+Unlink tmp segment autoseg83
+Next link pointer:
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@de
+Output arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@e0 >- arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@df
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@ee >- node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@ec
+
+Input arcs:
+
+Singleton:
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@ec
+Output arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@f0 >- node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@9
+
+Input arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@ee -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@de
+
+Singleton value:
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@9
+Output arcs:
+
+Input arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@86 -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@82
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@f0 -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@ec
+
+===========================================================
+autosegment is 02BA5650
+chain_get_next: entering
+chain_get_next: leaving
+Process 02D0E820 is dying now
+Unlink tmp segment autoseg84
+Next link pointer:
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@cf
+Output arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@d1 >- arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@d0
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@df >- node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@dd
+
+Input arcs:
+
+Singleton:
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@dd
+Output arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@e1 >- node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@a
+
+Input arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@df -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@cf
+
+Singleton value:
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@a
+Output arcs:
+
+Input arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@93 -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@8f
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@e1 -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@dd
+
+===========================================================
+autosegment is 02BA5B00
+chain_get_next: entering
+chain_get_next: leaving
+Process 02D0E578 is dying now
+Unlink tmp segment autoseg85
+Next link pointer:
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@cd
+Output arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@d0 >- node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@ce
+
+Input arcs:
+
+Singleton:
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@ce
+Output arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@d2 >- node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@b
+
+Input arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@d0 -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@cd
+
+Singleton value:
+printEl: node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@b
+Output arcs:
+
+Input arcs:
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@a0 -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@9c
+	arc|const|pos|temporary|actual:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@d2 -< node|const:/tmp/autoseg/@@b4e9fc32-6333-432c-882b-a57f140af24e@ce
+
+===========================================================
+autosegment is 02BA5C68
+chain_get_next: entering
+chain_get_next: leaving
+Process 02D0DE98 is dying now
+Unlink tmp segment autoseg86
+Chain representation finished <====================
+Process 02D19860 is dying now
+Unlink tmp segment autoseg82
 =======Procedure has been executed successful=======
 =======Goodbye world!=======
-Process 02BD1E78 is dying now
+Process 02D17128 is dying now
 Unlink tmp segment autoseg0
-autosegment is 02B01458
+autosegment is 02BA53F8
 =======LOIS LR2 START=======
-autosegment is 02B014D0
+autosegment is 02BA58A8
 >>>>>>>> entering chain_create_parameters
-autosegment is 02B01548
+autosegment is 02BA5470
 chain_push_first_singlet: entering
-autosegment is 02B01908
-autosegment is 02B01C50
-autosegment is 02B01E30
+autosegment is 02BA50B0
+autosegment is 02BA5C68
+autosegment is 02BA5920
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB0CB0 is dying now
-Unlink tmp segment autoseg88
-Process 02CAFDD8 is dying now
-Unlink tmp segment autoseg87
-Process 02CAF310 is dying now
-Unlink tmp segment autoseg86
-chain_push_first_singlet: leaving
-Process 02CAE168 is dying now
-Unlink tmp segment autoseg85
-autosegment is 02B01E30
-chain_push_singlet: entering
-autosegment is 02B01890
-autosegment is 02B01200
-autosegment is 02B016B0
-chain_get_next: entering
-chain_get_next: leaving
-Process 02CB1278 is dying now
+Process 02D12D30 is dying now
 Unlink tmp segment autoseg92
-Process 02CB03A0 is dying now
+Process 02D122E0 is dying now
 Unlink tmp segment autoseg91
-Process 02CAF928 is dying now
+Process 02D11688 is dying now
 Unlink tmp segment autoseg90
-chain_push_singlet: leaving
-Process 02CAE4B0 is dying now
+chain_push_first_singlet: leaving
+Process 02D0FBA8 is dying now
 Unlink tmp segment autoseg89
-autosegment is 02B01548
+autosegment is 02BA5470
 chain_push_singlet: entering
-autosegment is 02B01C50
-autosegment is 02B01B60
-autosegment is 02B016B0
+autosegment is 02BA54E8
+autosegment is 02BA57B8
+autosegment is 02BA5DD0
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB1638 is dying now
+Process 02D13668 is dying now
 Unlink tmp segment autoseg96
-Process 02CB08C8 is dying now
+Process 02D12588 is dying now
 Unlink tmp segment autoseg95
-Process 02CAFDD8 is dying now
+Process 02D11C50 is dying now
 Unlink tmp segment autoseg94
 chain_push_singlet: leaving
-Process 02CAE348 is dying now
+Process 02D0FD38 is dying now
 Unlink tmp segment autoseg93
-autosegment is 02B01E30
+autosegment is 02BA5C68
 chain_push_singlet: entering
-autosegment is 02B01EA8
-autosegment is 02B01F20
-autosegment is 02B01200
+autosegment is 02BA5EC0
+autosegment is 02BA50B0
+autosegment is 02BA5470
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB19F8 is dying now
+Process 02E4B640 is dying now
 Unlink tmp segment autoseg100
-Process 02CB0D50 is dying now
+Process 02E4A920 is dying now
 Unlink tmp segment autoseg99
-Process 02CAFC98 is dying now
+Process 02E49BB0 is dying now
 Unlink tmp segment autoseg98
 chain_push_singlet: leaving
-Process 02CAE2D0 is dying now
+Process 02E48FA8 is dying now
 Unlink tmp segment autoseg97
-autosegment is 02B01200
-chain_push_first_singlet: entering
-autosegment is 02B01C50
-autosegment is 02B01CC8
-autosegment is 02B01110
+autosegment is 02BA5470
+chain_push_singlet: entering
+autosegment is 02BA54E8
+autosegment is 02BA5CE0
+autosegment is 02BA5128
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB1F98 is dying now
+Process 02E4BAA0 is dying now
 Unlink tmp segment autoseg104
-Process 02CB16B0 is dying now
+Process 02E4ACE0 is dying now
 Unlink tmp segment autoseg103
-Process 02CB0670 is dying now
+Process 02E4A268 is dying now
 Unlink tmp segment autoseg102
-chain_push_first_singlet: leaving
-Process 02CAE960 is dying now
-Unlink tmp segment autoseg101
-autosegment is 02B016B0
-chain_push_singlet: entering
-autosegment is 02B01110
-autosegment is 02B01278
-autosegment is 02B01AE8
-chain_get_next: entering
-chain_get_next: leaving
-Process 02CB2600 is dying now
-Unlink tmp segment autoseg108
-Process 02CB1868 is dying now
-Unlink tmp segment autoseg107
-Process 02CB0C10 is dying now
-Unlink tmp segment autoseg106
 chain_push_singlet: leaving
-Process 02CAE9B0 is dying now
-Unlink tmp segment autoseg105
-autosegment is 02B01890
-chain_push_singlet: entering
-autosegment is 02B01548
-autosegment is 02B01AE8
-autosegment is 02B01278
+Process 02E48C60 is dying now
+Unlink tmp segment autoseg101
+autosegment is 02BA5B00
+chain_push_first_singlet: entering
+autosegment is 02BA5C68
+autosegment is 02BA5470
+autosegment is 02BA5128
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB29E8 is dying now
+Process 02E4BE10 is dying now
+Unlink tmp segment autoseg108
+Process 02E4B708 is dying now
+Unlink tmp segment autoseg107
+Process 02E4A790 is dying now
+Unlink tmp segment autoseg106
+chain_push_first_singlet: leaving
+Process 02E490C0 is dying now
+Unlink tmp segment autoseg105
+autosegment is 02BA5650
+chain_push_singlet: entering
+autosegment is 02BA57B8
+autosegment is 02BA5470
+autosegment is 02BA5128
+chain_get_next: entering
+chain_get_next: leaving
+Process 02E4C4C8 is dying now
 Unlink tmp segment autoseg112
-Process 02CB1DE0 is dying now
+Process 02E4B9D8 is dying now
 Unlink tmp segment autoseg111
-Process 02CB0E68 is dying now
+Process 02E4A948 is dying now
 Unlink tmp segment autoseg110
 chain_push_singlet: leaving
-Process 02CAECA8 is dying now
+Process 02E49340 is dying now
 Unlink tmp segment autoseg109
-autosegment is 02B01CC8
+autosegment is 02BA5470
 chain_push_singlet: entering
-autosegment is 02B01E30
-autosegment is 02B01110
-autosegment is 02B01B60
+autosegment is 02BA54E8
+autosegment is 02BA5560
+autosegment is 02BA57B8
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB3028 is dying now
+Process 02E4C810 is dying now
 Unlink tmp segment autoseg116
-Process 02CB1DB8 is dying now
+Process 02E4C018 is dying now
 Unlink tmp segment autoseg115
-Process 02CB1750 is dying now
+Process 02E4AF60 is dying now
 Unlink tmp segment autoseg114
 chain_push_singlet: leaving
-Process 02CAEF00 is dying now
+Process 02E49098 is dying now
 Unlink tmp segment autoseg113
-<<<<<<<< leaving chain_create_parameters
-Process 02CBD168 is dying now
-Unlink tmp segment autoseg84
-autosegment is 02B01B60
->>>>>>>> entering chain_get_disjunction
-autosegment is 02B014D0
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CAE780 is dying now
-Unlink tmp segment autoseg118
-autosegment is 02B01A70
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CAE870 is dying now
-Unlink tmp segment autoseg119
-autosegment is 02B014D0
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CAE9B0 is dying now
+autosegment is 02BA5560
+chain_push_singlet: entering
+autosegment is 02BA50B0
+autosegment is 02BA5128
+autosegment is 02BA54E8
+chain_get_next: entering
+chain_get_next: leaving
+Process 02E4CE78 is dying now
 Unlink tmp segment autoseg120
-autosegment is 02B01E30
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CAE938 is dying now
-Unlink tmp segment autoseg121
-autosegment is 02B01AE8
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CAEA28 is dying now
-Unlink tmp segment autoseg122
-<<<<<<<< leaving chain_get_disjunction
-Process 02CBD258 is dying now
-Unlink tmp segment autoseg117
-autosegment is 02B01278
->>>>>>>> entering chain_get_negotiation
-autosegment is 02B01C50
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CAF568 is dying now
-Unlink tmp segment autoseg124
-autosegment is 02B01908
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CAFCC0 is dying now
-Unlink tmp segment autoseg125
-autosegment is 02B01110
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CAFCC0 is dying now
-Unlink tmp segment autoseg126
-autosegment is 02B014D0
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB03C8 is dying now
-Unlink tmp segment autoseg127
-autosegment is 02B01890
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB0170 is dying now
-Unlink tmp segment autoseg128
-autosegment is 02B01110
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB0210 is dying now
-Unlink tmp segment autoseg129
-autosegment is 02B016B0
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB08C8 is dying now
-Unlink tmp segment autoseg130
-<<<<<<<< leaving chain_get_negotiation
-Process 02CBDA00 is dying now
-Unlink tmp segment autoseg123
-autosegment is 02B016B0
-chain_push_first_singlet: entering
-autosegment is 02B01110
-autosegment is 02B01728
-autosegment is 02B014D0
-chain_get_next: entering
-chain_get_next: leaving
-Process 02CB2D30 is dying now
-Unlink tmp segment autoseg134
-Process 02CB2448 is dying now
-Unlink tmp segment autoseg133
-Process 02CB1778 is dying now
-Unlink tmp segment autoseg132
-chain_push_first_singlet: leaving
-Process 02CBD668 is dying now
-Unlink tmp segment autoseg131
-autosegment is 02B01C50
-chain_push_singlet: entering
-autosegment is 02B01110
-autosegment is 02B01EA8
-autosegment is 02B016B0
-chain_get_next: entering
-chain_get_next: leaving
-Process 02CB3690 is dying now
-Unlink tmp segment autoseg138
-Process 02CB2858 is dying now
-Unlink tmp segment autoseg137
-Process 02CB18B8 is dying now
-Unlink tmp segment autoseg136
+Process 02E4C658 is dying now
+Unlink tmp segment autoseg119
+Process 02E4B690 is dying now
+Unlink tmp segment autoseg118
 chain_push_singlet: leaving
-Process 02CBDD20 is dying now
-Unlink tmp segment autoseg135
-autosegment is 02B016B0
-chain_push_singlet: entering
-autosegment is 02B01C50
-autosegment is 02B014D0
-autosegment is 02B01728
+Process 02E49110 is dying now
+Unlink tmp segment autoseg117
+<<<<<<<< leaving chain_create_parameters
+Process 02D1A788 is dying now
+Unlink tmp segment autoseg88
+autosegment is 02BA5830
+>>>>>>>> entering chain_get_disjunction
+autosegment is 02BA5470
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4C248 is dying now
+Unlink tmp segment autoseg122
+autosegment is 02BA50B0
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4C950 is dying now
+Unlink tmp segment autoseg123
+autosegment is 02BA5C68
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4CB80 is dying now
+Unlink tmp segment autoseg124
+autosegment is 02BA5650
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4C860 is dying now
+Unlink tmp segment autoseg125
+autosegment is 02BA54E8
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4CB30 is dying now
+Unlink tmp segment autoseg126
+<<<<<<<< leaving chain_get_disjunction
+Process 02E4B708 is dying now
+Unlink tmp segment autoseg121
+autosegment is 02BA5B00
+>>>>>>>> entering chain_get_negotiation
+autosegment is 02BA5470
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4C748 is dying now
+Unlink tmp segment autoseg128
+autosegment is 02BA5A10
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4CEC8 is dying now
+Unlink tmp segment autoseg129
+autosegment is 02BA50B0
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4CCE8 is dying now
+Unlink tmp segment autoseg130
+autosegment is 02BA5C68
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4D080 is dying now
+Unlink tmp segment autoseg131
+autosegment is 02BA5830
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4D0D0 is dying now
+Unlink tmp segment autoseg132
+autosegment is 02BA5A10
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4CF90 is dying now
+Unlink tmp segment autoseg133
+autosegment is 02BA5EC0
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4D3A0 is dying now
+Unlink tmp segment autoseg134
+<<<<<<<< leaving chain_get_negotiation
+Process 02E4BBB8 is dying now
+Unlink tmp segment autoseg127
+autosegment is 02BA5A10
+chain_push_first_singlet: entering
+autosegment is 02BA5B00
+autosegment is 02BA5CE0
+autosegment is 02BA5470
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB3F78 is dying now
+Process 02E4F3D0 is dying now
+Unlink tmp segment autoseg138
+Process 02E4E8B8 is dying now
+Unlink tmp segment autoseg137
+Process 02E4D6C0 is dying now
+Unlink tmp segment autoseg136
+chain_push_first_singlet: leaving
+Process 02E4BA78 is dying now
+Unlink tmp segment autoseg135
+autosegment is 02BA50B0
+chain_push_singlet: entering
+autosegment is 02BA5650
+autosegment is 02BA56C8
+autosegment is 02BA5B00
+chain_get_next: entering
+chain_get_next: leaving
+Process 02E4F790 is dying now
 Unlink tmp segment autoseg142
-Process 02CB30F0 is dying now
+Process 02E4EAC0 is dying now
 Unlink tmp segment autoseg141
-Process 02CB1D90 is dying now
+Process 02E4DEE0 is dying now
 Unlink tmp segment autoseg140
 chain_push_singlet: leaving
-Process 02CBDBE0 is dying now
+Process 02E4BA78 is dying now
 Unlink tmp segment autoseg139
-autosegment is 02B01EA8
-chain_push_first_singlet: entering
-autosegment is 02B014D0
-autosegment is 02B01CC8
-autosegment is 02B01548
+autosegment is 02BA5830
+chain_push_singlet: entering
+autosegment is 02BA5470
+autosegment is 02BA5650
+autosegment is 02BA5DD0
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB3F78 is dying now
+Process 02E4FC40 is dying now
 Unlink tmp segment autoseg146
-Process 02CB3578 is dying now
+Process 02E4EB88 is dying now
 Unlink tmp segment autoseg145
-Process 02CB24C0 is dying now
+Process 02E4E3B8 is dying now
 Unlink tmp segment autoseg144
-chain_push_first_singlet: leaving
-Process 02CBDDC0 is dying now
+chain_push_singlet: leaving
+Process 02E4BE88 is dying now
 Unlink tmp segment autoseg143
-autosegment is 02B014D0
-chain_push_singlet: entering
-autosegment is 02B01200
-autosegment is 02B016B0
-autosegment is 02B01EA8
+autosegment is 02BA5830
+chain_push_first_singlet: entering
+autosegment is 02BA50B0
+autosegment is 02BA57B8
+autosegment is 02BA5DD0
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB4928 is dying now
+Process 02E50078 is dying now
 Unlink tmp segment autoseg150
-Process 02CB3938 is dying now
+Process 02E4F060 is dying now
 Unlink tmp segment autoseg149
-Process 02CB28F8 is dying now
+Process 02E4E728 is dying now
 Unlink tmp segment autoseg148
-chain_push_singlet: leaving
-Process 02CBDE38 is dying now
+chain_push_first_singlet: leaving
+Process 02E4BF00 is dying now
 Unlink tmp segment autoseg147
-autosegment is 02B01C50
-<<<<<<<< entering chain_transform_to_conjunction_of_negotiations
-autosegment is 02B01200
->>>>>>>> entering chain_get_conjunction
-autosegment is 02B014D0
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB48D8 is dying now
-Unlink tmp segment autoseg153
-autosegment is 02B014D0
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB49C8 is dying now
+autosegment is 02BA56C8
+chain_push_singlet: entering
+autosegment is 02BA5830
+autosegment is 02BA5470
+autosegment is 02BA5128
+chain_get_next: entering
+chain_get_next: leaving
+Process 02E503C0 is dying now
 Unlink tmp segment autoseg154
-autosegment is 02B01A70
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB49C8 is dying now
-Unlink tmp segment autoseg155
-autosegment is 02B014D0
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB4A18 is dying now
-Unlink tmp segment autoseg156
-<<<<<<<< leaving chain_get_conjunction
-Process 02CB3708 is dying now
+Process 02E4FCE0 is dying now
+Unlink tmp segment autoseg153
+Process 02E4EDB8 is dying now
 Unlink tmp segment autoseg152
-autosegment is 02B01E30
->>>>>>>> entering chain_get_disjunction
-autosegment is 02B01EA8
+chain_push_singlet: leaving
+Process 02E4C0E0 is dying now
+Unlink tmp segment autoseg151
+autosegment is 02BA56C8
+<<<<<<<< entering chain_transform_to_conjunction_of_negotiations
+autosegment is 02BA5128
+>>>>>>>> entering chain_get_conjunction
+autosegment is 02BA5EC0
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02CB4540 is dying now
-Unlink tmp segment autoseg158
-autosegment is 02B01200
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB4798 is dying now
-Unlink tmp segment autoseg159
-autosegment is 02B01548
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB4B08 is dying now
-Unlink tmp segment autoseg160
-autosegment is 02B01EA8
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB4EF0 is dying now
-Unlink tmp segment autoseg161
-autosegment is 02B01200
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB4B08 is dying now
-Unlink tmp segment autoseg162
-<<<<<<<< leaving chain_get_disjunction
-Process 02CB37D0 is dying now
+Process 02E50578 is dying now
 Unlink tmp segment autoseg157
-autosegment is 02B01EA8
->>>>>>>> entering chain_get_negotiation
-autosegment is 02B01278
+autosegment is 02BA5EC0
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02CB4EC8 is dying now
-Unlink tmp segment autoseg164
-autosegment is 02B01278
+Process 02E507D0 is dying now
+Unlink tmp segment autoseg158
+autosegment is 02BA5EC0
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02CB4CC0 is dying now
-Unlink tmp segment autoseg165
-autosegment is 02B01278
+Process 02E50500 is dying now
+Unlink tmp segment autoseg159
+autosegment is 02BA58A8
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02CB4D10 is dying now
-Unlink tmp segment autoseg166
-autosegment is 02B01278
+Process 02E50578 is dying now
+Unlink tmp segment autoseg160
+<<<<<<<< leaving chain_get_conjunction
+Process 02E4F588 is dying now
+Unlink tmp segment autoseg156
+autosegment is 02BA5EC0
+>>>>>>>> entering chain_get_disjunction
+autosegment is 02BA5A10
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02CB50D0 is dying now
-Unlink tmp segment autoseg167
-autosegment is 02B01278
+Process 02E50CA8 is dying now
+Unlink tmp segment autoseg162
+autosegment is 02BA5128
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02CB5300 is dying now
-Unlink tmp segment autoseg168
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB5198 is dying now
-Unlink tmp segment autoseg169
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB51E8 is dying now
-Unlink tmp segment autoseg170
-<<<<<<<< leaving chain_get_negotiation
-Process 02CB3898 is dying now
+Process 02E50A78 is dying now
 Unlink tmp segment autoseg163
-autosegment is 02B01278
+autosegment is 02BA5128
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02CB3C30 is dying now
+Process 02E50898 is dying now
+Unlink tmp segment autoseg164
+autosegment is 02BA5128
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E50960 is dying now
+Unlink tmp segment autoseg165
+autosegment is 02BA5128
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E50960 is dying now
+Unlink tmp segment autoseg166
+<<<<<<<< leaving chain_get_disjunction
+Process 02E4FB78 is dying now
+Unlink tmp segment autoseg161
+autosegment is 02BA5A10
+>>>>>>>> entering chain_get_negotiation
+autosegment is 02BA5F38
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E50AC8 is dying now
+Unlink tmp segment autoseg168
+autosegment is 02BA5F38
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E511A8 is dying now
+Unlink tmp segment autoseg169
+autosegment is 02BA5F38
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E511A8 is dying now
+Unlink tmp segment autoseg170
+autosegment is 02BA5F38
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E50EB0 is dying now
 Unlink tmp segment autoseg171
-autosegment is 00A71A68
+autosegment is 02BA5F38
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02CB3FF0 is dying now
+Process 02E50F50 is dying now
 Unlink tmp segment autoseg172
-autosegment is 02B78670
+autosegment is 02BA5F38
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02CB3C30 is dying now
+Process 02E50ED8 is dying now
 Unlink tmp segment autoseg173
-autosegment is 02B78D78
+autosegment is 02BA5F38
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02CB3E60 is dying now
+Process 02E51428 is dying now
 Unlink tmp segment autoseg174
-autosegment is 02B788C8
+<<<<<<<< leaving chain_get_negotiation
+Process 02E4FAB0 is dying now
+Unlink tmp segment autoseg167
+autosegment is 02BA5F38
 chain_get_next_singlet: entering
 chain_get_next_singlet: leaving
-Process 02CB3E60 is dying now
+Process 02E4F998 is dying now
 Unlink tmp segment autoseg175
-autosegment is 02B78490
-chain_push_first_singlet: entering
-autosegment is 02B78238
-autosegment is 02B78E68
-autosegment is 02B781C0
-chain_get_next: entering
-chain_get_next: leaving
-Process 02CB7470 is dying now
-Unlink tmp segment autoseg179
-Process 02CB6908 is dying now
-Unlink tmp segment autoseg178
-Process 02CB6048 is dying now
-Unlink tmp segment autoseg177
-chain_push_first_singlet: leaving
-Process 02CB3FC8 is dying now
+autosegment is 02BA5F38
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4FDF8 is dying now
 Unlink tmp segment autoseg176
-autosegment is 02B78148
-chain_push_singlet: entering
-autosegment is 02B786E8
-autosegment is 02B78A30
-autosegment is 02B78AA8
+autosegment is 02BF60E0
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4FD30 is dying now
+Unlink tmp segment autoseg177
+autosegment is 02BF6338
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4FC18 is dying now
+Unlink tmp segment autoseg178
+autosegment is 02BF6E78
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E4F9C0 is dying now
+Unlink tmp segment autoseg179
+autosegment is 02BF6518
+chain_push_first_singlet: entering
+autosegment is 02BF6A40
+autosegment is 02BF6860
+autosegment is 02BF63B0
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB7920 is dying now
+Process 02E53778 is dying now
 Unlink tmp segment autoseg183
-Process 02CB6E08 is dying now
+Process 02E52AA8 is dying now
 Unlink tmp segment autoseg182
-Process 02CB6610 is dying now
+Process 02E52008 is dying now
 Unlink tmp segment autoseg181
-chain_push_singlet: leaving
-Process 02CB43B0 is dying now
+chain_push_first_singlet: leaving
+Process 02E4FEC0 is dying now
 Unlink tmp segment autoseg180
-autosegment is 02B78AA8
-chain_push_first_singlet: entering
-autosegment is 02B78A30
-autosegment is 02B78E68
-autosegment is 02B78670
+autosegment is 02BF6068
+chain_push_singlet: entering
+autosegment is 02BF6680
+autosegment is 02BF6770
+autosegment is 02BF6A40
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB7DA8 is dying now
+Process 02E53A48 is dying now
 Unlink tmp segment autoseg187
-Process 02CB75B0 is dying now
+Process 02E52FF8 is dying now
 Unlink tmp segment autoseg186
-Process 02CB6728 is dying now
+Process 02E525F8 is dying now
 Unlink tmp segment autoseg185
-chain_push_first_singlet: leaving
-Process 02CB4040 is dying now
+chain_push_singlet: leaving
+Process 02E500C8 is dying now
 Unlink tmp segment autoseg184
-autosegment is 02B78A30
-chain_push_singlet: entering
-autosegment is 02B78B20
-autosegment is 02B786E8
-autosegment is 02B78238
-chain_get_next: entering
-chain_get_next: leaving
-Process 02CB83E8 is dying now
-Unlink tmp segment autoseg191
-Process 02CB7B00 is dying now
-Unlink tmp segment autoseg190
-Process 02CB6AE8 is dying now
-Unlink tmp segment autoseg189
-chain_push_singlet: leaving
-Process 02CB4888 is dying now
-Unlink tmp segment autoseg188
-autosegment is 02B786E8
-<<<<<<<< entering chain_transform_to_conjunction_of_negotiations
-autosegment is 02B78850
->>>>>>>> entering chain_get_conjunction
-autosegment is 02B78940
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8500 is dying now
-Unlink tmp segment autoseg194
-autosegment is 02B78238
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8410 is dying now
-Unlink tmp segment autoseg195
-autosegment is 02B78AA8
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8500 is dying now
-Unlink tmp segment autoseg196
-autosegment is 02B78580
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB82D0 is dying now
-Unlink tmp segment autoseg197
-<<<<<<<< leaving chain_get_conjunction
-Process 02CB74C0 is dying now
-Unlink tmp segment autoseg193
-autosegment is 02B78850
->>>>>>>> entering chain_get_disjunction
-autosegment is 02B78EE0
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8730 is dying now
-Unlink tmp segment autoseg199
-autosegment is 02B78AA8
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB89D8 is dying now
-Unlink tmp segment autoseg200
-autosegment is 02B78B20
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8708 is dying now
-Unlink tmp segment autoseg201
-autosegment is 02B78EE0
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8960 is dying now
-Unlink tmp segment autoseg202
-autosegment is 02B78238
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB89B0 is dying now
-Unlink tmp segment autoseg203
-<<<<<<<< leaving chain_get_disjunction
-Process 02CB7858 is dying now
-Unlink tmp segment autoseg198
-autosegment is 02B78EE0
->>>>>>>> entering chain_get_negotiation
-autosegment is 02B78850
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8640 is dying now
-Unlink tmp segment autoseg205
-autosegment is 02B78580
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8B90 is dying now
-Unlink tmp segment autoseg206
-autosegment is 02B78B20
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8E38 is dying now
-Unlink tmp segment autoseg207
-autosegment is 02B78238
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB91D0 is dying now
-Unlink tmp segment autoseg208
-autosegment is 02B78580
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB9478 is dying now
-Unlink tmp segment autoseg209
-autosegment is 02B78580
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02BD1D10 is dying now
-Unlink tmp segment autoseg210
-autosegment is 02B78AA8
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02BD1FB8 is dying now
-Unlink tmp segment autoseg211
-<<<<<<<< leaving chain_get_negotiation
-Process 02CB7768 is dying now
-Unlink tmp segment autoseg204
-autosegment is 02B78238
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02BD4600 is dying now
-Unlink tmp segment autoseg212
-autosegment is 02B78AA8
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02BD4C68 is dying now
-Unlink tmp segment autoseg213
-autosegment is 02B78580
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02BD4C90 is dying now
-Unlink tmp segment autoseg214
-======== error chain_transform_to_conjunction_of_negotiations
-
-<<<<<<<< leaving chain_transform_to_conjunction_of_negotiations
-Process 02CB5008 is dying now
-Unlink tmp segment autoseg192
-autosegment is 02B78940
-<<<<<<<< entering chain_transform_to_conjunction_of_negotiations
-autosegment is 02B78F58
->>>>>>>> entering chain_get_conjunction
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02BD2030 is dying now
-Unlink tmp segment autoseg217
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02BD2030 is dying now
-Unlink tmp segment autoseg218
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02BD1F40 is dying now
-Unlink tmp segment autoseg219
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02BD1FE0 is dying now
-Unlink tmp segment autoseg220
-<<<<<<<< leaving chain_get_conjunction
-Process 02BC8D50 is dying now
-Unlink tmp segment autoseg216
-autosegment is 02B01278
->>>>>>>> entering chain_get_disjunction
-autosegment is 02B78F58
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02BD2378 is dying now
-Unlink tmp segment autoseg222
-autosegment is 02B78F58
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02BD2328 is dying now
-Unlink tmp segment autoseg223
-autosegment is 02B78F58
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02BD2328 is dying now
-Unlink tmp segment autoseg224
-autosegment is 02B78F58
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB5670 is dying now
-Unlink tmp segment autoseg225
-autosegment is 02B78F58
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB5620 is dying now
-Unlink tmp segment autoseg226
-<<<<<<<< leaving chain_get_disjunction
-Process 02BC8E68 is dying now
-Unlink tmp segment autoseg221
-autosegment is 02B78F58
->>>>>>>> entering chain_get_negotiation
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB82F8 is dying now
-Unlink tmp segment autoseg228
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8370 is dying now
-Unlink tmp segment autoseg229
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB83C0 is dying now
-Unlink tmp segment autoseg230
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8AF0 is dying now
-Unlink tmp segment autoseg231
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8910 is dying now
-Unlink tmp segment autoseg232
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB8AF0 is dying now
-Unlink tmp segment autoseg233
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB9018 is dying now
-Unlink tmp segment autoseg234
-<<<<<<<< leaving chain_get_negotiation
-Process 02CB71F0 is dying now
-Unlink tmp segment autoseg227
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB7218 is dying now
-Unlink tmp segment autoseg235
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB6F48 is dying now
-Unlink tmp segment autoseg236
-autosegment is 02B01278
-chain_get_next_singlet: entering
-chain_get_next_singlet: leaving
-Process 02CB7588 is dying now
-Unlink tmp segment autoseg237
-======== error chain_transform_to_conjunction_of_negotiations
-
-<<<<<<<< leaving chain_transform_to_conjunction_of_negotiations
-Process 02BD7D00 is dying now
-Unlink tmp segment autoseg215
-autosegment is 02B01278
+autosegment is 02BF6E78
 chain_push_first_singlet: entering
-autosegment is 00A71A68
-autosegment is 02CE2B08
-autosegment is 02CE2CE8
+autosegment is 02BF63B0
+autosegment is 02BF61D0
+autosegment is 02BF6680
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB7C40 is dying now
-Unlink tmp segment autoseg241
-Process 02CB59E0 is dying now
-Unlink tmp segment autoseg240
-Process 02CBA4E0 is dying now
-Unlink tmp segment autoseg239
+Process 02E54010 is dying now
+Unlink tmp segment autoseg191
+Process 02E53480 is dying now
+Unlink tmp segment autoseg190
+Process 02E526C0 is dying now
+Unlink tmp segment autoseg189
 chain_push_first_singlet: leaving
-Process 02CB89B0 is dying now
-Unlink tmp segment autoseg238
-autosegment is 00A71A68
+Process 02E505A0 is dying now
+Unlink tmp segment autoseg188
+autosegment is 02BF6D88
 chain_push_singlet: entering
-autosegment is 02CE2388
-autosegment is 02CE21A8
-autosegment is 02CE2568
+autosegment is 02BF6770
+autosegment is 02BF6EF0
+autosegment is 02BF6A40
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BD83B8 is dying now
-Unlink tmp segment autoseg245
-Process 02BD33E0 is dying now
-Unlink tmp segment autoseg244
-Process 02BC98B8 is dying now
-Unlink tmp segment autoseg243
+Process 02E54448 is dying now
+Unlink tmp segment autoseg195
+Process 02E53548 is dying now
+Unlink tmp segment autoseg194
+Process 02E52C88 is dying now
+Unlink tmp segment autoseg193
 chain_push_singlet: leaving
-Process 02BD8FC0 is dying now
-Unlink tmp segment autoseg242
-autosegment is 02CE2478
-chain_push_singlet: entering
-autosegment is 02CE2220
-autosegment is 02CE2D60
-autosegment is 02CE29A0
+Process 02E50780 is dying now
+Unlink tmp segment autoseg192
+autosegment is 02BF6068
+<<<<<<<< entering chain_transform_to_conjunction_of_negotiations
+autosegment is 02BF60E0
+>>>>>>>> entering chain_get_conjunction
+autosegment is 02BF61D0
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54740 is dying now
+Unlink tmp segment autoseg198
+autosegment is 02BF6860
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54538 is dying now
+Unlink tmp segment autoseg199
+autosegment is 02BF6AB8
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E548A8 is dying now
+Unlink tmp segment autoseg200
+autosegment is 02BF6860
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E548A8 is dying now
+Unlink tmp segment autoseg201
+<<<<<<<< leaving chain_get_conjunction
+Process 02E53728 is dying now
+Unlink tmp segment autoseg197
+autosegment is 02BF6AB8
+>>>>>>>> entering chain_get_disjunction
+autosegment is 02BF6BA8
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54448 is dying now
+Unlink tmp segment autoseg203
+autosegment is 02BF60E0
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54498 is dying now
+Unlink tmp segment autoseg204
+autosegment is 02BF60E0
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54628 is dying now
+Unlink tmp segment autoseg205
+autosegment is 02BF6860
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54A10 is dying now
+Unlink tmp segment autoseg206
+autosegment is 02BF6BA8
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54C18 is dying now
+Unlink tmp segment autoseg207
+<<<<<<<< leaving chain_get_disjunction
+Process 02E536B0 is dying now
+Unlink tmp segment autoseg202
+autosegment is 02BF61D0
+>>>>>>>> entering chain_get_negotiation
+autosegment is 02BF60E0
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54B00 is dying now
+Unlink tmp segment autoseg209
+autosegment is 02BF6860
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54DA8 is dying now
+Unlink tmp segment autoseg210
+autosegment is 02BF60E0
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54920 is dying now
+Unlink tmp segment autoseg211
+autosegment is 02BF6860
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54920 is dying now
+Unlink tmp segment autoseg212
+autosegment is 02BF6860
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E55118 is dying now
+Unlink tmp segment autoseg213
+autosegment is 02BF6D88
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54E48 is dying now
+Unlink tmp segment autoseg214
+autosegment is 02BF6860
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E55000 is dying now
+Unlink tmp segment autoseg215
+<<<<<<<< leaving chain_get_negotiation
+Process 02E536D8 is dying now
+Unlink tmp segment autoseg208
+autosegment is 02BF6860
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E53700 is dying now
+Unlink tmp segment autoseg216
+autosegment is 02BF6860
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E53750 is dying now
+Unlink tmp segment autoseg217
+autosegment is 02BF6AB8
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E53EF8 is dying now
+Unlink tmp segment autoseg218
+======== error chain_transform_to_conjunction_of_negotiations
+
+<<<<<<<< leaving chain_transform_to_conjunction_of_negotiations
+Process 02E50EB0 is dying now
+Unlink tmp segment autoseg196
+autosegment is 02BF60E0
+<<<<<<<< entering chain_transform_to_conjunction_of_negotiations
+autosegment is 02BA5F38
+>>>>>>>> entering chain_get_conjunction
+autosegment is 02E9AC80
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E55668 is dying now
+Unlink tmp segment autoseg221
+autosegment is 02E9A7D0
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E55690 is dying now
+Unlink tmp segment autoseg222
+autosegment is 02E9A488
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E557A8 is dying now
+Unlink tmp segment autoseg223
+autosegment is 02E9AF50
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E55370 is dying now
+Unlink tmp segment autoseg224
+<<<<<<<< leaving chain_get_conjunction
+Process 02E542B8 is dying now
+Unlink tmp segment autoseg220
+autosegment is 02BA5F38
+>>>>>>>> entering chain_get_disjunction
+autosegment is 02E9AD70
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E55820 is dying now
+Unlink tmp segment autoseg226
+autosegment is 02E9AE60
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E55898 is dying now
+Unlink tmp segment autoseg227
+autosegment is 02E9A320
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E55A78 is dying now
+Unlink tmp segment autoseg228
+autosegment is 02E9A668
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E55BB8 is dying now
+Unlink tmp segment autoseg229
+autosegment is 02E9A500
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E55CD0 is dying now
+Unlink tmp segment autoseg230
+<<<<<<<< leaving chain_get_disjunction
+Process 02E53FC0 is dying now
+Unlink tmp segment autoseg225
+autosegment is 02BA5F38
+>>>>>>>> entering chain_get_negotiation
+autosegment is 02E9A230
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E55938 is dying now
+Unlink tmp segment autoseg232
+autosegment is 02E9ADE8
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E55F78 is dying now
+Unlink tmp segment autoseg233
+autosegment is 02E9A8C0
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E561A8 is dying now
+Unlink tmp segment autoseg234
+autosegment is 02E9AAA0
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E56130 is dying now
+Unlink tmp segment autoseg235
+autosegment is 02E9A668
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E56130 is dying now
+Unlink tmp segment autoseg236
+autosegment is 02E9A140
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E56130 is dying now
+Unlink tmp segment autoseg237
+autosegment is 02E9A578
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E561A8 is dying now
+Unlink tmp segment autoseg238
+<<<<<<<< leaving chain_get_negotiation
+Process 02E54600 is dying now
+Unlink tmp segment autoseg231
+autosegment is 02BA5F38
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54538 is dying now
+Unlink tmp segment autoseg239
+autosegment is 02BA5F38
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E547E0 is dying now
+Unlink tmp segment autoseg240
+autosegment is 02BA5F38
+chain_get_next_singlet: entering
+chain_get_next_singlet: leaving
+Process 02E54C18 is dying now
+Unlink tmp segment autoseg241
+======== error chain_transform_to_conjunction_of_negotiations
+
+<<<<<<<< leaving chain_transform_to_conjunction_of_negotiations
+Process 02E514F0 is dying now
+Unlink tmp segment autoseg219
+autosegment is 02BA5F38
+chain_push_first_singlet: entering
+autosegment is 02E9A0C8
+autosegment is 02E9A5F0
+autosegment is 02E9A938
 chain_get_next: entering
 chain_get_next: leaving
-Process 02BC91D8 is dying now
+Process 02E57080 is dying now
+Unlink tmp segment autoseg245
+Process 02E56630 is dying now
+Unlink tmp segment autoseg244
+Process 02E547B8 is dying now
+Unlink tmp segment autoseg243
+chain_push_first_singlet: leaving
+Process 02E51428 is dying now
+Unlink tmp segment autoseg242
+autosegment is 02E9A410
+chain_push_singlet: entering
+autosegment is 02E9AAA0
+autosegment is 02E9A320
+autosegment is 02E9A1B8
+chain_get_next: entering
+chain_get_next: leaving
+Process 02E57288 is dying now
 Unlink tmp segment autoseg249
-Process 02CB8438 is dying now
+Process 02E56838 is dying now
 Unlink tmp segment autoseg248
-Process 02CB60E8 is dying now
+Process 02E55370 is dying now
 Unlink tmp segment autoseg247
 chain_push_singlet: leaving
-Process 02CB9C48 is dying now
+Process 02E51978 is dying now
 Unlink tmp segment autoseg246
+autosegment is 02E9AE60
+chain_push_singlet: entering
+autosegment is 02E9A8C0
+autosegment is 02E9A500
+autosegment is 02E9AC80
+chain_get_next: entering
+chain_get_next: leaving
+Process 02E576C0 is dying now
+Unlink tmp segment autoseg253
+Process 02E56E50 is dying now
+Unlink tmp segment autoseg252
+Process 02E561A8 is dying now
+Unlink tmp segment autoseg251
+chain_push_singlet: leaving
+Process 02E517C0 is dying now
+Unlink tmp segment autoseg250
 <<<<<<<< leaving chain_transform_to_conjunction_of_negotiations
-Process 02CB0238 is dying now
-Unlink tmp segment autoseg151
+Process 02E4CDD8 is dying now
+Unlink tmp segment autoseg155
 =======LOIS LR2 SUCCESFUL END=======
-Process 02CBC308 is dying now
-Unlink tmp segment autoseg83
+Process 02D17628 is dying now
+Unlink tmp segment autoseg87
 Loading fs segment lib/relation/META
 load_segment: Warning find homonym for /lib/relation/META/get_different_unorient_filter (/lib/test/META/get_different_unorient_filter)
 load_segment: Warning find homonym for /lib/relation/META/META (/META/META)
-autosegment is 02CE2568
-autosegment is 02CE2478
+autosegment is 02E9AB18
+autosegment is 02E9A6E0
 chain_push_first: entering
-autosegment is 02CE2400
-autosegment is 02CE26D0
-autosegment is 02CE29A0
+autosegment is 02E9A938
+autosegment is 02E9A9B0
+autosegment is 02E9A320
 chain_get_next: entering
 chain_get_next: leaving
-Process 02CB4770 is dying now
-Unlink tmp segment autoseg254
-Process 02CB2B00 is dying now
-Unlink tmp segment autoseg253
-Process 02CB0E40 is dying now
-Unlink tmp segment autoseg252
-chain_push_first: leaving
-Process 02CBCE20 is dying now
-Unlink tmp segment autoseg251
-autosegment is 02CE2A18
-chain_push_first: entering
-autosegment is 02CE2C70
-autosegment is 02CE2DD8
-autosegment is 02CE28B0
-chain_get_next: entering
-chain_get_next: leaving
-Process 02CB58A0 is dying now
+Process 02E4C770 is dying now
 Unlink tmp segment autoseg258
-Process 02CB32D0 is dying now
+Process 02E4A8D0 is dying now
 Unlink tmp segment autoseg257
-Process 02CB18B8 is dying now
+Process 02E49020 is dying now
 Unlink tmp segment autoseg256
 chain_push_first: leaving
-Process 02CBD578 is dying now
+Process 02E57D50 is dying now
 Unlink tmp segment autoseg255
+autosegment is 02E9A758
+chain_push_first: entering
+autosegment is 02E9ACF8
+autosegment is 02E9AAA0
+autosegment is 02E9A398
+chain_get_next: entering
+chain_get_next: leaving
+Process 02E4E980 is dying now
+Unlink tmp segment autoseg262
+Process 02E4AFD8 is dying now
+Unlink tmp segment autoseg261
+Process 02E49E80 is dying now
+Unlink tmp segment autoseg260
+chain_push_first: leaving
+Process 02E57D78 is dying now
+Unlink tmp segment autoseg259
 call failed!
 Stopping process due to ERROR_STATE
-Process 02BC9818 is dying now
-Process 02BCFFB0 is dying now
-cache hits: 2013
-cache misses:2819
+Process 02E56540 is dying now
+Process 02D15BE8 is dying now
+cache hits: 2050
+cache misses:2861
 cache replaces:0
 
 Unloading all live segments of fs repository
@@ -1730,7 +1792,7 @@ Unlink tmp segment META
 Unlink tmp segment pm_proc_auto
 Unlink tmp segment service
 Unlink tmp segment autoseg
-Unlink tmp segment autoseg250
+Unlink tmp segment autoseg254
 Unlink tmp segment META
 Unlink tmp segment keynode
 Unlink tmp segment META
@@ -1781,5 +1843,3 @@ Unlink tmp segment agents
 Unlink tmp segment processes
 Unlink tmp segment commands
 Terminate batch job (Y/N)? 
-
-C:\M4SCP>
