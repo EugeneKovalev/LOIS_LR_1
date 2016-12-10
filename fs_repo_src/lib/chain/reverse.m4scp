@@ -10,20 +10,19 @@ procedure(chain_reverse,
 M4SCS(	[[
 			entering_msg = /"<<<<<<<< entering chain_reverse\n"/,
 			leaving_msg = /"<<<<<<<< leaving chain_reverse\n"/,
-			msg3 = /"REVERSE ERROR\n"/,
-			msg4 = /"REVERSE SUCCESS\n"/,
+			error_msg = /"======== error chain_reverse\n"/,
 			chain_get_next = "/lib/chain/get_next/chain_get_next",
-			chain_get_singlet_value = "/lib/chain/get_singlet_value/chain_get_singlet_value",
+			chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
 			chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
 			chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",
-			prm1,prm2,prm3,prm4
+			prm1,prm2,prm3,prm4, prm111, prm112
 		]])
 M4SEC(	[[	
 			chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
-			chain_get_singlet_value = /../chain/get_singlet_value[SYFIX]/chain_get_singlet_value,
+			chain_get_next_singlet = /../chain/get_next_singlet[SYFIX]/chain_get_next_singlet,
 			chain_push_first_singlet = /../chain/push_first_singlet[SYFIX]/chain_push_first_singlet,
 			chain_push_singlet = /../chain/push_singlet[SYFIX]/chain_push_singlet,
-			prm1,prm2,prm3,prm4
+			prm1,prm2,prm3,prm4, prm111, prm112
 		]]), 
 	[{
 		state, true, stack, parameters, logger,
@@ -41,23 +40,23 @@ M4SEC(	[[
 DBG(M4SCS(print([1_: fixed_: entering_msg])))
 genEl([1_: assign_: node_: const_: empty])
 
+ifVarAssign([1_: stack ], , error)
 
-ifVarAssign([1_: stack ], , send_error)
-varAssign([ 1_: assign_: link_pointer, 2_: fixed_: stack ])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm112 = [{1_: stack, 2_: singleton, 3_: link_pointer}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: link_pointer ], , error)
+
 genEl([1_: assign_: node_: const_: new_pointer])
 genEl([1_: assign_: node_: const_: singleton_value])
 genEl([1_: assign_: node_: const_: is_the_first_link_has_been_processed])
 
-
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< START LOOP
 label(get_next_chain)
-call([1_: fixed_: chain_get_next, 2_: fixed_: prm1 = [{1_: link_pointer, 2_: next_link_pointer, 3_: singleton}], 3_: assign_: descr])
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm1 = [{1_: link_pointer, 2_: next_link_pointer, 3_: singleton_value}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-ifVarAssign([1_: next_link_pointer ], , send_success) 
+ifVarAssign([1_: next_link_pointer ], , success) 
 // =======================================> LOOP EXIT
-
-call([1_: fixed_: chain_get_singlet_value, 2_: fixed_: prm2 = [{1_: singleton, 2_: singleton_value}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
 
 // Create a link for the reversed chain
 ifVarAssign([1_: is_the_first_link_has_been_processed ], push_first_singlet, push_next_singlet)
@@ -76,21 +75,18 @@ waitReturn([1_: fixed_: descr])
 
 label(jump_to_the_end_of_loop)
 varAssign([ 1_: assign_: link_pointer, 2_: fixed_: next_link_pointer ])
-ifVarAssign([1_: link_pointer ], get_next_chain, send_error)
+ifVarAssign([1_: link_pointer ], get_next_chain, error)
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FINISH LOOP
 
-
-// // PROCEDURE TERMINATION
-label(send_error)
-
-DBG(M4SCS(print([1_: fixed_: msg3])))
+label(error)
+DBG(M4SCS(print([1_: fixed_: error_msg])))
+DBG(M4SCS(print([1_: fixed_: leaving_msg])))
 return()
 
-label(send_success)
-varAssign([ 1_: assign_: stack, 2_: fixed_: new_pointer ])
+label(success)
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm111 = [{1_: new_pointer, 2_: stack, 3_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
 varAssign([ 1_: assign_: state, 2_: fixed_: true ])
-DBG(M4SCS(printEl([1_: fixed_: stack])))
-DBG(M4SCS(print([1_: fixed_: msg4])))
+DBG(M4SCS(print([1_: fixed_: leaving_msg])))
 return()
-
 end()

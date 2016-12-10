@@ -18,7 +18,8 @@ M4SCS(	[[
 		chain_show = "/lib/chain/show/chain_show",
 		chain_purge = "/lib/chain/purge/chain_purge",
 		chain_reverse = "/lib/chain/reverse/chain_reverse",
-		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8
+		chain_create_parameters = "/lib/chain/create_parameters/chain_create_parameters",
+		prm0, prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm11
 		]])
 M4SEC(	[[	
 		chain_push_first_singlet = /../chain/push_first_singlet[SYFIX]/chain_push_first_singlet,
@@ -30,10 +31,11 @@ M4SEC(	[[
 		chain_show = "/../chain/show[SYFIX]/chain_show",
 		chain_purge = "/../chain/purge[SYFIX]/chain_purge",
 		chain_reverse = "/../chain/reverse[SYFIX]/chain_reverse",
-		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8
+		chain_create_parameters = /../chain/create_parameters[SYFIX]/chain_create_parameters,
+		prm0, prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm11, prm112
 		]]), 
-	[{state, true, last_link_pointer, parameters, empty, descr,
-	  node1, node2, node3}], 
+	[{state, true, last_link_pointer, stack, parameters, empty, descr,
+	  node1, node2, node3, singleton}], 
 	{[]}) 
 
 DBG(M4SCS(printNl([1_: fixed_: start_message])))
@@ -45,6 +47,11 @@ genEl([1_: assign_: node_: const_: true])
 genEl([1_: assign_: node_: const_: node1])
 genEl([1_: assign_: node_: const_: node2])
 genEl([1_: assign_: node_: const_: node3])
+
+
+call([1_: fixed_: chain_create_parameters, 2_: fixed_: prm0 = [{1_: parameters, 2_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
 
 // # Ñîçäàíèå ïåðâîãî ñèíãëåòîíà
 call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm1 = [{1_: node1, 2_: last_link_pointer, 3_: empty}], 3_: assign_: descr])
@@ -61,9 +68,17 @@ waitReturn([1_: fixed_: descr])
 call([1_: fixed_: chain_show, 2_: fixed_: prm4 = [{1_: last_link_pointer}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: chain_reverse, 2_: fixed_: prm5 = [{1_: state, 2_: true, 3_: last_link_pointer, 4_: parameters, 5_: empty}], 3_: assign_: descr])
+// Set chain to stack
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm11 = [{1_: last_link_pointer, 2_: stack, 3_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_reverse, 2_: fixed_: prm5 = [{1_: state, 2_: true, 3_: stack, 4_: parameters, 5_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifCoin([1_: fixed_: state,2_: fixed_: true], , error)
+
+// Get reversed chain from stack
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm112 = [{1_: stack, 2_: singleton, 3_: last_link_pointer}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
 
 call([1_: fixed_: chain_show, 2_: fixed_: prm6 = [{1_: last_link_pointer}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])

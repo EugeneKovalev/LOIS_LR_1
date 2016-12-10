@@ -22,7 +22,7 @@ call([1_: fixed_: test_LOIS_Lab1, 2_: fixed_: prm1=[{}], 3_: assign_: descr])
 
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: test_LOIS_Lab2, 2_: fixed_: prm1=[{}], 3_: assign_: descr])
+call([1_: fixed_: test_LOIS_Lab2, 2_: fixed_: prm2=[{}], 3_: assign_: descr])
 
 waitReturn([1_: fixed_: descr])
 
