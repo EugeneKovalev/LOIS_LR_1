@@ -46,6 +46,7 @@ genEl([1_: assign_: node_: const_: empty])
 
 ifVarAssign([1_: stack ], , error)
 
+// Getting a chain from stack
 call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm112 = [{1_: stack, 2_: singleton, 3_: link_pointer}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
