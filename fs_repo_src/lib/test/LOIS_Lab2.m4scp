@@ -88,35 +88,11 @@ call([1_: fixed_: chain_push, 2_: fixed_: prm8 = [{1_: not_D_or_E, 2_: negotiati
 waitReturn([1_: fixed_: descr])
 // <<<<<<<<<<< !(D or E)
 
-// >>>>>>>>>>> (OR, A, B, C, !(D or E))
-
-call([1_: fixed_: chain_push_first, 2_: fixed_: prm9 = [{1_: not_D_or_E, 2_: or_A_B_C_not_D_or_E, 3_: empty}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-
-call([1_: fixed_: chain_push, 2_: fixed_: prm10 = [{1_: or_A_B_C_not_D_or_E, 2_: node_C, 3_: or_A_B_C_not_D_or_E, 4_: empty}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-
-call([1_: fixed_: chain_push, 2_: fixed_: prm11 = [{1_: or_A_B_C_not_D_or_E, 2_: node_B, 3_: or_A_B_C_not_D_or_E, 4_: empty}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-
-call([1_: fixed_: chain_push, 2_: fixed_: prm12 = [{1_: or_A_B_C_not_D_or_E, 2_: node_A, 3_: or_A_B_C_not_D_or_E, 4_: empty}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-
-call([1_: fixed_: chain_push, 2_: fixed_: prm13 = [{1_: or_A_B_C_not_D_or_E, 2_: disjunction, 3_: or_A_B_C_not_D_or_E, 4_: empty}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-// <<<<<<<<<<< (OR, A, B, C, !(D or E))
-
-// >>>>>>>>>>> NOT(OR, A, B, C, !(D or E))
-call([1_: fixed_: chain_push_first, 2_: fixed_: prm14 = [{1_: or_A_B_C_not_D_or_E, 2_: not_or_A_B_C_not_D_or_E, 3_: empty}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-
-call([1_: fixed_: chain_push, 2_: fixed_: prm15 = [{1_: not_or_A_B_C_not_D_or_E, 2_: negotiation, 3_: not_or_A_B_C_not_D_or_E, 4_: empty}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
-// <<<<<<<<<<< NOT(OR, A, B, C, !(D or E))
-// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< NOT(OR, A, B, C, !(D or E))
+DBG(M4SCS(printEl([1_: fixed_: node_D])))
+DBG(M4SCS(printEl([1_: fixed_: node_E])))
 
 // Pushing the generated formula to stack
-call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm16 = [{1_: not_or_A_B_C_not_D_or_E, 2_: stack, 3_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm16 = [{1_: not_D_or_E, 2_: stack, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Get conjunction of negotiations
