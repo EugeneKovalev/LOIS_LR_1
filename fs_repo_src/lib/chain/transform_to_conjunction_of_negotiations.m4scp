@@ -123,19 +123,16 @@ ifCoin([1_: fixed_: disjunction, 2_: fixed_: singleton], , error)
 genEl([1_: assign_: node_: const_: conjunctors])
 //>>>>>>>>>>>>>>>>>>>>>>>>> Processing of disjunctive elements
 label(loop_start)
-DBG(M4SCS(printNl([1_: fixed_: looool])))
 
 call([1_: fixed_: chain_get_next, 2_: fixed_: prm8 = [{1_: link, 2_: link, 3_: singleton}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-
-DBG(M4SCS(printEl([1_: fixed_: singleton])))
 ifVarAssign([1_: singleton ], , loop_end)
 
 // Pushing the element to inner stack
 call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm9 = [{1_: singleton, 2_: inner_stack, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: chain_transform_to_conjunction_of_negotiations, 2_: fixed_: prm10 = [{1_: state, 2_: true, 3_: inner_stack, 4_: parameters, 5_: empty}], 3_: assign_: descr])
+call([1_: fixed_: chain_transform_to_conjunction_of_negotiations, 2_: fixed_: prm10 = [{1_: state, 2_: empty, 3_: inner_stack, 4_: parameters, 5_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
 // Extract a transformed element from the inner stack
@@ -155,12 +152,11 @@ label(loop_end)
 genEl([1_: assign_: node_: const_: result_formula])
 call([1_: fixed_: chain_create_logical_formula, 2_: fixed_: prm13 = [{1_: conjunction, 2_: conjunctors, 3_: result_formula}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
+
 ifVarAssign([1_: result_formula ], success, error)
 
 label(error)
 DBG(M4SCS(printNl([1_: fixed_: error_msg])))
-DBG(M4SCS(printEl([1_: fixed_: formula])))
-
 call([1_: fixed_: chain_push_first, 2_: fixed_: prm14 = [{1_: formula, 2_: stack, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 call([1_: fixed_: chain_push, 2_: fixed_: prm15 = [{1_: stack, 2_: negotiation, 3_: stack, 4_: empty}], 3_: assign_: descr])

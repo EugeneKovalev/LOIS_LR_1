@@ -88,9 +88,6 @@ call([1_: fixed_: chain_push, 2_: fixed_: prm8 = [{1_: not_D_or_E, 2_: negotiati
 waitReturn([1_: fixed_: descr])
 // <<<<<<<<<<< !(D or E)
 
-DBG(M4SCS(printEl([1_: fixed_: node_D])))
-DBG(M4SCS(printEl([1_: fixed_: node_E])))
-
 // Pushing the generated formula to stack
 call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm16 = [{1_: not_D_or_E, 2_: stack, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
@@ -98,7 +95,8 @@ waitReturn([1_: fixed_: descr])
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Get conjunction of negotiations
 call([1_: fixed_: chain_transform_to_conjunction_of_negotiations, 2_: fixed_: prm17 = [{1_: state, 2_: true, 3_: stack, 4_: parameters, 5_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-ifCoin([1_: fixed_: state,2_: fixed_: true], , error)
+
+ifCoin([1_: fixed_: state,2_: fixed_: true], success, error)
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Get conjunction of negotiations
 
 label(error)

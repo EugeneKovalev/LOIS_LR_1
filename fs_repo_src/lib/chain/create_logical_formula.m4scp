@@ -61,27 +61,17 @@ call([1_: fixed_: chain_push, 2_: fixed_: prm2 = [{1_: result_formula, 2_: eleme
 waitReturn([1_: fixed_: descr])
 label(loop_end)
 
-
-
-
-
-
-
-
-
-
-DBG(M4SCS(printNl([1_: fixed_: error_msg])))
 call([1_: fixed_: chain_push, 2_: fixed_: prm3 = [{1_: result_formula, 2_: logical_operator, 3_: result_formula, 4_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 ifVarAssign([1_: logical_operator ], success, error)
 
 label(error)
 DBG(M4SCS(printNl([1_: fixed_: error_msg])))
-call([1_: fixed_: chain_push_first, 2_: fixed_: prm4 = [{1_: logical_operator, 2_: result_formula, 3_: empty}], 3_: assign_: descr])
-waitReturn([1_: fixed_: descr])
 DBG(M4SCS(print([1_: fixed_: leaving_msg])))
 return()
 label(success)
+call([1_: fixed_: chain_push_first, 2_: fixed_: prm4 = [{1_: logical_operator, 2_: result_formula, 3_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
 DBG(M4SCS(print([1_: fixed_: leaving_msg])))
 return()
 end()
