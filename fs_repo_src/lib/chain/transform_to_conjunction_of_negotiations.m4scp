@@ -30,8 +30,9 @@ M4SCS(	[[
 			chain_push_first = "/lib/chain/push_first/chain_push_first",
 			chain_push = "/lib/chain/push/chain_push",
 			chain_show = "/lib/chain/show/chain_show",
-
-			prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9,prm10,prm11,prm12,prm13,prm14,prm15,prm16,prm89,prm90,prm17
+			chain_get_then_routine = "/lib/chain/get_then_routine/chain_get_then_routine",
+			chain_get_else_routine = "/lib/chain/get_else_routine/chain_get_else_routine",
+			prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9,prm10,prm11,prm12,prm13,prm14,prm15,prm16,prm89,prm90,prm17,prm222,prm333,prm444,prm555
 		]])
 M4SEC(	[[	
 			chain_get_conjunction = /../chain/get_conjunction[SYFIX]/chain_get_conjunction,
@@ -53,8 +54,9 @@ M4SEC(	[[
 			chain_push_first = /../chain/push_first[SYFIX]/chain_push_first,
 			chain_push = /../chain/push[SYFIX]/chain_push,
 			chain_show = "/../chain/show[SYFIX]/chain_show",
-
-			prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9,prm10,prm11,prm12,prm13,prm14,prm15,prm16,prm89,prm90,prm17
+			chain_get_then_routine = /../chain/get_then_routine[SYFIX]/chain_get_then_routine,
+			chain_get_else_routine = /../chain/get_else_routine[SYFIX]/chain_get_else_routine,
+			prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9,prm10,prm11,prm12,prm13,prm14,prm15,prm16,prm89,prm90,prm17,prm222,prm333,prm444,prm555
 		]]), 
 	[{
 		state, true, stack, parameters, logger,
@@ -67,7 +69,8 @@ M4SEC(	[[
 
 		singleton_value, subformula_1, subformula_2, neg_subformula_1, neg_subformula_2,
 		result_formula,
-		link, descr, empty
+		link, descr, empty,
+		then_routine, else_routine
 	}], 
 	{[ 
 		1_: in_: out_: state,
@@ -161,8 +164,16 @@ waitReturn([1_: fixed_: descr])
 
 ifVarAssign([1_: result_formula ], success, error)
 
+
+// =============================================ERROR=================================================================
 label(error)
 DBG(M4SCS(printNl([1_: fixed_: error_msg])))
+genEl([1_: assign_: node_: const_: else_routine])
+call([1_: fixed_: chain_get_else_routine, 2_: fixed_: prm444 = [{1_: parameters, 2_: else_routine, 3_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: else_routine ], call_else_routine, skip_else_routine)
+
+label(call_else_routine)
 
 call([1_: fixed_: chain_push_first, 2_: fixed_: prm14 = [{1_: formula, 2_: stack, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
@@ -171,16 +182,33 @@ waitReturn([1_: fixed_: descr])
 varAssign([ 1_: assign_: formula, 2_: fixed_: stack ])
 call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm16 = [{1_: formula, 2_: stack, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
+return()
 
+label(skip_else_routine)
+DBG(M4SCS(print([1_: fixed_: error_msg])))
 DBG(M4SCS(print([1_: fixed_: leaving_msg])))
 return()
 
+// =============================================SUCCESS=================================================================
 label(success)
 
+genEl([1_: assign_: node_: const_: then_routine])
+call([1_: fixed_: chain_get_then_routine, 2_: fixed_: prm222 = [{1_: parameters, 2_: then_routine, 3_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: then_routine ], call_then_routine, skip_then_routine)
+
+
+label(call_then_routine)
+call([1_: fixed_: then_routine, 2_: fixed_: prm333 = [{1_: parameters, 2_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+return()
+
+label(skip_then_routine)
 call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm17 = [{1_: result_formula, 2_: stack, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 varAssign([ 1_: assign_: state, 2_: fixed_: true ])
 
 DBG(M4SCS(print([1_: fixed_: leaving_msg])))
 return()
+
 end()
