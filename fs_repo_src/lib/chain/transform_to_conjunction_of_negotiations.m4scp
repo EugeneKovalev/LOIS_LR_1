@@ -31,7 +31,7 @@ M4SCS(	[[
 			chain_push = "/lib/chain/push/chain_push",
 			chain_show = "/lib/chain/show/chain_show",
 
-			prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9,prm10,prm11,prm12,prm13,prm14,prm15,prm16,prm89,prm90
+			prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9,prm10,prm11,prm12,prm13,prm14,prm15,prm16,prm89,prm90,prm17
 		]])
 M4SEC(	[[	
 			chain_get_conjunction = /../chain/get_conjunction[SYFIX]/chain_get_conjunction,
@@ -54,7 +54,7 @@ M4SEC(	[[
 			chain_push = /../chain/push[SYFIX]/chain_push,
 			chain_show = "/../chain/show[SYFIX]/chain_show",
 
-			prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9,prm10,prm11,prm12,prm13,prm14,prm15,prm16,prm89,prm90
+			prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9,prm10,prm11,prm12,prm13,prm14,prm15,prm16,prm89,prm90,prm17
 		]]), 
 	[{
 		state, true, stack, parameters, logger,
@@ -176,7 +176,9 @@ DBG(M4SCS(print([1_: fixed_: leaving_msg])))
 return()
 
 label(success)
-varAssign([ 1_: assign_: stack, 2_: fixed_: result_formula ])
+
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm17 = [{1_: result_formula, 2_: stack, 3_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
 varAssign([ 1_: assign_: state, 2_: fixed_: true ])
 
 DBG(M4SCS(print([1_: fixed_: leaving_msg])))
