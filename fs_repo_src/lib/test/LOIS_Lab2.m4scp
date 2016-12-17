@@ -14,11 +14,12 @@ M4SCS(	[[
 		chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",
 		chain_show = "/lib/chain/show/chain_show",
 		chain_create_parameters = "/lib/chain/create_parameters/chain_create_parameters",
+		chain_get_conjunction = "/lib/chain/get_conjunction/chain_get_conjunction",
 		chain_get_disjunction = "/lib/chain/get_disjunction/chain_get_disjunction",
 		chain_get_negotiation = "/lib/chain/get_negotiation/chain_get_negotiation",
 		chain_transform_to_conjunction_of_negotiations = "/lib/chain/transform_to_conjunction_of_negotiations/chain_transform_to_conjunction_of_negotiations",
 		chain_remove_neg_A_and_neg_B = "/lib/chain/remove_neg_A_and_neg_B/chain_remove_neg_A_and_neg_B",
-		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm12, prm13, prm14, prm15, prm16, prm17
+		prm0,prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm12, prm13, prm14, prm15, prm16, prm17
 		]])
 M4SEC(	[[	
 		chain_push_first = /../chain/push_first[SYFIX]/chain_push_first,
@@ -27,11 +28,12 @@ M4SEC(	[[
 		chain_push_singlet = /../chain/push_singlet[SYFIX]/chain_push_singlet,
 		chain_show = /../chain/show[SYFIX]/chain_show,
 		chain_create_parameters = /../chain/create_parameters[SYFIX]/chain_create_parameters,
+		chain_get_conjunction = /../chain/get_conjunction[SYFIX]/chain_get_conjunction,
 		chain_get_disjunction = /../chain/get_disjunction[SYFIX]/chain_get_disjunction,
 		chain_get_negotiation = /../chain/get_negotiation[SYFIX]/chain_get_negotiation,
 		chain_transform_to_conjunction_of_negotiations = /../chain/transform_to_conjunction_of_negotiations[SYFIX]/chain_transform_to_conjunction_of_negotiations,
 		chain_remove_neg_A_and_neg_B = /../chain/remove_neg_A_and_neg_B[SYFIX]/chain_remove_neg_A_and_neg_B,
-		prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm12, prm13, prm14, prm15, prm16, prm17
+		prm0,prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm12, prm13, prm14, prm15, prm16, prm17
 		]]), 
 	[{
 		implication, conjunction, disjunction, negotiation, 
@@ -48,11 +50,16 @@ genEl([1_: assign_: node_: const_: true])
 genEl([1_: assign_: node_: const_: parameters])
 genEl([1_: assign_: node_: const_: empty])
 
+genEl([1_: assign_: node_: const_: conjunction])
 genEl([1_: assign_: node_: const_: disjunction])
 genEl([1_: assign_: node_: const_: negotiation])
 
 call([1_: fixed_: chain_create_parameters, 2_: fixed_: prm1 = [{1_: parameters, 2_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_get_conjunction, 2_: fixed_: prm0 = [{1_: parameters, 2_: conjunction, 3_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifVarAssign([1_: conjunction ], , error)
 
 call([1_: fixed_: chain_get_disjunction, 2_: fixed_: prm2 = [{1_: parameters, 2_: disjunction, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
@@ -112,6 +119,22 @@ call([1_: fixed_: chain_push, 2_: fixed_: prm15 = [{1_: not_or_A_B_C_not_D_or_E,
 waitReturn([1_: fixed_: descr])
 // <<<<<<<<<<< NOT(OR, A, B, C, !(D or E))
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< NOT(OR, A, B, C, !(D or E))
+
+DBG(M4SCS(printEl([1_: fixed_: node_A])))
+
+DBG(M4SCS(printEl([1_: fixed_: node_B])))
+
+DBG(M4SCS(printEl([1_: fixed_: node_C])))
+
+DBG(M4SCS(printEl([1_: fixed_: node_D])))
+
+DBG(M4SCS(printEl([1_: fixed_: node_E])))
+
+DBG(M4SCS(printEl([1_: fixed_: conjunction])))
+
+DBG(M4SCS(printEl([1_: fixed_: disjunction])))
+
+DBG(M4SCS(printEl([1_: fixed_: negotiation])))
 
 // Pushing the generated formula to stack
 call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prm16 = [{1_: not_or_A_B_C_not_D_or_E, 2_: stack, 3_: empty}], 3_: assign_: descr])

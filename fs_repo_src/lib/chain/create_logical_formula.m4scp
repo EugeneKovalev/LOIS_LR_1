@@ -13,12 +13,13 @@ M4SCS(	[[
 			error_msg = /"======== error chain_create_logical_formula\n"/,
 			chain_push_first = "/lib/chain/push_first/chain_push_first",
 			chain_push = "/lib/chain/push/chain_push",
-			prm1, prm2, prm3, prm4
+			chain_get_next = "/lib/chain/get_next/chain_get_next",
+			prm1, prm2, prm3, prm4, prm
 		]])
 M4SEC(	[[	
 			chain_push_first = /../chain/push_first[SYFIX]/chain_push_first,
 			chain_push = /../chain/push[SYFIX]/chain_push,
-			prm1, prm2, prm3, prm4
+			prm1, prm2, prm3, prm4, prm
 		]]), 
 	[{
 		logical_operator, elements, result_formula,
@@ -44,10 +45,6 @@ eraseEl([1_: fixed_: f_: arc])
 
 call([1_: fixed_: chain_push_first, 2_: fixed_: prm1 = [{1_: first_element, 2_: result_formula, 3_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
-
-
-
-
 
 label(loop_start)
 searchElStr3([
