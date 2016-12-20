@@ -6,29 +6,43 @@ M4SCS(
 
 program(test_main,
 M4SCS(	[[	
-		test_LOIS_Lab1 = "/lib/test/LOIS_Lab1/test_LOIS_Lab1",
-		test_LOIS_Lab2 = "/lib/test/LOIS_Lab2/test_LOIS_Lab2",
-		test_get_different_unorient_filter = "/lib/test/get_different_unorient_filter/test_get_different_unorient_filter",
-		prm1,prm2]])
+		start_message = /"=======main start======="/, 
+		end_success_message = /"=======main end======="/,
+		end_error_message = /"=======main error======="/,
+		chain_generate_default_parameters = "/lib/chain/generate_default_parameters/chain_generate_default_parameters",
+		chain_get_next = "/lib/chain/get_next/chain_get_next",
+		test_generate_formula_1 = "/lib/test/generate_formula_1/test_generate_formula_1",
+		prm1,prm2,prm3,prm4]])
 M4SEC(	[[
-		test_LOIS_Lab1 = /LOIS_Lab1[SYFIX]/test_LOIS_Lab1,
-		test_LOIS_Lab2 = /LOIS_Lab2[SYFIX]/test_LOIS_Lab2,
-		test_get_different_unorient_filter = /get_different_unorient_filter[SYFIX]/test_get_different_unorient_filter,
-		prm1,prm2]]),
-	[{
-		descr}])
+		chain_generate_default_parameters = /generate_default_parameters[SYFIX]/chain_generate_default_parameters,
+		chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
+		test_generate_formula_1 = /generate_formula_1[SYFIX]/test_generate_formula_1,
+		prm1,prm2,prm3,prm4]]),
+	[{ 
+		state, true, stack, parameters, empty, 
+		link,
+		descr 
+	}])
 
-call([1_: fixed_: test_LOIS_Lab1, 2_: fixed_: prm1=[{}], 3_: assign_: descr])
+DBG(M4SCS(printNl([1_: fixed_: start_message])))
 
+genEl([1_: assign_: node_: const_: empty])
+
+call([1_: fixed_: chain_generate_default_parameters, 2_: fixed_: prm1=[{1_: state, 2_: true, 3_: stack, 4_: parameters, 5_: empty}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+ifCoin([1_: fixed_: state, 2_: fixed_: true], , error)
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm2 = [{1_: stack, 2_: link, 3_: parameters}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-call([1_: fixed_: test_LOIS_Lab2, 2_: fixed_: prm2=[{}], 3_: assign_: descr])
-
+call([1_: fixed_: test_generate_formula_1, 2_: fixed_: prm3=[{1_: state, 2_: true, 3_: stack, 4_: parameters, 5_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
+ifCoin([1_: fixed_: state, 2_: fixed_: true], , error)
 
-call([1_: fixed_: test_get_different_unorient_filter, 2_: fixed_: prm2=[{}], 3_: assign_: descr])
-
-waitReturn([1_: fixed_: descr])
-
+label(error)
+DBG(M4SCS(printNl([1_: fixed_: end_error_message])))
+return([])
+label(success)
+DBG(M4SCS(printNl([1_: fixed_: end_success_message])))
 return([])
 end()

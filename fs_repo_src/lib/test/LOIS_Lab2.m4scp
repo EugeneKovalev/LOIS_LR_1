@@ -146,7 +146,7 @@ waitReturn([1_: fixed_: descr])
 call([1_: fixed_: chain_transform_to_conjunction_of_negotiations, 2_: fixed_: prm17 = [{1_: state, 2_: true, 3_: stack, 4_: parameters, 5_: empty}], 3_: assign_: descr])
 waitReturn([1_: fixed_: descr])
 
-ifCoin([1_: fixed_: state,2_: fixed_: true], success, error)
+ifCoin([1_: fixed_: state, 2_: fixed_: true], success, error)
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Get conjunction of negotiations
 
 label(error)

@@ -1,0 +1,103 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+///////////////////////////////////////////////////////
+//        File: generate_strategy.m4scp
+//    Location: /lib/chain/generate_strategy
+])
+
+procedure(chain_generate_strategy,
+M4SCS(	[[
+			entering_msg = /">>>>>>>> entering chain_generate_strategy\n"/,
+			leaving_msg = /"<<<<<<<< leaving chain_generate_strategy\n"/,
+			chain_push_first = "/lib/chain/push_first/chain_push_first",
+			chain_push = "/lib/chain/push/chain_push",
+			prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm12, prm13, prm14
+		]])
+M4SEC(	[[	
+			chain_push_first = /../chain/push_first[SYFIX]/chain_push_first,
+			chain_push = /../chain/push[SYFIX]/chain_push,
+			prm1, prm2, prm3, prm4, prm5, prm6, prm7, prm8, prm9, prm10, prm11, prm12, prm13, prm14
+		]]), 
+	[{
+		state, true, stack, parameters, logger,
+		logic_operators, alternative, equivalence, implication, universal_quantifier, existential_quantifier, conjunction, disjunction, negation,
+		strategy, strategy_procedure, strategy_parameters, then, else, 
+		descr
+	}], 
+	{[ 
+		1_: out_: state,
+		2_: out_: true,
+		3_: out_: stack,
+		4_: out_: parameters,
+		5_: in_: out_: logger
+	]}) 
+DBG(M4SCS(print([1_: fixed_: entering_msg])))
+
+genEl([1_: assign_: node_: const_: state])
+genEl([1_: assign_: node_: const_: true])
+
+// >>>>>> Generate logic operators
+genEl([1_: assign_: node_: const_: alternative])
+call([1_: fixed_: chain_push_first, 2_: fixed_: prm1 = [{1_: alternative, 2_: logic_operators, 3_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+genEl([1_: assign_: node_: const_: equivalence])
+call([1_: fixed_: chain_push, 2_: fixed_: prm2 = [{1_: logic_operators, 2_: equivalence, 3_: logic_operators, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+genEl([1_: assign_: node_: const_: implication])
+call([1_: fixed_: chain_push, 2_: fixed_: prm3 = [{1_: logic_operators, 2_: implication, 3_: logic_operators, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+genEl([1_: assign_: node_: const_: universal_quantifier])
+call([1_: fixed_: chain_push, 2_: fixed_: prm4 = [{1_: logic_operators, 2_: universal_quantifier, 3_: logic_operators, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+genEl([1_: assign_: node_: const_: existential_quantifier])
+call([1_: fixed_: chain_push, 2_: fixed_: prm5 = [{1_: logic_operators, 2_: existential_quantifier, 3_: logic_operators, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+genEl([1_: assign_: node_: const_: conjunction])
+call([1_: fixed_: chain_push, 2_: fixed_: prm6 = [{1_: logic_operators, 2_: conjunction, 3_: logic_operators, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+genEl([1_: assign_: node_: const_: disjunction])
+call([1_: fixed_: chain_push, 2_: fixed_: prm7 = [{1_: logic_operators, 2_: disjunction, 3_: logic_operators, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+genEl([1_: assign_: node_: const_: negation])
+call([1_: fixed_: chain_push, 2_: fixed_: prm8 = [{1_: logic_operators, 2_: negation, 3_: logic_operators, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+// <<<<<< Generate logic operators
+
+// >>>>>> Generate (then, else, logic operators)
+call([1_: fixed_: chain_push_first, 2_: fixed_: prm9 = [{1_: logic_operators, 2_: strategy_parameters, 3_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+genEl([1_: assign_: node_: const_: else])
+call([1_: fixed_: chain_push, 2_: fixed_: prm10 = [{1_: strategy_parameters, 2_: else, 3_: strategy_parameters, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+genEl([1_: assign_: node_: const_: then])
+call([1_: fixed_: chain_push, 2_: fixed_: prm11 = [{1_: strategy_parameters, 2_: then, 3_: strategy_parameters, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+// <<<<<< Generate (then, else, logic operators)
+
+// >>>>>> Generate strategy = (then_procedure, then_parameters)
+call([1_: fixed_: chain_push_first, 2_: fixed_: prm12 = [{1_: strategy_parameters, 2_: strategy, 3_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+genEl([1_: assign_: node_: const_: strategy_procedure])
+call([1_: fixed_: chain_push, 2_: fixed_: prm13 = [{1_: strategy, 2_: strategy_procedure, 3_: strategy, 4_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+// <<<<<< Generate strategy = (then_procedure, then_parameters)
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prm14 = [{1_: strategy, 2_: stack, 3_: logger}], 3_: assign_: descr])
+waitReturn([1_: fixed_: descr])
+
+varAssign([ 1_: assign_: state, 2_: fixed_: true ])
+
+DBG(M4SCS(print([1_: fixed_: leaving_msg])))
+return()
+end()
